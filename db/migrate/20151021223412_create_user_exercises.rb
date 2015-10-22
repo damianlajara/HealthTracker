@@ -4,7 +4,7 @@ class CreateUserExercises < ActiveRecord::Migration
       t.integer :exercise_id
       t.integer :user_id
       t.integer :regular_frequency
-      t.array :irregular_frequency
+      t.text :irregular_frequency
 
       t.timestamps null: false
     end

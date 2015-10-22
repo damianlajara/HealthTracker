@@ -11,24 +11,92 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151021221213) do
+ActiveRecord::Schema.define(version: 20151021223412) do
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+  create_table "appointments", force: :cascade do |t|
+    t.string   "doctor"
+    t.string   "location"
+    t.date     "date"
+    t.string   "reasons"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  create_table "exercises", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "illness_symptoms", force: :cascade do |t|
+    t.integer  "illness_id"
+    t.integer  "symptom_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "illnesses", force: :cascade do |t|
+    t.string   "common_term"
+    t.string   "medical_term"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "medications", force: :cascade do |t|
+    t.string   "brand_name"
+    t.string   "generic_name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "symptoms", force: :cascade do |t|
+    t.string   "common_term"
+    t.string   "medical_term"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "user_exercises", force: :cascade do |t|
+    t.integer  "exercise_id"
+    t.integer  "user_id"
+    t.integer  "regular_frequency"
+    t.text     "irregular_frequency"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "user_illnesses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "illness_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "severity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_medications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "medication_id"
+    t.integer  "amount"
+    t.integer  "frequency"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "user_symptoms", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "symptom_id"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+# Could not dump table "users" because of following NoMethodError
+#   undefined method `[]' for nil:NilClass
 
 end
