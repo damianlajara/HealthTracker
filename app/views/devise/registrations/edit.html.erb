@@ -23,6 +23,41 @@
   </div>
 
   <div class="field">
+    <%= f.label :first_name %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.text_field :first_name, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.text_field :last_name, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthdate %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.date_field :birthdate, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :height %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.number_field :height, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weight %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.number_field :weight, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :locations %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.text_field :locations, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.text_field :gender, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
