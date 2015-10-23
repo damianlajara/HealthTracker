@@ -21,6 +21,53 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
+
+  <div class="field">
+    <%= f.label :first_name %> <br />
+    <%= f.text_field :first_name, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_name %> <br />
+    <%= f.text_field :last_name, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :birthdate %> <br />
+    <%= f.date_field :birthdate, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :height %><br />
+    <%= f.number_field :height, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weight %> <br />
+    <%= f.number_field :weight, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Home%><br />
+    <%= f.text_field :home  %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :Work %><br />
+    <%= f.text_field :work %>
+  </div>
+
+  <div class="field">
+    <%= f.label :School %><br />
+    <%= f.text_field :school %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.text_field :gender, autocomplete: "off" %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

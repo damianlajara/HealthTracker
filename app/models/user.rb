@@ -17,6 +17,4 @@ class User < ActiveRecord::Base
   has_many :exercises, through: :user_exercises
 
   has_many :appointments
-
-  serialize :locations
 end
