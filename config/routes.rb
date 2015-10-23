@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :feelings
+
   devise_for :users
 
   resources :user
