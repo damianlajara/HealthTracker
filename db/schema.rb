@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151021223412) do
+ActiveRecord::Schema.define(version: 20151023190318) do
 
   create_table "appointments", force: :cascade do |t|
     t.string   "doctor"
@@ -23,8 +23,22 @@ ActiveRecord::Schema.define(version: 20151021223412) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "circles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "exercises", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "feelings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.boolean  "sick"
+    t.date     "day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,6 +69,13 @@ ActiveRecord::Schema.define(version: 20151021223412) do
     t.string   "medical_term"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "user_circles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "circle_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_exercises", force: :cascade do |t|
@@ -114,10 +135,8 @@ ActiveRecord::Schema.define(version: 20151021223412) do
     t.date     "birthdate"
     t.integer  "height"
     t.integer  "weight"
-    t.string   "work"
-    t.string   "home"
-    t.string   "school"
     t.string   "gender"
+    t.integer  "zipcode"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
