@@ -1,0 +1,184 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <h1 class="circle-title"><%= @circle.name %></h1>
+</p>
+
+<div class="circle-body">
+
+	<div class="circle-members">
+		<ul class="list-group">
+			<% @circle.users.each do |u| %>		
+				<li class="member list-group-item">
+					<%= image_tag u.avatar(:thumb), class: "member-img" %>
+					<div class="member-name"><%= u.full_name %></div>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+
+	<div class="circle-chart">
+		<canvas id="doughnutChart" width="450" height="450"></canvas>
+		<ul class="circle-legend">
+			<li class="circle-legend-li sick">
+				<div class="legend-li-icon"></div>
+				<div class="legend-li-label">Sick</div>
+			</li>
+			<li class="circle-legend-li so-so">
+				<div class="legend-li-icon"></div>
+				<div class="legend-li-label">So So</div>
+			</li>
+			<li class="circle-legend-li feel-well">
+				<div class="legend-li-icon"></div>
+				<div class="legend-li-label">Well</div>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+<%= link_to 'Edit', edit_circle_path(@circle) %> |
+<%= link_to 'Back', circles_path %>
+
+
+<script type="text/javascript">
+// ======================================================
+// Doughnut Chart
+// ======================================================
+
+// Doughnut Chart Options
+var doughnutOptions = {
+	//Boolean - Whether we should show a stroke on each segment
+	segmentShowStroke : true,
+	
+	//String - The colour of each segment stroke
+	segmentStrokeColor : "#fff",
+	
+	//Number - The width of each segment stroke
+	segmentStrokeWidth : 2,
+	
+	//The percentage of the chart that we cut out of the middle.
+	percentageInnerCutout : 50,
+	
+	//Boolean - Whether we should animate the chart	
+	animation : true,
+	
+	//Number - Amount of animation steps
+	animationSteps : 100,
+	
+	//String - Animation easing effect
+	animationEasing : "easeOutBounce",
+	
+	//Boolean - Whether we animate the rotation of the Doughnut
+	animateRotate : true,
+
+	//Boolean - Whether we animate scaling the Doughnut from the centre
+	animateScale : true,
+	
+	//Function - Will fire on animation completion.
+	onAnimationComplete : null
+}
+
+
+// Doughnut Chart Data
+var doughnutData = [
+	{
+		value: 100,
+		color:"red"
+	},
+	{
+		value : 200,
+		color : "#6a5ffc"
+	},
+
+	{
+		value : 300,
+		color : "#22ace2"
+	}
+
+]
+
+
+//Get the context of the Doughnut Chart canvas element we want to select
+var ctx = document.getElementById("doughnutChart").getContext("2d");
+
+// Create the Doughnut Chart
+var mydoughnutChart = new Chart(ctx).Doughnut(doughnutData, doughnutOptions);
+</script>
+
+<style>
+
+
+h1.circle-title {
+	text-transform: uppercase;
+	margin-bottom:30px;
+}
+
+.circle-chart {
+	position: relative;
+	padding-top:20px;
+}
+
+.legend-li-label {
+	font-size: 22px;
+}
+
+.circle-legend {
+	position: absolute;
+	top:20px;
+	right: -150px;
+}
+
+.circle-body {
+	display: flex;
+}
+
+.circle-legend-li {
+	display: flex;
+	margin-bottom: 15px;
+}
+
+.legend-li-icon {
+	margin-right:10px;
+	height: 30px;
+    width: 30px;
+    border-radius: 7px;
+}
+
+.sick .legend-li-icon {
+	background: red;
+}
+
+.so-so .legend-li-icon {
+	background: #6a5ffc;
+}
+
+.feel-well .legend-li-icon {
+	background: #22ace2;
+}
+
+
+
+.member {
+	display: flex;
+}
+
+img.member-img {
+	width: 60px;
+	height: 60px;
+}
+
+.member-name {
+	line-height: 60px;
+    font-size: 22px;
+    margin: 0 15px;
+}
+
+.circle-members {
+	width: 30%;
+    margin-right: 100px;
+}
+
+</style>
