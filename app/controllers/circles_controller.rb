@@ -10,6 +10,7 @@ class CirclesController < ApplicationController
   # GET /circles/1
   # GET /circles/1.json
   def show
+    #@circle = Circle.find(params[:id])
   end
 
   # GET /circles/new
