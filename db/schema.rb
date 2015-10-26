@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151023190318) do
+ActiveRecord::Schema.define(version: 20151026030039) do
 
   create_table "appointments", force: :cascade do |t|
     t.string   "doctor"
@@ -135,8 +135,15 @@ ActiveRecord::Schema.define(version: 20151023190318) do
     t.date     "birthdate"
     t.integer  "height"
     t.integer  "weight"
+    t.string   "work"
+    t.string   "home"
+    t.string   "school"
     t.string   "gender"
     t.integer  "zipcode"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

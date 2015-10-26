@@ -19,4 +19,16 @@ class User < ActiveRecord::Base
   has_many :appointments
 
   has_many :feelings
+
+  has_many :user_circles
+  has_many :circles, through: :user_circles
+
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100#" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  
+
+  def full_name 
+    "#{self.first_name.capitalize} #{self.last_name.capitalize}"
+  end
+
 end

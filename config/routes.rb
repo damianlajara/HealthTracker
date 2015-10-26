@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :circles
+
   resources :feelings
 
   devise_for :users
