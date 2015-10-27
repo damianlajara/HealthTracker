@@ -7,13 +7,14 @@ class RoutinesController < ApplicationController
 
   def symptom_check
     symptoms = params[:symptoms].split(",")
-    binding.pry
+    
     symptoms.each do |s|
       current_user.symptoms << Symptom.find_or_create_by(common_term: s)
     end
     binding.pry
-    
-    "hello"
+    respond_to do |format|
+       format.json { render json: SymptomChecker.possible_illnesses(current_user) }
+     end
   end
   
   def create 

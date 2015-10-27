@@ -174,3 +174,4 @@ x.symptoms <<
     Symptom.find_or_create_by(common_term: "Swollen Lymph Nodes")
   ]
 x.save
+

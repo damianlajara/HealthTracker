@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-
+gem 'jquery-ui-rails'
 gem 'chart-js-rails'
 gem 'paperclip', '~> 4.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

@@ -1,0 +1,35 @@
+var illnesses = new Array();
+
+
+<% @illnesses.each do |illness| %>
+  <% symptoms = [] %>
+  <% illness.symptoms.each do |symptom| %>
+    symptoms.push(symptom.common_term)
+  <% end %>
+  illnesses.push(<%= illness.name %>, <% symptoms %>));
+<% end -%>
+
+function symptomsSelected() {
+  symptoms = $("").val().split
+  var possible_illnesses = new Array();
+
+  illnesses.each(function(illness) {
+    symptoms.each(function(symptom) {
+      if (illness[1].include(symptom)) {
+        possible_illnesses.push(illness);
+        break;
+      };
+    }); 
+  });
+
+  if (options.length == 1) {
+    $('state_field').hide();
+  } else {
+    $('state_field').show();
+  }
+}
+
+document.observe('dom:loaded', function() {
+  countrySelected();
+  $('person_country_id').observe('change', countrySelected);
+});
