@@ -1,7 +1,7 @@
 var symptom_list = <%= Symptom.all.map {|symptom| symptom.common_term } %> 
-console.log(symptom_list)
-$( document ).ready(function() {
 
+$( document ).ready(function() {
+  smoothScroll();
   $(".health-form").hide();
   radio_field();
   
@@ -14,7 +14,6 @@ function radio_field() {
     value = $("input[type=radio]:checked").val()
 
     if(value === "true"){
-      $("#field-1").hide();
       symptom_field();
     } 
     else if($("input[type=radio]:checked").val() === undefined) {
@@ -28,20 +27,25 @@ function radio_field() {
 
 function symptom_field(){
   $("#field-2").show();
+  // trigger ancher tag. Page will scroll to #field-2. 
+  $("a[href=#field-2]")[0].click()
+
   setAutoComplete("#routine_symptoms", symptom_list)
-  
+  $(".ui-helper-hidden-accessible").remove();
+
   $("#field-2 button").click(function(){
-    $("#field-2").hide();
-    
-  $.get('/routines/symptom_check/' + $("textarea[id=routine_symptoms").val(), illness_field)
-  
+    $.get('/routines/symptom_check/' + $("textarea[id=routine_symptoms").val(), illness_field)
   });
 }
 
 function illness_field(possible_illnesses) {
   $("#field-3").show();
+  $("a[href=#field-3]")[0].click()
 
-  setAutoComplete("#routine_illnesses", possible_illnesses)
+  $.each(possible_illnesses, function(index, value) {
+    $("#routine_illnesses").append('<option class="illness_list" value="' + value +'">' + value + '</option>')
+  });
+
 };
 
 function setAutoComplete(input_id, list){
@@ -54,6 +58,13 @@ function setAutoComplete(input_id, list){
   }
 
   $( input_id )
+  // don't navigate away from the field on tab when selecting an item
+    .bind( "keydown", function( event ) {
+      if ( event.keyCode === $.ui.keyCode.TAB &&
+          $( this ).autocomplete( "instance" ).menu.active ) {
+        event.preventDefault();
+      }
+    })
     .autocomplete({
       minLength: 0,
       source: function( request, response ) {
@@ -75,8 +86,28 @@ function setAutoComplete(input_id, list){
         terms.push( "" );
         this.value = terms.join( ", " );
         return false;
-      }
+      },
+      messages: {
+        noResults: '',
+        results: function() {}
+      },
+
     });
+}
+
+function smoothScroll() {
+  $(".scroll").click(function(event){
+         event.preventDefault();
+         //calculate destination place
+         var dest=0;
+         if($(this.hash).offset().top > $(document).height()-$(window).height()){
+              dest=$(document).height()-$(window).height();
+         }else{
+              dest=$(this.hash).offset().top;
+         }
+         //go to destination
+         $('html,body').animate({scrollTop:dest}, 1000,'swing');
+     });
 }
 
 

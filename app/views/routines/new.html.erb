@@ -1,23 +1,26 @@
+
 <%= form_tag '/routines' do  %> 
 
 <div class="health-form" id="field-1">
   <h3> How Are You Feeling Today? </h3>
   <%= radio_button("user", "sick?", "true") %> Sick </br>
   <%= radio_button("user", "sick?", "false") %> Okey/Great </br>
-  <button name="button" type="button">Continue</button> 
+  <button name="button" type="button">Continue</button>
+  <a class="scroll" href="#field-2"></a>
 </div>
 
 <div class="health-form" id="field-2">
   <h3> What's bothering you? </h3>
   <p> Type out your symptoms below (seperate each by a comma) </p>
   <%= text_area_tag "routine[symptoms]" %>
-  <button name="button" type="button">Continue</button> 
+  <button name="button" type="button">Continue</button>
+  <a class="scroll" href="#field-3"></a>
 </div>
 
 <div class="health-form" id="field-3">
   <h3> Do you know if your suffering from any of these illnesses? </h3>
   <p> We curated a list of illnesses that we think match your symptoms. This is NOT a medical diagnoses! </br> Consult your family doctor for more information. </p>
-  <%= text_field_tag "routine[illnesses]"%>
+  <%= select_tag('routine[illnesses]',  options_for_select([['Select']])) %>
   <%= submit_tag "Search" %>
 </div>
 

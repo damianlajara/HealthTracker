@@ -6,14 +6,10 @@ class RoutinesController < ApplicationController
   end
 
   def symptom_check
-    symptoms = params[:symptoms].split(",")
+    symptoms = params[:symptoms].gsub(", ", ",").split(",")
     
-    symptoms.each do |s|
-      current_user.symptoms << Symptom.find_or_create_by(common_term: s)
-    end
-    binding.pry
     respond_to do |format|
-       format.json { render json: SymptomChecker.possible_illnesses(current_user) }
+       format.json { render json: SymptomChecker.possible_illnesses(symptoms).uniq }
      end
   end
   
@@ -22,7 +18,7 @@ class RoutinesController < ApplicationController
   end
 
   def routine_params
-    params.require(:routine).permit(:symptoms)
+    params.require(:routine).permit(:symptoms, :illnesses)
   end 
   
 end

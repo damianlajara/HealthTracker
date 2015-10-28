@@ -108,15 +108,6 @@ ActiveRecord::Schema.define(version: 20151026030039) do
     t.datetime "updated_at",    null: false
   end
 
-  create_table "user_symptoms", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "symptom_id"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
