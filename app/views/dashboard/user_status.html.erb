@@ -1,0 +1,8 @@
+<h1>Status</h1>
+
+
+<ul>
+  <% UserStatus.where(user_id = current_user.id).each do |s| %>
+  <li><%= s.status %></li>
+  <% end %>
+</ul>

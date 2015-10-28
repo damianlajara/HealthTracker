@@ -1,0 +1,2 @@
+module FeelingHelper
+end
