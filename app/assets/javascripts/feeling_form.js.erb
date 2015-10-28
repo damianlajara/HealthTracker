@@ -1,13 +1,14 @@
-var symptom_list = <%= Symptom.all.map {|symptom| symptom.common_term } %> 
 console.log(symptom_list)
 $( document ).ready(function() {
-
-  $(".health-form").hide();
-  radio_field();
+  $.get("/symptoms.json", function(symptoms) {
+    $(".health-form").hide();
+    radio_field(symptoms);
+  })
+  
   
 });
 
-function radio_field() {
+function radio_field(symptom_list) {
   $("#field-1").show();
 
   $("#field-1 button").click(function(){
@@ -15,7 +16,7 @@ function radio_field() {
 
     if(value === "true"){
       $("#field-1").hide();
-      symptom_field();
+      symptom_field(symptom_list);
     } 
     else if($("input[type=radio]:checked").val() === undefined) {
 
@@ -26,7 +27,7 @@ function radio_field() {
   });
 };
 
-function symptom_field(){
+function symptom_field(symptom_list){
   $("#field-2").show();
   setAutoComplete("#routine_symptoms", symptom_list)
   

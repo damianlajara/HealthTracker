@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :circles
-
+  resources :symptoms
   resources :feelings
 
   devise_for :users
