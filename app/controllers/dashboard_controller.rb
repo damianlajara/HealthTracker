@@ -1,4 +1,5 @@
 class DashboardController < ApplicationController
+
   def index
     render 'dashboard/index'
   end
@@ -9,4 +10,5 @@ class DashboardController < ApplicationController
     @user_status.status = params[:status]
     @user_status.save
   end
+
 end

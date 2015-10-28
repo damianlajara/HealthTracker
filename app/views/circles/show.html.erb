@@ -20,19 +20,27 @@
 	</div>
 
 	<div class="circle-chart">
-		<canvas id="doughnutChart" width="450" height="450"></canvas>
+		<canvas id="circleChart" width="450" height="450"></canvas>
 		<ul class="circle-legend">
-			<li class="circle-legend-li sick">
+			<li class="circle-legend-li energized">
 				<div class="legend-li-icon"></div>
-				<div class="legend-li-label">Sick</div>
+				<div class="legend-li-label">Energized</div>
 			</li>
-			<li class="circle-legend-li so-so">
+			<li class="circle-legend-li just-fine">
 				<div class="legend-li-icon"></div>
-				<div class="legend-li-label">So So</div>
+				<div class="legend-li-label">Just Fine</div>
 			</li>
-			<li class="circle-legend-li feel-well">
+			<li class="circle-legend-li exhausted">
 				<div class="legend-li-icon"></div>
-				<div class="legend-li-label">Well</div>
+				<div class="legend-li-label">Exhausted</div>
+			</li>
+			<li class="circle-legend-li mildly-sick">
+				<div class="legend-li-icon"></div>
+				<div class="legend-li-label">Mildly Sick</div>
+			</li>
+			<li class="circle-legend-li very-sick">
+				<div class="legend-li-icon"></div>
+				<div class="legend-li-label">Very Sick</div>
 			</li>
 		</ul>
 	</div>
@@ -42,13 +50,16 @@
 <%= link_to 'Edit', edit_circle_path(@circle) %> |
 <%= link_to 'Back', circles_path %>
 
+<script>
 
-<script type="text/javascript">
 // ======================================================
 // Doughnut Chart
 // ======================================================
 
 // Doughnut Chart Options
+
+$(document).ready(function(){
+
 var doughnutOptions = {
 	//Boolean - Whether we should show a stroke on each segment
 	segmentShowStroke : true,
@@ -79,33 +90,44 @@ var doughnutOptions = {
 	
 	//Function - Will fire on animation completion.
 	onAnimationComplete : null
-}
+};
 
 
 // Doughnut Chart Data
 var doughnutData = [
 	{
-		value: 100,
-		color:"red"
+		<%= binding.pry %>
+		value: <%= @circle.statuses[:energized] %>,
+		color:"#10cc84"
 	},
 	{
-		value : 200,
-		color : "#6a5ffc"
+		value: <%= @circle.statuses[:just_fine] %>,
+		color : "#1dc8e2"
+	},
+    {
+		value : 1,
+		color : "#b457f2"
 	},
 
 	{
-		value : 300,
-		color : "#22ace2"
+		value : 1,
+		color : "#ef7b45"
+	},
+    {
+		value : 2,
+		color : "#ed3b3b"
 	}
 
-]
+];
 
 
 //Get the context of the Doughnut Chart canvas element we want to select
-var ctx = document.getElementById("doughnutChart").getContext("2d");
+var ctx = document.getElementById("circleChart").getContext("2d");
 
 // Create the Doughnut Chart
 var mydoughnutChart = new Chart(ctx).Doughnut(doughnutData, doughnutOptions);
+
+})
 </script>
 
 <style>
@@ -128,7 +150,7 @@ h1.circle-title {
 .circle-legend {
 	position: absolute;
 	top:20px;
-	right: -150px;
+	right: -350px;
 }
 
 .circle-body {
@@ -147,18 +169,25 @@ h1.circle-title {
     border-radius: 7px;
 }
 
-.sick .legend-li-icon {
-	background: red;
+.energized .legend-li-icon {
+	background: #10cc84;
 }
 
-.so-so .legend-li-icon {
-	background: #6a5ffc;
+.just-fine .legend-li-icon {
+	background: #1dc8e2;
 }
 
-.feel-well .legend-li-icon {
-	background: #22ace2;
+.exhausted .legend-li-icon {
+	background: #b457f2;
 }
 
+.mildly-sick .legend-li-icon {
+	background: #ef7b45;
+}
+
+.very-sick .legend-li-icon {
+	background: #ed3b3b;
+}
 
 
 .member {
@@ -177,7 +206,7 @@ img.member-img {
 }
 
 .circle-members {
-	width: 30%;
+	width: 25%;
     margin-right: 100px;
 }
 
