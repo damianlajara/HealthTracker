@@ -24,8 +24,11 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
+
     @appointment = Appointment.new(appointment_params)
-    binding.pry
+    @appointment.user = current_user
+    @appointment.save
+
     respond_to do |format|
       if @appointment.save
         format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
