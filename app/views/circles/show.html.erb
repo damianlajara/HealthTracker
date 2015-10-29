@@ -6,46 +6,47 @@
   <h1 class="circle-title"><%= @circle.name %></h1>
 </p>
 
-<div class="circle-body">
+<%= unless @circle.users.nil? %>
+	<div class="circle-body">
 
-	<div class="circle-members">
-		<ul class="list-group">
-			<% @circle.users.each do |u| %>		
-				<li class="member list-group-item">
-					<%= image_tag u.avatar(:thumb), class: "member-img" %>
-					<div class="member-name"><%= u.full_name %></div>
+		<div class="circle-members">
+			<ul class="list-group">
+				<% @circle.users.each do |u| %>		
+					<li class="member list-group-item">
+						<%= image_tag u.avatar(:thumb), class: "member-img" %>
+						<div class="member-name"><%= u.full_name %></div>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+
+		<div class="circle-chart">
+			<canvas id="circleChart" width="450" height="450"></canvas>
+			<ul class="circle-legend">
+				<li class="circle-legend-li energized">
+					<div class="legend-li-icon"></div>
+					<div class="legend-li-label">Energized</div>
 				</li>
-			<% end %>
-		</ul>
+				<li class="circle-legend-li just-fine">
+					<div class="legend-li-icon"></div>
+					<div class="legend-li-label">Just Fine</div>
+				</li>
+				<li class="circle-legend-li exhausted">
+					<div class="legend-li-icon"></div>
+					<div class="legend-li-label">Exhausted</div>
+				</li>
+				<li class="circle-legend-li mildly-sick">
+					<div class="legend-li-icon"></div>
+					<div class="legend-li-label">Mildly Sick</div>
+				</li>
+				<li class="circle-legend-li very-sick">
+					<div class="legend-li-icon"></div>
+					<div class="legend-li-label">Very Sick</div>
+				</li>
+			</ul>
+		</div>
 	</div>
-
-	<div class="circle-chart">
-		<canvas id="circleChart" width="450" height="450"></canvas>
-		<ul class="circle-legend">
-			<li class="circle-legend-li energized">
-				<div class="legend-li-icon"></div>
-				<div class="legend-li-label">Energized</div>
-			</li>
-			<li class="circle-legend-li just-fine">
-				<div class="legend-li-icon"></div>
-				<div class="legend-li-label">Just Fine</div>
-			</li>
-			<li class="circle-legend-li exhausted">
-				<div class="legend-li-icon"></div>
-				<div class="legend-li-label">Exhausted</div>
-			</li>
-			<li class="circle-legend-li mildly-sick">
-				<div class="legend-li-icon"></div>
-				<div class="legend-li-label">Mildly Sick</div>
-			</li>
-			<li class="circle-legend-li very-sick">
-				<div class="legend-li-icon"></div>
-				<div class="legend-li-label">Very Sick</div>
-			</li>
-		</ul>
-	</div>
-</div>
-
+<% end %>
 
 <%= link_to 'Edit', edit_circle_path(@circle) %> |
 <%= link_to 'Back', circles_path %>
