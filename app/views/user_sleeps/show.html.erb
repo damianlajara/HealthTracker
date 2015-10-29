@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= current_user %>
+</p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @user_sleep.hours %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @user_sleep.start %>
+</p>
+
+<p>
+  <strong>Wake:</strong>
+  <%= @user_sleep.wake %>
+</p>
+
+<p>
+  <strong>Quality:</strong>
+  <%= @user_sleep.quality %>
+</p>
+
+<%= link_to 'Edit', edit_user_sleep_path(@user_sleep) %> |
+<%= link_to 'Back', user_sleeps_path %>

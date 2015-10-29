@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing User Sleeps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <!-- <th>User</th> -->
+      <th>Hours</th>
+      <th>Start</th>
+      <th>Wake</th>
+      <th>Quality</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_sleeps.where(user_id = current_user.id).each do |user_sleep| %>
+      <tr>
+        <td><%= current_user %></td>
+        <td><%= user_sleep.hours %></td>
+        <td><%= user_sleep.start %></td>
+        <td><%= user_sleep.wake %></td>
+        <td><%= user_sleep.quality %></td>
+        <td><%= link_to 'Show', user_sleep %></td>
+        <td><%= link_to 'Edit', edit_user_sleep_path(user_sleep) %></td>
+        <td><%= link_to 'Destroy', user_sleep, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User sleep', new_user_sleep_path %>

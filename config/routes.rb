@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :feelings
 
+  resources :appointments
+
   devise_for :users
 
   resources :routines
@@ -23,6 +25,8 @@ Rails.application.routes.draw do
   post 'dashboard/user_status' => 'dashboard#user_status'  
 
   post 'circles/add_user' => 'circles#add_user'
+
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
