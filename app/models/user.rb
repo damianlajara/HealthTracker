@@ -7,9 +7,6 @@ class User < ActiveRecord::Base
   has_many :user_illnesses
   has_many :illnesses, through: :user_illnesses
 
-  has_many :user_symptoms
-  has_many :symptoms, through: :user_symptoms
-
   has_many :user_medications
   has_many :medications, through: :user_medications
 
@@ -32,5 +29,7 @@ class User < ActiveRecord::Base
   def full_name 
     "#{self.first_name.capitalize} #{self.last_name.capitalize}"
   end
+
+  scope :ci_find, lambda { |attribute, value| where("lower(#{attribute}) = ?", value.downcase).first }
 
 end

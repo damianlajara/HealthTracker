@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151028155113) do
+ActiveRecord::Schema.define(version: 20151029175334) do
 
   create_table "appointments", force: :cascade do |t|
     t.string   "doctor"
     t.string   "location"
-    t.date     "date"
-    t.string   "reasons"
+    t.datetime "date"
+    t.text     "reasons"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -107,6 +107,18 @@ ActiveRecord::Schema.define(version: 20151028155113) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
+
+  create_table "user_sleeps", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "hours"
+    t.time     "start"
+    t.time     "wake"
+    t.string   "quality"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "user_sleeps", ["user_id"], name: "index_user_sleeps_on_user_id"
 
   create_table "user_statuses", force: :cascade do |t|
     t.integer  "user_id"

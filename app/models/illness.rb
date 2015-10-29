@@ -6,4 +6,7 @@ class Illness < ActiveRecord::Base
   has_many :symptoms, through: :illness_symptoms
 
   validates :common_term, uniqueness: true
+
+  scope :ci_find, lambda { |attribute, value| where("lower(#{attribute}) = ?", value.downcase).first }
+  
 end

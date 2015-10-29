@@ -1,0 +1,37 @@
+<%= form_for(@user_sleep) do |f| %>
+  <% if @user_sleep.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user_sleep.errors.count, "error") %> prohibited this user_sleep from being saved:</h2>
+
+      <ul>
+      <% @user_sleep.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div> -->
+  <div class="field">
+    <%= f.label :hours %><br>
+    <%= f.number_field :hours %>
+  </div>
+  <div class="field">
+    <%= f.label :start %><br>
+    <%= f.time_select :start %>
+  </div>
+  <div class="field">
+    <%= f.label :wake %><br>
+    <%= f.time_select :wake %>
+  </div>
+  <div class="field">
+    <%= f.label :quality %><br>
+    <%= f.text_field :quality %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
