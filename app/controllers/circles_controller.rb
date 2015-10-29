@@ -62,6 +62,23 @@ class CirclesController < ApplicationController
     end
   end
 
+  # POST /circles/add_user/
+  def add_user
+    @user = User.find(params[:user][:id])
+    @circle = Circle.find_by(circle_params)
+    @circle.users << @user
+    
+    respond_to do |format|
+      if @circle.save
+        format.html { redirect_to @circle, notice: 'User was successfully added to circle.' }
+        format.json { render :show, status: :created, location: @circle }
+      else
+        format.html { render :new }
+        format.json { render json: @circle.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_circle

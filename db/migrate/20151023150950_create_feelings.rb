@@ -2,7 +2,7 @@ class CreateFeelings < ActiveRecord::Migration
   def change
     create_table :feelings do |t|
       t.integer :user_id
-      t.boolean :sick
+      t.integer :sick
       t.date :day
 
       t.timestamps null: false
