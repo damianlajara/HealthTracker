@@ -13,8 +13,8 @@ class Circle < ActiveRecord::Base
 		}
 
 		self.users.each do |u|
-	      unless u.user_statuses.last == nil
-	      	case u.user_statuses.last.status
+	      unless u.user_statuses.last.nil?
+	      	case u.user_statuses.where("created_at >= ?", Time.zone.now.beginning_of_day).last.status
 				when "Energized"
 					hash[:energized] += 1
 				when "Just Fine"
@@ -31,5 +31,10 @@ class Circle < ActiveRecord::Base
 
 		hash
 	end
+
+	def undefined_status 
+		self.users.count - self.statuses.values.sum
+	end
+
 
 end

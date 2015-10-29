@@ -7,14 +7,9 @@
 </p>
 
 <%= form_tag '/circles/add_user', class: "new_user" do %>
-	<h3> Add Users To Circles </h3>
-	<%= hidden_field_tag "circle[name]", @circle.name %>
-	
-	<div class="user_id_field">
-		<%= label_tag "user[id]", "User ID:"%>
-		<%= number_field_tag "user[id][]"%>
-	</div>
-		
+	<%= hidden_field_tag "circle[name]", @circle.name %>	
+	<%= label_tag "user[id]", "User ID:"%>
+    <%= number_field_tag "user[id]"%>		
 	<%= submit_tag "Join Circle"%>
 <% end %>
 
@@ -116,17 +111,21 @@ var doughnutData = [
 		color : "#1dc8e2"
 	},
     {
-		value : 1,
+		value : <%= @circle.statuses[:exhausted] %>,
 		color : "#b457f2"
 	},
 
 	{
-		value : 1,
+		value : <%= @circle.statuses[:mildly_sick] %>,
 		color : "#ef7b45"
 	},
     {
-		value : 2,
+		value : <%= @circle.statuses[:very_sick] %>,
 		color : "#ed3b3b"
+	},
+	{
+		value : <%= @circle.undefined_status%>,
+		color : "gray"
 	}
 
 ];
