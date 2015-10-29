@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20151029175334) do
 
   create_table "feelings", force: :cascade do |t|
     t.integer  "user_id"
-    t.boolean  "sick"
+    t.integer  "sick"
     t.date     "day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -129,15 +129,6 @@ ActiveRecord::Schema.define(version: 20151029175334) do
 
   add_index "user_statuses", ["user_id"], name: "index_user_statuses_on_user_id"
 
-  create_table "user_symptoms", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "symptom_id"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -156,9 +147,6 @@ ActiveRecord::Schema.define(version: 20151029175334) do
     t.date     "birthdate"
     t.integer  "height"
     t.integer  "weight"
-    t.string   "work"
-    t.string   "home"
-    t.string   "school"
     t.string   "gender"
     t.integer  "zipcode"
     t.string   "avatar_file_name"

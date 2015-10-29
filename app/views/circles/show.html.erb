@@ -7,9 +7,9 @@
 </p>
 
 <%= form_tag '/circles/add_user', class: "new_user" do %>
-	<%= hidden_field_tag "circle[name]", @circle.name %>	
+	<%= hidden_field_tag "circle[name]", @circle.name %>
 	<%= label_tag "user[id]", "User ID:"%>
-    <%= number_field_tag "user[id]"%>		
+    <%= number_field_tag "user[id]"%>
 	<%= submit_tag "Join Circle"%>
 <% end %>
 
@@ -18,7 +18,7 @@
 
 		<div class="circle-members">
 			<ul class="list-group">
-				<% @circle.users.each do |u| %>		
+				<% @circle.users.each do |u| %>
 					<li class="member list-group-item">
 						<%= image_tag u.avatar(:thumb), class: "member-img" %>
 						<div class="member-name"><%= u.full_name %></div>
@@ -60,91 +60,86 @@
 
 <script>
 
-// ======================================================
-// Doughnut Chart
-// ======================================================
+  // ======================================================
+  // Doughnut Chart
+  // ======================================================
 
-// Doughnut Chart Options
-
-
-var doughnutOptions = {
-	//Boolean - Whether we should show a stroke on each segment
-	segmentShowStroke : true,
-	
-	//String - The colour of each segment stroke
-	segmentStrokeColor : "#fff",
-	
-	//Number - The width of each segment stroke
-	segmentStrokeWidth : 2,
-	
-	//The percentage of the chart that we cut out of the middle.
-	percentageInnerCutout : 50,
-	
-	//Boolean - Whether we should animate the chart	
-	animation : true,
-	
-	//Number - Amount of animation steps
-	animationSteps : 100,
-	
-	//String - Animation easing effect
-	animationEasing : "easeOutBounce",
-	
-	//Boolean - Whether we animate the rotation of the Doughnut
-	animateRotate : true,
-
-	//Boolean - Whether we animate scaling the Doughnut from the centre
-	animateScale : true,
-	
-	//Function - Will fire on animation completion.
-	onAnimationComplete : null
-};
+  // Doughnut Chart Options
 
 
-// Doughnut Chart Data
-var doughnutData = [
-	{
-		value: <%= @circle.statuses[:energized] %>,
-		color:"#10cc84"
-	},
-	{
-		value: <%= @circle.statuses[:just_fine] %>,
-		color : "#1dc8e2"
-	},
-    {
-		value : <%= @circle.statuses[:exhausted] %>,
-		color : "#b457f2"
-	},
+  var doughnutOptions = {
+  	//Boolean - Whether we should show a stroke on each segment
+  	segmentShowStroke : true,
 
-	{
-		value : <%= @circle.statuses[:mildly_sick] %>,
-		color : "#ef7b45"
-	},
-    {
-		value : <%= @circle.statuses[:very_sick] %>,
-		color : "#ed3b3b"
-	},
-	{
-		value : <%= @circle.undefined_status%>,
-		color : "gray"
-	}
+  	//String - The colour of each segment stroke
+  	segmentStrokeColor : "#fff",
 
-];
+  	//Number - The width of each segment stroke
+  	segmentStrokeWidth : 2,
+
+  	//The percentage of the chart that we cut out of the middle.
+  	percentageInnerCutout : 50,
+
+  	//Boolean - Whether we should animate the chart
+  	animation : true,
+
+  	//Number - Amount of animation steps
+  	animationSteps : 100,
+
+  	//String - Animation easing effect
+  	animationEasing : "easeOutBounce",
+
+  	//Boolean - Whether we animate the rotation of the Doughnut
+  	animateRotate : true,
+
+  	//Boolean - Whether we animate scaling the Doughnut from the centre
+  	animateScale : true,
+
+  	//Function - Will fire on animation completion.
+  	onAnimationComplete : null
+  };
 
 
-//Get the context of the Doughnut Chart canvas element we want to select
-var ctx = document.getElementById("circleChart").getContext("2d");
+  // Doughnut Chart Data
+  var doughnutData = [
+  	{
+  		value: <%= @circle.statuses[:energized] %>,
+  		color:"#10cc84"
+  	},
+  	{
+  		value: <%= @circle.statuses[:just_fine] %>,
+  		color : "#1dc8e2"
+  	},
+      {
+  		value : <%= @circle.statuses[:exhausted] %>,
+  		color : "#b457f2"
+  	},
 
-// Create the Doughnut Chart
-var mydoughnutChart = new Chart(ctx).Doughnut(doughnutData, doughnutOptions);
+  	{
+  		value : <%= @circle.statuses[:mildly_sick] %>,
+  		color : "#ef7b45"
+  	},
+      {
+  		value : <%= @circle.statuses[:very_sick] %>,
+  		color : "#ed3b3b"
+  	},
+  	{
+  		value : <%= @circle.undefined_status%>,
+  		color : "gray"
+  	}
 
+  ];
+
+
+  //Get the context of the Doughnut Chart canvas element we want to select
+  var ctx = document.getElementById("circleChart").getContext("2d");
+
+  // Create the Doughnut Chart
+  var mydoughnutChart = new Chart(ctx).Doughnut(doughnutData, doughnutOptions);
 
 </script>
 
-<% end %>
-
 <style>
-
-
 h1.circle-title {
 	text-transform: uppercase;
 	margin-bottom:30px;
@@ -221,5 +216,4 @@ img.member-img {
 	width: 25%;
     margin-right: 100px;
 }
-
 </style>
