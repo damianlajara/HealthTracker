@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
   	render "application/index"
   end
 
+  def root
+    render "test/dashboard"
+  end
+
   private
 
       def configure_permitted_parameters

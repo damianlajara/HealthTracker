@@ -1,20 +1,103 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HealthTracker</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
-  <%= analytics_init if Rails.env.production? %>
+  <meta charset="UTF-8">       
+    
+    <!-- Include the head -->
+    <!-- Meta -->
+<meta name="description" content="Dee Admin Template Bootstrap">
+<meta name="keywords" content="admin,template,lightweight,dashboard,responsive,webapp,css3,html5,jquery,bootstrap">
+<meta name="author" content="Deemble">
+<!-- / Meta -->
+
+<!-- Fonts -->
+<link href='//fonts.googleapis.com/css?family=Raleway:300,400,600,700,800' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+<!-- / Fonts -->
+
+<!-- Style Sheets -->
+<link rel="stylesheet" href="styles/vendor/pace-theme-minimal.css">
+<link rel="stylesheet" href="styles/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="styles/vendor/metisMenu.min.css">
+<link rel="stylesheet" href="styles/vendor/animate.min.css">
+<link rel="stylesheet" href="styles/vendor/toastr.min.css">
+<link rel="stylesheet" href="styles/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="styles/style.min.css">
+<link rel="stylesheet" href="styles/themes/theme-all.min.css">
+<link rel="stylesheet" href="styles/demo.min.css">
+<!-- / Style Sheets -->
+
 </head>
 
-<div id="header">
-  <%= render "session" %>
-</div>
 
-<body>
+<body data-theme="default">
+    <div id="wrapper">
+        <!-- Include the sidebar-nav -->
+        <%= render "sidebar" %>
+        <!-- END sidebar-nav -->
+        <div id="container-wrapper" class="container-wrapper">
+        <!-- Inclide header navbar -->
+        <%= render "header" %>
+        <!-- End header navbar -->
+
 
 <%= yield %>
 
+   <div id="container-footer" class="container-footer">
+    <div class="container-fluid">
+      <div class="row">
+          <component>container-footer</component>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+               Dee Company © 2015-2016
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 to-right">
+              <i class="fa fa-code"></i>
+              <span>Version 1.2.0</span>
+          </div>
+      </div>
+    </div>
+</div>
+ 
+        </div>
+    </div>
+
+    <!-- Scroll up -->
+    <a href="#" class="fa scrollup"></a>   
+
+    <!-- Scripts -->
+    <!-- Post Scripts -->
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/jquery-ui.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+
+<script src="js/main.min.js"></script>
+<script src="js/loremizer.min.js"></script>
+<script src="js/panels.min.js"></script>
+<script src="js/deepassword.min.js"></script>
+<script src="js/demo/demo.min.js"></script>
+
+<script src="js/vendor/toastr.min.js"></script>
+<script src="js/vendor/pace.min.js"></script>
+<script src="js/vendor/metisMenu.min.js"></script>
+<script src="js/vendor/jquery.slimscroll.min.js"></script>
+
+<script src="js/vendor/lodash.min.js"></script>
+<script src="js/vendor/moment.min.js"></script>
+
+<!-- / Post Scripts -->
+
+ 
+
+    <script src="js/vendor/jquery.peity.min.js"></script>
+    <script src="js/vendor/index.js""></script>
+    <script src="js/vendor/Chart.min.js""></script>
+                
+    <script src="js/demo/demo-dashboard.js"></script>
+
+    <script src="js/vendor/holder.min.js"></script>
+                            
 </body>
 </html>

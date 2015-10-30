@@ -1,0 +1,3151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Include the title -->
+    <title>Dee Admin | Form basics</title>
+    
+    <link rel="stylesheet" href="styles/vendor/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="styles/vendor/chosen.min.css">
+    
+    <!-- Include the head -->
+    <!-- Meta -->
+<meta name="description" content="Dee Admin Template Bootstrap">
+<meta name="keywords" content="admin,template,lightweight,dashboard,responsive,webapp,css3,html5,jquery,bootstrap">
+<meta name="author" content="Deemble">
+<!-- / Meta -->
+
+<!-- Fonts -->
+<link href='//fonts.googleapis.com/css?family=Raleway:300,400,600,700,800' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+<!-- / Fonts -->
+
+<!-- Style Sheets -->
+<link rel="stylesheet" href="styles/vendor/pace-theme-minimal.css">
+<link rel="stylesheet" href="styles/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="styles/vendor/metisMenu.min.css">
+<link rel="stylesheet" href="styles/vendor/animate.min.css">
+<link rel="stylesheet" href="styles/vendor/toastr.min.css">
+<link rel="stylesheet" href="styles/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="styles/style.min.css">
+<link rel="stylesheet" href="styles/themes/theme-all.min.css">
+<link rel="stylesheet" href="styles/demo.min.css">
+<!-- / Style Sheets -->
+
+
+    
+</head>
+<body data-theme="default">
+    <div id="wrapper">
+        <!-- Include the sidebar-nav -->
+        <nav id="sidebar-nav" class="sidebar-nav">
+    <div id="sidebar-wrapper" class="sidebar-wrapper" data-background="default">
+        <component>sidebar-nav</component>
+        <ul class="side-nav-top nav">
+            <li class="sidebar-nav-logo">
+                <component>sidebar-nav-logo</component>
+                <img src="img/sidebar-logo.png" alt="Dee Admin">
+                <span class="logo-text">
+                    <b>Dee</b> Template
+                </span>
+            </li>
+            <li class="sidebar-nav-profile">
+                <component>sidebar-nav-profile</component>
+                <div class="profile-left">
+                    <img src="img/user.jpg" alt="Peter Boussa">
+                </div>
+                <div class="profile-right">
+                    <span class="name">
+                        Peter Boussa<i id="user-profile-settings-toggler" class="fa fa-caret-down l-pad-5"></i>
+                    </span>
+                    <span class="info">
+                        Project Manager
+                    </span>
+                </div>
+            </li>
+            <!-- Profile settings -->
+            <li class="side-nav-profile-settings" style="display: none;">
+                <ul class="inline-list">
+                    <li>
+                        <a id="right-notifier-toggler-3" 
+                           class="btn btn-white-hover mb-5" 
+                           data-placement="top" 
+                           data-toggle="tooltip" 
+                           data-original-title="Notifications">
+                            <i class="fa fa-bell-o"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-white-hover mb-5"
+                           data-placement="top" 
+                           data-toggle="tooltip"
+                           data-original-title="Profile"
+                           href="profile.html">
+                            <i class="fa fa-user"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-white-hover mb-5"
+                           data-placement="top" 
+                           data-toggle="tooltip"
+                           data-original-title="Inbox"
+                           href="inbox.html">
+                            <i class="fa fa-inbox"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-white-hover mb-5" 
+                           data-placement="top" 
+                           data-toggle="tooltip" 
+                           data-original-title="Desktop">
+                            <i class="fa fa-desktop"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-white-hover mb-5"
+                           data-placement="top" 
+                           data-toggle="tooltip"
+                           data-original-title="Support">
+                            <i class="fa fa-support"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-white-hover mb-5"
+                           data-placement="top" 
+                           data-toggle="tooltip"
+                           data-original-title="Log out"
+                           href="login.html">
+                            <i class="fa fa-sign-out l-pad-5"></i>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- / Profile settings -->
+        </ul>
+        <ul id="side-nav" class="side-nav nav">
+            <li class="side-nav-group">
+                <span class="name">Options</span>
+            </li>
+            <li class="@@activate-dashboard">
+                <a href="dashboard.html">
+                    <i class="fa fa-tachometer"></i> 
+                    <span class="name">Dashboard</span>
+                </a>
+            </li>
+            <li class="@@activate-ui-elements">
+                <a href="#">
+                    <i class="fa fa-desktop"></i> 
+                    <span class="name">UI Elements</span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@@activate-components">
+                        <a href="components.html">
+                            Components
+                        </a>
+                    </li>
+                    <li class="@@activate-buttons">
+                        <a href="buttons.html">
+                            Buttons
+                        </a>
+                    </li>
+                    <li class="@@activate-panels">
+                        <a href="panels.html">
+                            Panels
+                        </a>
+                    </li>
+                    <li class="@@activate-panel-grid">
+                        <a href="panelgrid.html">
+                            Panel grid
+                        </a>
+                    </li>
+                    <li class="@@activate-tabs">
+                        <a href="tabs.html">
+                            Tabs &amp; Accordions
+                        </a>
+                    </li>
+                    <li class="@@activate-spinners">
+                        <a href="spinners.html">
+                            Spinners
+                        </a>
+                    </li>
+                    <li class="@@activate-tooltips">
+                        <a href="tooltips.html">
+                            Tooltips &amp; Popovers
+                        </a>
+                    </li>
+                    <li class="@@activate-checkboxes">
+                        <a href="checkboxes.html">
+                            Checkbox &amp; Radio
+                        </a>
+                    </li>
+                    <li class="@@activate-switches">
+                        <a href="switches.html">
+                            Switches
+                        </a>
+                    </li>
+                    <li class="@@activate-modals">
+                        <a href="modals.html">
+                            Modal dialogs
+                        </a>
+                    </li>
+                    <li class="@@activate-alerts">
+                        <a href="alerts.html">
+                            Alert dialogs
+                        </a>
+                    </li>
+                    <li class="@@activate-page-message">
+                        <a href="page_message.html">
+                            Page messages
+                        </a>
+                    </li>
+                    <li class="@@activate-growls">
+                        <a href="growl.html">
+                            Growls
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-extra-pages">
+                <a href="#">
+                    <i class="fa fa-trophy"></i> 
+                    <span class="name">Extra pages</span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@@activate-faq">
+                        <a href="faq.html">
+                            FAQ Page
+                        </a>
+                    </li>
+                    <li class="@@activate-invoice">
+                        <a href="invoice.html">
+                            Invoice
+                        </a>
+                    </li>
+                    <li class="@@activate-timeline">
+                        <a href="timeline.html">
+                            Timeline
+                        </a>
+                    </li>
+                    <li class="@@activate-profile">
+                        <a href="profile.html">
+                            Profile
+                        </a>
+                    </li>
+                    <li class="@@activate-activity">
+                        <a href="activity.html">
+                            Activity feed
+                        </a>
+                    </li>
+                    <li class="@@activate-search">
+                        <a href="search.html">
+                            Search results
+                        </a>
+                    </li>
+                    <li class="@@activate-todo">
+                        <a href="todo.html">
+                            TODO List
+                            <span class="label label-warning label-s pull-right r-mar-10">New</span>
+                        </a>
+                    </li>
+                    <li class="@@activate-pricing">
+                        <a href="pricing.html">
+                            Pricing
+                            <span class="label label-warning label-s pull-right r-mar-10">New</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-app-pages">
+                <a href="#">
+                    <i class="fa fa-file-o"></i> 
+                    <span class="name">App pages</span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="login.html">
+                            Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="password.html">
+                            Forgot password
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.html">
+                            Register
+                        </a>
+                    </li>
+                    <li>
+                        <a href="error-404.html">
+                            404 Error
+                        </a>
+                    </li>
+                    <li>
+                        <a href="error-500.html">
+                            500 Error
+                        </a>
+                    </li>
+                    <li>
+                        <a href="coming_soon.html">
+                            Coming soon
+                            <span class="label label-warning label-s pull-right r-mar-10">New</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="@@activate-mailbox">
+                <a href="#">
+                    <i class="fa fa-inbox"></i> 
+                    <span class="name">Mailbox</span>
+                    <span class="fa expand"></span>
+                    <span class="label label-warning label-s pull-right r-mar-10">3</span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@@activate-inbox">
+                        <a href="inbox.html">
+                            Inbox
+                        </a>
+                    </li>
+                    <li class="@@activate-mail-compose">
+                        <a href="email_compose.html">
+                            Email compose
+                        </a>
+                    </li>
+                    <li class="@@activate-mail-view">
+
+                        <a href="email_view.html">
+                            Email detail
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-calendar">
+                <a href="calendar.html">
+                    <i class="fa fa-calendar-o"></i> 
+                    <span class="name">Calendar</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="#">
+                    <i class="fa fa-edit"></i> 
+                    <span class="name">Forms</span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="active">
+                        <a href="form_basic.html">
+                            Form basics
+                        </a>
+                    </li>
+                    <li class="@@activate-form-layouts">
+                        <a href="form_layouts.html">
+                            Form layouts
+                        </a>
+                    </li>
+                    <li class="@@activate-form-advanced-controls">
+                        <a href="form_advanced_controls.html">
+                            Advanced controls
+                        </a>
+                    </li>
+                    <li class="@@activate-form-text-editor">
+                        <a href="text-editor.html">
+                            Text editor
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-widgets">
+                <a href="widgets.html">
+                    <i class="fa fa-space-shuttle"></i> 
+                    <span class="name">Widgets</span>
+                </a>
+            </li>
+            <li class="@@activate-charts">
+                <a href="#">
+                    <i class="fa fa-pie-chart"></i> 
+                    <span class="name">Charts</span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@@activate-sparkline">
+                        <a href="sparkline.html">
+                            Sparkline / Peity
+                        </a>
+                    </li>
+                    <li class="@@activate-chartjs">
+                        <a href="chartjs.html">
+                            Chart.js
+                        </a>
+                    </li>
+                    <li class="@@activate-flotcharts">
+                        <a href="flotcharts.html">
+                            Flot Charts
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-tables">
+                <a href="#">
+                    <i class="fa fa-table"></i> 
+                    <span class="name">
+                        Tables
+                    </span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@@activate-basic-tables">
+                        <a href="tables.html">
+                            Table basics
+                        </a>
+                    </li>
+                    <li class="@@activate-datatables">
+                        <a href="datatables.html">
+                            DataTables
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-grids">
+                <a href="grids.html">
+                    <i class="fa fa-th"></i> 
+                    <span class="name">Grids</span>
+                </a>
+            </li>
+            <li class="@@activate-layouts">
+                <a href="#">
+                    <i class="fa fa-laptop"></i> 
+                    <span class="name">Layouts</span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="#" class="container-navbar-fixer-nav">Fixed top navbar</a>
+                    </li>
+                    <li>
+                        <a href="#" class="container-footer-fixer-nav">Fixed footer</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-collapser-nav">Sidebar collapsed </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-fixed-nav">Fixed sidebar</a>
+                    </li>
+                    <li>
+                        <a href="#" class="boxed-selector-nav">Boxed</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-css-animate">
+                <a href="css-animate.html">
+                    <i class="fa fa-fighter-jet"></i>
+                    <span class="name">CSS Animations</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-align-left"></i> 
+                    <span class="name">Menu levels</span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="javascript:void(0);">
+                            Item 1.1<span class="fa expand"></span>
+                        </a>
+                        <ul class="nav nav-third-level collapse">
+                            <li>
+                                <a href="javascript:void(0);">
+                                    Item 1.1.1<span class="fa expand"></span>
+                                </a>
+                                <ul class="nav nav-fourth-level collapse">
+                                    <li>
+                                        <a href="javascript:void(0);">Item 1.1.1.1</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">Item 1.1.1.2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">Item 1.1.2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Item 1.2</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Item 1.3</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-colors">
+                <a href="colors.html">
+                    <i class="fa fa-adjust"></i> 
+                    <span class="name">Colors</span>
+                </a>
+            </li>
+            <li class="@@activate-typography">
+                <a href="typography.html">
+                    <i class="fa fa-text-width"></i> 
+                    <span class="name">Typography</span>
+                </a>
+            </li>
+            <li class="@@activate-classes">
+                <a href="classes.html">
+                    <i class="fa fa-cubes"></i> 
+                    <span class="name">Generic classes</span>
+                </a>
+            </li>    
+            <li class="side-nav-group">
+                <span class="name">Information</span>
+            </li>
+            <li class="@@activate-features">
+                <a href="features.html">
+                    <i class="fa fa-cube"></i> 
+                    <span class="name">Features</span>
+                </a>
+            </li>
+            <li class="@@activate-next">
+                <a href="next.html">
+                    <i class="fa fa-clock-o"></i> 
+                    <span class="name">In progress</span>
+                </a>
+            </li>
+            <li class="@@activate-credits">
+                <a href="credits.html">
+                    <i class="fa fa-credit-card"></i> 
+                    <span class="name">Credits</span>
+                </a>
+            </li>
+            <li class="@@activate-versions">
+                <a href="versions.html">
+                    <i class="fa fa-database"></i> 
+                    <span class="name">Versions</span>
+                </a>
+            </li>
+            <li class="side-nav-group">
+                <span class="name">Status</span>
+            </li>
+            <li class="side-nav-info">
+                <div class="row">
+                    <div class="col-md-9">
+                        Pending tasks
+                    </div>
+                    <div class="col-md-3">
+                        <span class="badge badge-warning">6</span>
+                    </div>
+                </div>
+            </li>
+            <li class="side-nav-separator">
+            <li class="side-nav-info">
+                <div class="row">
+                    <div class="col-md-12">
+                        <small>
+                            Application server progress
+                        </small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="progress progress-striped active progress-xs no-mb mt-5">
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">
+                                <span class="sr-only">5%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="side-nav-info">
+                <div class="row">
+                    <div class="col-md-12">
+                        <small>
+                            Database backup progress 
+                        </small>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-12">
+                        <div class="progress progress-striped active progress-xs no-mb mt-5">
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                                <span class="sr-only">75%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+        <div id="container-wrapper" class="container-wrapper">
+            
+            <!-- Include the container navbar -->
+            <div id="container-navbar" class="container-navbar navbar">
+    <component>container-navbar</component>
+    <div class="l-container-navbar">
+        <a href="#" class="sidebar-minimalizer btn btn-theme">
+            <i class="fa"></i> 
+        </a>
+        <span id="navbar-search" class="navbar-search-input-icon l-mar-10">
+            <i class="fa fa-search navbar-search-icon"></i>
+            <input class="navbar-search" type="text" placeholder="Search ...">
+        </span>
+    </div>
+    <div class="r-container-navbar">
+        <!-- Notification sidebar -->
+        <a id="right-notifier-toggler" class="btn btn-default btn-bordered">
+            <span class="fa fa-bell-o"></span>
+            <span class="badge badge-danger badge-xs upbadges">9</span>
+        </a>
+        <!-- User information -->
+        <span class="dropdown" id="profile-toggler">
+            <a class="btn btn-default btn-bordered dropdown-toggle" data-toggle="dropdown">
+                <span class="fa fa-magic"></span>
+            </a>
+            <!-- Include the theme selector component -->
+            <ul class="dropdown-menu dropdown-arrowed dropdown-menu-center w250" style="margin-right: -119px">
+    <li class="dropdown-header">
+        <h3 class="bold">Profile status</h3>
+        <small>79% Complete</small>
+        <div class="progress progress-striped progress-xs">
+            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="79" aria-valuemin="0" aria-valuemax="100" style="width: 79%">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div>
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab-top-1" data-toggle="tab-hover" aria-expanded="false">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-top-2" data-toggle="tab-hover" aria-expanded="true">
+                        <i class="fa fa-user"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab-top-1">
+                <div class="tab-pane-title">
+                    <h3><strong>Settings</strong></h3>
+                </div>
+                <div class="to-center">
+                    <!-- Include the theme selector component -->
+                    <div id="demo-themes-page">
+    <div class="theme-selector theme-default-background theme-selector-bordered" theme="default">
+     <div class="theme-selector-label" title="Default"></div>
+    </div>
+    <div class="theme-selector theme-white-background theme-selector-bordered" theme="white">
+     <div class="theme-selector-label" title="White Light"></div>
+    </div>
+    <div class="theme-selector theme-navy-background theme-selector-bordered" theme="navy">
+     <div class="theme-selector-label" title="Blue Navy"></div>
+    </div>
+    <div class="theme-selector theme-sky-background theme-selector-bordered" theme="sky">
+     <div class="theme-selector-label" title="Blue Sky"></div>
+    </div>
+    <div class="theme-selector theme-lime-background theme-selector-bordered" theme="lime">
+     <div class="theme-selector-label" title="Lime Lemon"></div>
+    </div>
+    <div class="theme-selector theme-dust-background theme-selector-bordered" theme="dust">
+     <div class="theme-selector-label" title="Star Dust"></div>
+    </div>
+    <div class="theme-selector theme-green-background theme-selector-bordered" theme="green">
+     <div class="theme-selector-label" title="Green Tea"></div>
+    </div>
+    <br/>
+    <div class="theme-selector theme-orange-background theme-selector-bordered" theme="orange">
+     <div class="theme-selector-label" title="Orange Round"></div>
+    </div>
+    <div class="theme-selector theme-yellow-background theme-selector-bordered" theme="yellow">
+     <div class="theme-selector-label" title="Yellow Sun"></div>
+    </div>
+    <div class="theme-selector theme-purple-background theme-selector-bordered" theme="purple">
+     <div class="theme-selector-label" title="Deep Purple"></div>
+    </div>
+    <div class="theme-selector theme-chocolate-background theme-selector-bordered" theme="chocolate">
+     <div class="theme-selector-label" title="Yummy Chocolate"></div>
+    </div>
+    <div class="theme-selector theme-dark-background theme-selector-bordered" theme="dark">
+     <div class="theme-selector-label" title="Dark Night"></div>
+    </div>
+    <div class="theme-selector theme-green-soft-background theme-selector-bordered" theme="green-soft">
+     <div class="theme-selector-label" title="Soft Green"></div>
+    </div>
+    <div class="theme-selector theme-red-background theme-selector-bordered" theme="red">
+     <div class="theme-selector-label" title="Wheel Red"></div>
+    </div>         
+</div>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab-top-2">
+                <div class="tab-pane-title">
+                    <h3><strong>Profile</strong></h3>
+                </div>
+                <div>
+                    Peter Boussa<br/>
+                    <small>
+                        Project Manager
+                    </small>
+                </div>
+            </div>
+        </div>
+    </li>
+
+    <li>
+        <a id="right-notifier-toggler-2">
+            <i class="fa fa-bullhorn r-pad-15"></i>Messages
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <i class="fa fa-power-off r-pad-15"></i>Logout
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <i class="fa fa-question-circle r-pad-15"></i>Lockscreen
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <i class="fa fa-info-circle r-pad-15"></i>Help
+        </a>
+    </li>
+</ul>
+        </span>
+        <!-- Fullscreen toggler -->
+        <a id="fullscreen-toggler" class="btn btn-default btn-bordered">
+            <span class="fa fa-arrows-alt"></span>
+        </a>
+        <!-- Log out -->
+        <a class="btn btn-default btn-bordered" href="login.html">
+            <span class="fa fa-sign-out r-mar-5"></span>Log out
+        </a>
+    </div>
+    <!-- Include the right notifier -->
+    <div id="right-notifier">
+    <div class="right-notifier-content">
+        <div class="right-notifier-tabs">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab-1" data-toggle="tab" aria-expanded="false">
+                        <i class="fa fa-bullhorn"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-2" data-toggle="tab" aria-expanded="true">
+                        <i class="fa fa-server"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-3" data-toggle="tab" aria-expanded="true">
+                        <i class="fa fa-tasks"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-4" data-toggle="tab" aria-expanded="true">
+                        <i class="fa fa-users r-pad-5"></i>
+                        Friends
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab-1">
+                <div class="right-notifier-title">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3><strong>Notifications</strong></h3>
+                            <small>
+                                You have 10 notifications
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-twitter fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    You have one new follower!
+                                    <br/>
+                                    <small>@deeTemplate is following you</small>
+                                    <br/>
+                                    <i><small>12/11/2022 11:26h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-facebook fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    You have one new friend!
+                                    <br/>
+                                    <small>Dee Admin Template is your friend</small>
+                                    <br/>
+                                    <i><small>12/11/2022 11:11h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-envelope fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    You have 4 new mails!
+                                    <br/>
+                                    <small>Go to webmail to read it</small>
+                                    <br/>
+                                    <i><small>12/11/2022 11:01h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-linkedin-square fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    Someone visited you professional profile!
+                                    <br/>
+                                    <small>Go to Linkedin and check-it</small>
+                                    <br/>
+                                    <i><small>12/11/2022 10:42h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-google-plus fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    You have been added to the Dee Circle!
+                                    <br/>
+                                    <small>Go to Google+ and check-it</small>
+                                    <br/>
+                                    <i><small>12/11/2022 10:31h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-facebook fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    You have 30 likes in your publication
+                                    <br/>
+                                    <small>Congratulations for the post!</small>
+                                    <br/>
+                                    <i><small>12/11/2022 10:21h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-spotify fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    Dee Admin Template follows your playlists
+                                    <br/>
+                                    <small>You listen amazing music!</small>
+                                    <br/>
+                                    <i><small>12/11/2022 10:20h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-paypal fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    You received 9.000,00$ in your account
+                                    <br/>
+                                    <small>Great job!</small>
+                                    <br/>
+                                    <i><small>12/11/2022 10:12h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-bitcoin fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    Bitcoin raises 410,00%
+                                    <br/>
+                                    <small>¿Time to sell?</small>
+                                    <br/>
+                                    <i><small>12/11/2022 10:10h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-dropbox fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    DeeTemplate shared a file with you
+                                    <br/>
+                                    <small>Visit Dropbox to see content</small>
+                                    <br/>
+                                    <i><small>12/11/2022 10:02h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab-2">
+                <div class="right-notifier-title">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3><strong>Server Statistics</strong></h3>
+                            <small>
+                                Actual server status
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul>
+                        <li class="right-notifier-element">
+                            <h5><strong>Server status</strong></h5>
+                            <div class="progress">
+                                <div style="width: 45%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" role="progressbar" 
+                                     class="progress-bar progress-bar-info">Server load (45%)</div>
+                            </div>
+                            <div class="progress">
+                                <div style="width: 85%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" role="progressbar" 
+                                     class="progress-bar progress-bar-danger">Database requests (+85%)</div>
+                            </div>
+                            <div class="progress">
+                                <div style="width: 65%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="65" role="progressbar" 
+                                     class="progress-bar progress-bar-warning">Database connections (+65%)</div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <h5><strong>Maintenance</strong></h5>
+                            <h6>Application server script progress</h6>
+                            <div class="progress progress-striped active progress-xs">
+                                <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" 
+                                     class="progress-bar">
+                                    <span class="sr-only">90%</span>
+                                </div>
+                            </div>
+                            <h6>Database maintenance progress</h6>
+                            <div class="progress progress-striped active progress-xs">
+                                <div style="width: 55%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="55" role="progressbar" 
+                                     class="progress-bar">
+                                    <span class="sr-only">55%</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <h5><strong>Server statistics</strong></h5>
+                            <h6>Traffic (last hour)</h6>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    132 requests
+                                </div>
+                                <div class="col-xs-6 to-right">
+                                    <i class="fa fa-caret-up pad-h-5"></i>22.2%
+                                </div>
+                            </div>
+                            <h6>Average server response (last hour)</h6>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    100 ms
+                                </div>
+                                <div class="col-xs-6 to-right">
+                                    <i class="fa fa-caret-up pad-h-5"></i>12.1%
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab-3">
+                <div class="right-notifier-title">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3><strong>Tasks</strong></h3>
+                            <small>
+                                You have 4 pending tasks
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul>
+                        <li class="right-notifier-element">
+                            <input type="checkbox"/>&nbsp;&nbsp;
+                            Partner evaluation
+                            <br/>
+                            <i><small>12/11/2022 10:00h</small></i>
+                        </li>
+                        <li class="right-notifier-element">
+                            <input type="checkbox"/>&nbsp;&nbsp;
+                            Meeting at main office
+                            <br/>
+                            <i><small>12/11/2022 10:30h</small></i>
+                        </li>
+                        <li class="right-notifier-element">
+                            <input type="checkbox"/>&nbsp;&nbsp;
+                            Check sales status
+                            <br/>
+                            <i><small>12/11/2022 11:00h</small></i>
+                        </li>
+                        <li class="right-notifier-element">
+                            <input type="checkbox"/>&nbsp;&nbsp;
+                            Add new entrance to blog
+                            <br/>
+                            <i><small>12/11/2022 17:00h</small></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab-4">
+                <div class="right-notifier-title">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3><strong>Friends</strong></h3>
+                            <small>
+                                Keep in contact with your friends
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-user fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Ronald C. Stevens
+                                    <br/>
+                                    <i class="fa fa-circle color-success r-pad-5"></i><small>Online</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-facebook-color label-s">
+                                        <i class="fa fa-facebook"></i>
+                                    </span>
+                                    <br/><i><small>Yesterday</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-fax fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Chanell W. Orcutt
+                                    <br/>
+                                    <i class="fa fa-circle color-success r-pad-5"></i><small>Online</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-facebook-color label-s">
+                                        <i class="fa fa-facebook"></i>
+                                    </span>
+                                    <br/><i><small>2 days ago</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                             <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-user fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Blake J. Gibson
+                                    <br/>
+                                    <i class="fa fa-circle color-success r-pad-5"></i><small>Online</small>
+                                </div>
+                                 <div class="col-xs-3 to-right">
+                                    <span class="label social-google-color label-s">
+                                        <i class="fa fa-google-plus"></i>
+                                    </span>
+                                    <br/><i><small>last week</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-institution fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Laura E. Fagin
+                                    <br/>
+                                    <i class="fa fa-circle color-danger r-pad-5"></i><small>Offline</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-twitter-color label-s">
+                                        New
+                                        <i class="fa fa-twitter"></i>
+                                    </span>
+                                    <br/><i><small>22 oct</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-user-md fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Bobby V. Becker
+                                    <br/>
+                                    <i class="fa fa-circle color-success r-pad-5"></i><small>Online</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-linkedin-color label-s">
+                                        <i class="fa fa-linkedin"></i>
+                                    </span>
+                                    <br/><i><small>11 dec</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-user fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Evelyn M. Drennon
+                                    <br/>
+                                    <i class="fa fa-circle color-success r-pad-5"></i><small>Online</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-linkedin-color label-s">
+                                        <i class="fa fa-linkedin"></i>
+                                    </span>
+                                    <br/><i><small>12 nov</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-male fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Jose S. Smith
+                                    <br/>
+                                    <i class="fa fa-circle color-danger r-pad-5"></i><small>Offline</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-linkedin-color label-s">
+                                        <i class="fa fa-linkedin"></i>
+                                    </span>
+                                    <br/><i><small>9 nov</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-female fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Melody M. Rooney
+                                    <br/>
+                                    <i class="fa fa-circle color-success r-pad-5"></i><small>Online</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-instagram-color label-s">
+                                        <i class="fa fa-instagram"></i>
+                                    </span>
+                                    <br/><i><small>3 days ago</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-user fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Brenda J. Heenan
+                                    <br/>
+                                    <i class="fa fa-circle color-danger r-pad-5"></i><small>Offline</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-instagram-color label-s">
+                                        <i class="fa fa-instagram"></i>
+                                    </span>
+                                    <br/><i><small>5 days ago</small></i>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+            
+            <!-- Include the container-header -->
+            <div id="container-header" class="container-header">
+    <component>container-header</component>
+      <div class="row">
+        <div class="col-md-12">
+            <h2>Form basics</h2>
+        </div>
+      </div>
+</div>
+            
+            <!-- Include the container-breadcrumb -->
+            <div id="container-breadcrumb" class="container-breadcrumb">
+    <component>container-breadcrumb</component>
+    <div class="row">
+        <div class="col-lg-10">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="@@s-active">
+                    Forms
+                </li>
+                <li class="@@ss-active">
+                    Form basics
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+            
+            <div id="container-content" class="container-content">
+                
+                <!-- Include the demo-settings -->
+                <div id="demo-settings">
+     <a id="demo-settings-toggler" href="#" class="r-pad-5">
+        <i class="fa fa-cogs"></i> 
+     </a>
+     <h5 class="header">
+         Settings
+    </h5>
+    <div id="demo-config">
+        <div class="container-fluid">
+            <div class="row">
+                 <div class="col-md-8">
+                    Fixed sidebar
+                 </div>
+                 <div class="col-md-2">
+                    <div class="switch">
+                        <input id="onoff-fixed-sidebar"
+                               type="checkbox" 
+                               name="switch" 
+                               class="switch-checkbox">
+                        <label class="switch-label sidebar-fixed" 
+                               for="onoff-fixed-sidebar">
+                            <span class="switch-inner"></span>
+                            <span class="switch-switcher"></span>
+                        </label>
+                    </div> 
+                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    Fixed footer
+                </div>
+                <div class="col-md-2">
+                    <div class="switch">
+                        <input id="onoff-footer-fixer"
+                               type="checkbox" 
+                               name="switch" 
+                               class="switch-checkbox">
+                        <label class="switch-label container-footer-fixer" 
+                               for="onoff-footer-fixer">
+                            <span class="switch-inner"></span>
+                            <span class="switch-switcher"></span>
+                        </label>
+                    </div> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    Fixed top navbar
+                </div>
+                <div class="col-md-2">
+                    <div class="switch">
+                        <input id="onoff-navbar-fixer"
+                               type="checkbox" 
+                               name="switch" 
+                               class="switch-checkbox">
+                        <label class="switch-label container-navbar-fixer" 
+                               for="onoff-navbar-fixer">
+                            <span class="switch-inner"></span>
+                            <span class="switch-switcher"></span>
+                        </label>
+                    </div> 
+                </div>
+            </div>
+            
+             <div class="row">
+                 <div class="col-md-8">
+                    Collapse sidebar
+                 </div>
+                 <div class="col-md-2">
+                    <div class="switch">
+                        <input id="onoff-collapse-sidebar"
+                               type="checkbox" 
+                               name="switch" 
+                               class="switch-checkbox">
+                        <label class="switch-label sidebar-collapser" 
+                               for="onoff-collapse-sidebar">
+                            <span class="switch-inner"></span>
+                            <span class="switch-switcher"></span>
+                        </label>
+                    </div> 
+                 </div>
+             </div>
+             
+             <div class="row">
+                 <div class="col-md-8">
+                    Boxed
+                 </div>
+                 <div class="col-md-2">
+                    <div class="switch">
+                        <input id="onoff-boxed"
+                               type="checkbox" 
+                               name="switch" 
+                               class="switch-checkbox">
+                        <label class="switch-label boxed-selector" 
+                               for="onoff-boxed">
+                            <span class="switch-inner"></span>
+                            <span class="switch-switcher"></span>
+                        </label>
+                    </div> 
+                 </div>
+             </div>
+         </div>
+     </div>
+    <h5 class="header">
+         Background
+    </h5>
+    <div id="demo-background">
+        <div class="background-selector background-selector-default" background="default">
+             <div class="background-selector-label">Default</div>
+        </div>
+        <div class="background-selector background-selector-dark" background="dark">
+             <div class="background-selector-label">Dark</div>
+        </div>
+        <div class="background-selector background-selector-light" background="light">
+             <div class="background-selector-label">Light</div>
+        </div>
+    </div>
+    <h5 class="header">
+         Themes
+     </h5>
+     <div id="demo-themes">
+         <div class="theme-selector theme-default-background" theme="default">
+             <div class="theme-selector-label">Default</div>
+         </div>
+         <div class="theme-selector theme-white-background" theme="white">
+             <div class="theme-selector-label">White Light</div>
+         </div>
+         <div class="theme-selector theme-navy-background" theme="navy">
+             <div class="theme-selector-label">Blue Navy</div>
+         </div>
+         <div class="theme-selector theme-sky-background" theme="sky">
+             <div class="theme-selector-label">Blue Sky</div>
+         </div>
+         <div class="theme-selector theme-lime-background" theme="lime">
+             <div class="theme-selector-label">Lime Lemon</div>
+         </div>
+         <div class="theme-selector theme-dust-background" theme="dust">
+             <div class="theme-selector-label">Star Dust</div>
+         </div>
+         <div class="theme-selector theme-green-background" theme="green">
+             <div class="theme-selector-label">Green Tea</div>
+         </div>
+         <div class="theme-selector theme-orange-background" theme="orange">
+             <div class="theme-selector-label">Orange Round</div>
+         </div>
+         <div class="theme-selector theme-yellow-background" theme="yellow">
+             <div class="theme-selector-label">Yellow Sun</div>
+         </div>
+         <div class="theme-selector theme-purple-background" theme="purple">
+             <div class="theme-selector-label">Deep Purple</div>
+         </div>
+         <div class="theme-selector theme-chocolate-background" theme="chocolate">
+             <div class="theme-selector-label">Yummy Chocolate</div>
+         </div>
+         <div class="theme-selector theme-dark-background" theme="dark">
+             <div class="theme-selector-label">Dark Night</div>
+         </div>
+         <div class="theme-selector theme-green-soft-background" theme="green-soft">
+             <div class="theme-selector-label">Soft Green</div>
+         </div>
+        <div class="theme-selector theme-red-background" theme="red">
+             <div class="theme-selector-label">Wheel Red</div>
+         </div>         
+     </div>
+</div> 
+                
+                <h1 class="bordered-dotted-dark mb-10">Inputs</h1>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Default Input -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Input <strong>Default</strong>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <p>CSS Classes: <code>.input-sm</code> or <code>.input-lg</code></p>
+                                <hr class="dotted"/>
+                                <div class="form-group">
+                                    <input type="text" class="form-control input-sm mb-5" placeholder="Small input (.input-lg)">
+                                    <input type="text" class="form-control mb-5" placeholder="Default Input">
+                                    <input type="text" class="form-control mb-5 input-lg" placeholder="Big input (.input-lg)">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / Default Input -->
+                        <!-- Left Icon -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Input <strong>Left Icon</strong>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <p>CSS Classes: <code>.iconed-input</code></p>
+                                <hr class="dotted"/>
+                                <div class="form-group">
+                                    <div class="iconed-input mb-5">
+                                        <i class="fa fa-shield fa-sm"></i>
+                                        <input type="text" placeholder="Left icon" class="form-control input-sm">
+                                    </div>
+                                    <div class="iconed-input mb-5">
+                                        <i class="fa fa-shield"></i>
+                                        <input type="text" placeholder="Left icon" class="form-control">
+                                    </div>
+                                    <div class="iconed-input mb-5">
+                                        <i class="fa fa-shield fa-lg"></i>
+                                        <input type="text" placeholder="Left icon" class="form-control input-lg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / Left Icon -->
+                        <!-- Left Spinner Icon -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Input <strong>Left Spinner</strong>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <p>CSS Classes: <code>.iconed-input</code> and <code>.fa-spin</code></p>
+                                <hr class="dotted"/>
+                                <div class="iconed-input mb-5">
+                                    <i class="fa fa-spinner fa-spin fa-sm"></i>
+                                    <input type="text" placeholder="Spinner icon" class="form-control input-sm">
+                                </div>
+                                <div class="iconed-input mb-5">
+                                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                                    <input type="text" placeholder="Spinner icon" class="form-control">
+                                </div>
+                                <div class="iconed-input mb-5">
+                                    <i class="fa fa-refresh fa-spin fa-lg"></i>
+                                    <input type="text" placeholder="Spinner icon" class="form-control input-lg">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / Left Spinner Icon -->
+                    </div>
+                    <div class="col-md-6">
+                        <!-- State Input -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Input <strong>State</strong>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="form-group">
+                                    <label for="disabledinput1" class="control-label">Disabled Input</label>
+                                    <input type="text" disabled="" class="form-control" id="disabledinput1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="readonlyinput1" class="control-label">Read-only Input</label>
+                                    <input type="text" readonly="readonly" class="form-control" id="readonlyinput1" value="I'm a read-only input">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / State Input -->
+                        <!-- Right Icon -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Input <strong>Right Icon</strong>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <p>CSS Classes: <code>.iconed-input</code>, <code>.right-iconed-input</code></p>
+                                <hr class="dotted"/>
+                                <div class="form-group">
+                                    <div class="iconed-input right-iconed-input mb-5">
+                                        <i class="fa fa-shield fa-sm"></i>
+                                        <input type="text" placeholder="Right icon" class="form-control input-sm">
+                                    </div>
+                                    <div class="iconed-input right-iconed-input mb-5">
+                                        <i class="fa fa-shield"></i>
+                                        <input type="text" placeholder="Right icon" class="form-control">
+                                    </div>
+                                    <div class="iconed-input right-iconed-input mb-5">
+                                        <i class="fa fa-shield fa-lg"></i>
+                                        <input type="text" placeholder="Right icon" class="form-control input-lg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / Right Icon -->
+                        <!-- / Right Spinner Icon -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Input <strong>Right Spinner</strong>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <p>CSS Classes: <code>.iconed-input</code>, <code>.right-iconed-input</code> and <code>.fa-spin</code></p>
+                                <hr class="dotted"/>
+                                <div class="iconed-input right-iconed-input mb-5">
+                                    <i class="fa fa-spinner fa-spin fa-sm"></i>
+                                    <input type="text" placeholder="Spinner icon" class="form-control input-sm">
+                                </div>
+                                <div class="iconed-input right-iconed-input mb-5">
+                                    <i class="fa fa-circle-o-notch fa-spin"></i>
+                                    <input type="text" placeholder="Spinner icon" class="form-control">
+                                </div>
+                                <div class="iconed-input right-iconed-input mb-5">
+                                    <i class="fa fa-refresh fa-spin fa-lg"></i>
+                                    <input type="text" placeholder="Spinner icon" class="form-control input-lg">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / Right Spinner Icon -->
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Input with <strong>Tooltip</strong> and <strong>Popover</strong>
+                                </div>
+                            </div>
+                            <div class="panel-body">                        
+                                <div class="form-group">
+                                    <label class="control-label">Input Tooltip</label>
+                                    <p>CSS Classes: Add <code>.tooltips</code> class to an input tag.</p>
+                                    <input type="text" placeholder="Hover me" data-title="Tooltip content..." data-placement="top" data-toggle="tooltip" class="form-control tooltips" data-original-title="" title="">
+                                </div>
+                                <hr class="dotted"/>
+                                <div class="form-group">
+                                    <label class="control-label">Input Popover</label>
+                                    <p>CSS Classes: Add <code>.popovers</code> class to an input tag.</p>
+                                    <input type="text" placeholder="Click Me" data-trigger="click" data-content="Popover content..." data-title="Popover title" data-placement="top" data-toggle="popover" class="form-control popovers" data-original-title="" title="">
+                                </div>
+                                <hr class="dotted"/>
+                                <div class="form-group">
+                                    <label class="control-label">Placeholder</label>
+                                    <p>CSS Classes: Add <code>placeholder</code> attribute to an input tag.</p>
+                                    <input type="text" class="form-control" placeholder="I'm a placeholder">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Input <strong>Tags</strong>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <p>CSS Classes: Add attribute <code>data-role="tagsinput"</code> to an input tag.</p>
+                                <hr class="dotted"/>
+                                <div class="form-group">
+                                    <input type="text" 
+                                           placeholder="Type and click Enter to add values" 
+                                           class="form-control" 
+                                           data-role="tagsinput" 
+                                           value="Barcelona,Palma de Mallorca,Venice">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <h1 class="bordered-dotted-dark mb-10">Input Groups</h1>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Input Groups <strong>Basic</strong>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <p>CSS Classes: <code>.input-group</code> and <code>.input-group-addon</code></p>
+                                <hr class="dotted"/>
+                                <div class="input-group mb-5">
+                                    <span class="input-group-addon bg-theme">@</span>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="input-group mb-5">
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-addon bg-primary white">.00</span>
+                                </div>
+                                <div class="input-group mb-5">
+                                    <span class="input-group-addon bg-warning"><i class="fa fa-map-o white"></i></span>
+                                    <input type="text" class="form-control">
+                                    <span class="input-group-addon bg-warning"><i class="fa fa-map-marker white"></i></span>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Input Groups <strong>Button Addons</strong>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <p>CSS Classes: <code>.input-group-btn</code> with buttons inside.</p>
+                                <hr class="dotted"/>
+                                <div class="form-group">
+                                    <label class="control-label">Button addons</label>
+                                    <div class="input-group mb-5">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-primary" type="button">Go!</button>
+                                        </span>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="input-group mb-5">
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default" type="button">Go!</button>
+                                        </span>
+                                    </div>
+                                </div>
+                                <hr class="dotted"/>
+                                <div class="form-group">
+                                    <label class="control-label">Dropdown buttons</label>
+                                    <div class="input-group mb-5">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">Action 
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="input-group mb-5">
+                                        <input type="text" class="form-control">
+                                        <div class="input-group-btn">
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action 
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu pull-right">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="dotted"/>
+                                <div class="form-group">
+                                    <label class="control-label">Segmented buttons</label>
+                                    <div class="input-group mb-5">
+                                        <div class="input-group-btn">
+                                            <button tabindex="-1" class="btn btn-danger" type="button">Action</button>
+                                            <button tabindex="-1" data-toggle="dropdown" class="btn btn-danger dropdown-toggle" type="button">
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul role="menu" class="dropdown-menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="input-group mb-5">
+                                        <input type="text" class="form-control">
+                                        <div class="input-group-btn">
+                                            <button tabindex="-1" class="btn btn-warning" type="button">Action</button>
+                                            <button tabindex="-1" data-toggle="dropdown" class="btn btn-warning dropdown-toggle" type="button">
+                                                <span class="caret"></span>
+                                            </button>
+                                            <ul role="menu" class="dropdown-menu pull-right">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Input Groups <strong>Sizes</strong>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <p>CSS Classes: <code>.input-group-lg</code> and <code>.input-group-sm</code></p>
+                                <hr class="dotted"/>
+                                <div class="form-group">
+                                    <div class="input-group input-group-lg mb-5">
+                                        <span class="input-group-addon bg-warning"><i class="fa fa-map-marker white"></i></span>
+                                        <input type="text" class="form-control ">
+                                    </div>
+                                    <div class="input-group mb-5">
+                                        <span class="input-group-addon bg-success white"><i class="fa fa-magic"></i></span>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="input-group input-group-sm mb-5">
+                                        <span class="input-group-addon bg-danger white"><i class="fa fa-exclamation"></i></span>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    Input Groups <strong>Checkbox &amp; Radio</strong>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <p>CSS Classes: <code>.input-group-addon</code> with radio and checkbuttons inside.</p>
+                                <hr class="dotted"/>
+                                <div class="form-group">
+                                    <div class="input-group mb-5">
+                                        <span class="input-group-addon bg-primary"><input type="checkbox"></span>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="input-group mb-5">
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-addon">
+                                            <input type="checkbox" checked="checked" id="checkbox-success-addon1">
+                                            <label for="checkbox-success-addon1"></label>
+                                        </span>
+                                    </div>
+                                    <div class="input-group mb-5">
+                                        <span class="input-group-addon"><input type="radio"></span>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="input-group mb-5">
+                                        <input type="text" class="form-control">
+                                        <span class="input-group-addon">
+                                            <input type="radio" id="radio-checked-addon1">
+                                            <label for="radio-checked-addon1"></label>
+                                        </span>
+                                    </div>
+                                    <div class="input-group mb-5">
+                                        <span class="input-group-addon input-group-lg">
+                                            <label class="option block">
+                                                <input type="checkbox" name="varcb1" checked="checked">
+                                                <span class="checkbox checkbox-theme"></span>
+                                            </label>
+                                        </span>
+                                        <input type="text" class="form-control  input-lg">
+                                    </div>
+                                    <div class="input-group mb-5">
+                                        <input type="text" class="form-control input-lg">
+                                        <span class="input-group-addon input-group-lg">
+                                            <label class="option block">
+                                            <input type="radio" name="varcb1">
+                                                <span class="radio radio-theme"></span>
+                                            </label>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <h1 class="bordered-dotted-dark mb-10">Select</h1>
+                <div class="panel">
+                    <div class="panel-body">
+                        <p>CSS Classes: <code>select</code> and <code>option</code> tags.</p>
+                        <hr class="dotted"/>
+                        <div class="form-group">
+                            <label class="control-label" for="disabledSelect1">Disabled select menu</label>
+                            <select disabled="disabled" class="form-control" id="disabledSelect1">
+                                <option>Disabled select</option>
+                            </select>
+                        </div>
+                        <hr class="dotted"/>
+                        <div class="form-group">
+                            <label class="control-label">Sizes</label>
+                            <p>CSS Classes: <code>.input-sm</code> or <code>.input-lg</code></p>
+                            <select class="form-control input-sm mb-5">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                            <select class="form-control mb-5">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                            <select class="form-control input-lg">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                        </div>
+                        <hr class="dotted"/>
+                        <div class="form-group">
+                            <label class="control-label">Multiple Select</label>
+                            <p>CSS Classes: <code>multiple</code> attribute in the <code>select</code> tag.</p>
+                            <select class="form-control" multiple="">
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+    
+                <h1 class="bordered-dotted-dark mb-10">Chosen</h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <p>More <strong>Chosen</strong> info @ <a href="https://harvesthq.github.io/chosen/">https://harvesthq.github.io/chosen/</a></p>
+                                <hr class="dotted"/>
+                                <p>CSS Classes: <code>.chosen-select</code></p>
+                                <hr class="dotted"/>
+                                <div class="form-group">
+                                    <label class="control-label r-mar-10">Chosen Select</label>
+                                    <select tabindex="-1" class="chosen-select" data-placeholder="Choose a Country" >
+                                        <optgroup label="A">
+<option value="Afghanistan">Afghanistan</option>
+<option value="Aland Islands">Aland Islands</option>
+<option value="Albania">Albania</option>
+<option value="Algeria">Algeria</option>
+<option value="American Samoa">American Samoa</option>
+<option value="Andorra">Andorra</option>
+<option value="Angola">Angola</option>
+<option value="Anguilla">Anguilla</option>
+<option value="Antarctica">Antarctica</option>
+<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+<option value="Argentina">Argentina</option>
+<option value="Armenia">Armenia</option>
+<option value="Aruba">Aruba</option>
+<option value="Australia">Australia</option>
+<option value="Austria">Austria</option>
+<option value="Azerbaijan">Azerbaijan</option>
+<optgroup label="B">
+<option value="Bahamas">Bahamas</option>
+<option value="Bahrain">Bahrain</option>
+<option value="Bangladesh">Bangladesh</option>
+<option value="Barbados">Barbados</option>
+<option value="Belarus">Belarus</option>
+<option value="Belgium">Belgium</option>
+<option value="Belize">Belize</option>
+<option value="Benin">Benin</option>
+<option value="Bermuda">Bermuda</option>
+<option value="Bhutan">Bhutan</option>
+<option value="Bolivia, Plurinational State of">Bolivia, Plurinational State of</option>
+<option value="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</option>
+<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+<option value="Botswana">Botswana</option>
+<option value="Bouvet Island">Bouvet Island</option>
+<option value="Brazil">Brazil</option>
+<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+<option value="Brunei Darussalam">Brunei Darussalam</option>
+<option value="Bulgaria">Bulgaria</option>
+<option value="Burkina Faso">Burkina Faso</option>
+<option value="Burundi">Burundi</option>
+<optgroup label="C">
+<option value="Cambodia">Cambodia</option>
+<option value="Cameroon">Cameroon</option>
+<option value="Canada">Canada</option>
+<option value="Cape Verde">Cape Verde</option>
+<option value="Cayman Islands">Cayman Islands</option>
+<option value="Central African Republic">Central African Republic</option>
+<option value="Chad">Chad</option>
+<option value="Chile">Chile</option>
+<option value="China">China</option>
+<option value="Christmas Island">Christmas Island</option>
+<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+<option value="Colombia">Colombia</option>
+<option value="Comoros">Comoros</option>
+<option value="Congo">Congo</option>
+<option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+<option value="Cook Islands">Cook Islands</option>
+<option value="Costa Rica">Costa Rica</option>
+<option value="Cote D'ivoire">Cote D'ivoire</option>
+<option value="Croatia">Croatia</option>
+<option value="Cuba">Cuba</option>
+<option value="Curacao">Curacao</option>
+<option value="Cyprus">Cyprus</option>
+<option value="Czech Republic">Czech Republic</option>
+<optgroup label="D">
+<option value="Denmark">Denmark</option>
+<option value="Djibouti">Djibouti</option>
+<option value="Dominica">Dominica</option>
+<option value="Dominican Republic">Dominican Republic</option>
+<optgroup label="E">
+<option value="Ecuador">Ecuador</option>
+<option value="Egypt">Egypt</option>
+<option value="El Salvador">El Salvador</option>
+<option value="Equatorial Guinea">Equatorial Guinea</option>
+<option value="Eritrea">Eritrea</option>
+<option value="Estonia">Estonia</option>
+<option value="Ethiopia">Ethiopia</option>
+<optgroup label="F">
+<option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+<option value="Faroe Islands">Faroe Islands</option>
+<option value="Fiji">Fiji</option>
+<option value="Finland">Finland</option>
+<option value="France">France</option>
+<option value="French Guiana">French Guiana</option>
+<option value="French Polynesia">French Polynesia</option>
+<option value="French Southern Territories">French Southern Territories</option>
+<optgroup label="G">
+<option value="Gabon">Gabon</option>
+<option value="Gambia">Gambia</option>
+<option value="Georgia">Georgia</option>
+<option value="Germany">Germany</option>
+<option value="Ghana">Ghana</option>
+<option value="Gibraltar">Gibraltar</option>
+<option value="Greece">Greece</option>
+<option value="Greenland">Greenland</option>
+<option value="Grenada">Grenada</option>
+<option value="Guadeloupe">Guadeloupe</option>
+<option value="Guam">Guam</option>
+<option value="Guatemala">Guatemala</option>
+<option value="Guernsey">Guernsey</option>
+<option value="Guinea">Guinea</option>
+<option value="Guinea-bissau">Guinea-bissau</option>
+<option value="Guyana">Guyana</option>
+<optgroup label="H">
+<option value="Haiti">Haiti</option>
+<option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+<option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+<option value="Honduras">Honduras</option>
+<option value="Hong Kong">Hong Kong</option>
+<option value="Hungary">Hungary</option>
+<optgroup label="I">        
+<option value="Iceland">Iceland</option>
+<option value="India">India</option>
+<option value="Indonesia">Indonesia</option>
+<option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+<option value="Iraq">Iraq</option>
+<option value="Ireland">Ireland</option>
+<option value="Isle of Man">Isle of Man</option>
+<option value="Israel">Israel</option>
+<option value="Italy">Italy</option>
+<optgroup label="J">        
+<option value="Jamaica">Jamaica</option>
+<option value="Japan">Japan</option>
+<option value="Jersey">Jersey</option>
+<optgroup label="K">
+<option value="Jordan">Jordan</option>
+<option value="Kazakhstan">Kazakhstan</option>
+<option value="Kenya">Kenya</option>
+<option value="Kiribati">Kiribati</option>
+<option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+<option value="Korea, Republic of">Korea, Republic of</option>
+<option value="Kuwait">Kuwait</option>
+<option value="Kyrgyzstan">Kyrgyzstan</option>
+<optgroup label="L">
+<option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+<option value="Latvia">Latvia</option>
+<option value="Lebanon">Lebanon</option>
+<option value="Lesotho">Lesotho</option>
+<option value="Liberia">Liberia</option>
+<option value="Libya">Libya</option>
+<option value="Liechtenstein">Liechtenstein</option>
+<option value="Lithuania">Lithuania</option>
+<option value="Luxembourg">Luxembourg</option>
+<optgroup label="M">
+<option value="Macao">Macao</option>
+<option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+<option value="Madagascar">Madagascar</option>
+<option value="Malawi">Malawi</option>
+<option value="Malaysia">Malaysia</option>
+<option value="Maldives">Maldives</option>
+<option value="Mali">Mali</option>
+<option value="Malta">Malta</option>
+<option value="Marshall Islands">Marshall Islands</option>
+<option value="Martinique">Martinique</option>
+<option value="Mauritania">Mauritania</option>
+<option value="Mauritius">Mauritius</option>
+<option value="Mayotte">Mayotte</option>
+<option value="Mexico">Mexico</option>
+<option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+<option value="Moldova, Republic of">Moldova, Republic of</option>
+<option value="Monaco">Monaco</option>
+<option value="Mongolia">Mongolia</option>
+<option value="Montenegro">Montenegro</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Morocco">Morocco</option>
+<option value="Mozambique">Mozambique</option>
+<option value="Myanmar">Myanmar</option>
+<optgroup label="N">
+<option value="Namibia">Namibia</option>
+<option value="Nauru">Nauru</option>
+<option value="Nepal">Nepal</option>
+<option value="Netherlands">Netherlands</option>
+<option value="New Caledonia">New Caledonia</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Nicaragua">Nicaragua</option>
+<option value="Niger">Niger</option>
+<option value="Nigeria">Nigeria</option>
+<option value="Niue">Niue</option>
+<option value="Norfolk Island">Norfolk Island</option>
+<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+<option value="Norway">Norway</option>
+<optgroup label="O">
+<option value="Oman">Oman</option>
+<optgroup label="P">
+<option value="Pakistan">Pakistan</option>
+<option value="Palau">Palau</option>
+<option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+<option value="Panama">Panama</option>
+<option value="Papua New Guinea">Papua New Guinea</option>
+<option value="Paraguay">Paraguay</option>
+<option value="Peru">Peru</option>
+<option value="Philippines">Philippines</option>
+<option value="Pitcairn">Pitcairn</option>
+<option value="Poland">Poland</option>
+<option value="Portugal">Portugal</option>
+<option value="Puerto Rico">Puerto Rico</option>
+<optgroup label="Q">
+<option value="Qatar">Qatar</option>
+<optgroup label="R">
+<option value="Reunion">Reunion</option>
+<option value="Romania">Romania</option>
+<option value="Russian Federation">Russian Federation</option>
+<option value="Rwanda">Rwanda</option>
+<optgroup label="S">
+<option value="Saint Barthelemy">Saint Barthelemy</option>
+<option value="Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha</option>
+<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+<option value="Saint Lucia">Saint Lucia</option>
+<option value="Saint Martin (French part)">Saint Martin (French part)</option>
+<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+<option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+<option value="Samoa">Samoa</option>
+<option value="San Marino">San Marino</option>
+<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+<option value="Saudi Arabia">Saudi Arabia</option>
+<option value="Senegal">Senegal</option>
+<option value="Serbia">Serbia</option>
+<option value="Seychelles">Seychelles</option>
+<option value="Sierra Leone">Sierra Leone</option>
+<option value="Singapore">Singapore</option>
+<option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option>
+<option value="Slovakia">Slovakia</option>
+<option value="Slovenia">Slovenia</option>
+<option value="Solomon Islands">Solomon Islands</option>
+<option value="Somalia">Somalia</option>
+<option value="South Africa">South Africa</option>
+<option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+<option value="South Sudan">South Sudan</option>
+<option value="Spain">Spain</option>
+<option value="Sri Lanka">Sri Lanka</option>
+<option value="Sudan">Sudan</option>
+<option value="Suriname">Suriname</option>
+<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+<option value="Swaziland">Swaziland</option>
+<option value="Sweden">Sweden</option>
+<option value="Switzerland">Switzerland</option>
+<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+<optgroup label="T">
+<option value="Taiwan, Province of China">Taiwan, Province of China</option>
+<option value="Tajikistan">Tajikistan</option>
+<option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+<option value="Thailand">Thailand</option>
+<option value="Timor-leste">Timor-leste</option>
+<option value="Togo">Togo</option>
+<option value="Tokelau">Tokelau</option>
+<option value="Tonga">Tonga</option>
+<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+<option value="Tunisia">Tunisia</option>
+<option value="Turkey">Turkey</option>
+<option value="Turkmenistan">Turkmenistan</option>
+<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+<option value="Tuvalu">Tuvalu</option>
+<optgroup label="U">
+<option value="Uganda">Uganda</option>
+<option value="Ukraine">Ukraine</option>
+<option value="United Arab Emirates">United Arab Emirates</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="United States">United States</option>
+<option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+<option value="Uruguay">Uruguay</option>
+<option value="Uzbekistan">Uzbekistan</option>
+<optgroup label="V">
+<option value="Vanuatu">Vanuatu</option>
+<option value="Venezuela, Bolivarian Republic of">Venezuela, Bolivarian Republic of</option>
+<option value="Viet Nam">Viet Nam</option>
+<option value="Virgin Islands, British">Virgin Islands, British</option>
+<option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+<optgroup label="W">
+<option value="Wallis and Futuna">Wallis and Futuna</option>
+<option value="Western Sahara">Western Sahara</option>
+<optgroup label="Y">
+<option value="Yemen">Yemen</option>
+<optgroup label="Z">
+<option value="Zambia">Zambia</option>
+<option value="Zimbabwe">Zimbabwe</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label r-mar-10">Multiple Chosen Select</label>
+                                    <select tabindex="-1" multiple class="chosen-select" data-placeholder="Choose your Country" >
+                                        <optgroup label="A">
+<option value="Afghanistan">Afghanistan</option>
+<option value="Aland Islands">Aland Islands</option>
+<option value="Albania">Albania</option>
+<option value="Algeria">Algeria</option>
+<option value="American Samoa">American Samoa</option>
+<option value="Andorra">Andorra</option>
+<option value="Angola">Angola</option>
+<option value="Anguilla">Anguilla</option>
+<option value="Antarctica">Antarctica</option>
+<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+<option value="Argentina">Argentina</option>
+<option value="Armenia">Armenia</option>
+<option value="Aruba">Aruba</option>
+<option value="Australia">Australia</option>
+<option value="Austria">Austria</option>
+<option value="Azerbaijan">Azerbaijan</option>
+<optgroup label="B">
+<option value="Bahamas">Bahamas</option>
+<option value="Bahrain">Bahrain</option>
+<option value="Bangladesh">Bangladesh</option>
+<option value="Barbados">Barbados</option>
+<option value="Belarus">Belarus</option>
+<option value="Belgium">Belgium</option>
+<option value="Belize">Belize</option>
+<option value="Benin">Benin</option>
+<option value="Bermuda">Bermuda</option>
+<option value="Bhutan">Bhutan</option>
+<option value="Bolivia, Plurinational State of">Bolivia, Plurinational State of</option>
+<option value="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</option>
+<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+<option value="Botswana">Botswana</option>
+<option value="Bouvet Island">Bouvet Island</option>
+<option value="Brazil">Brazil</option>
+<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+<option value="Brunei Darussalam">Brunei Darussalam</option>
+<option value="Bulgaria">Bulgaria</option>
+<option value="Burkina Faso">Burkina Faso</option>
+<option value="Burundi">Burundi</option>
+<optgroup label="C">
+<option value="Cambodia">Cambodia</option>
+<option value="Cameroon">Cameroon</option>
+<option value="Canada">Canada</option>
+<option value="Cape Verde">Cape Verde</option>
+<option value="Cayman Islands">Cayman Islands</option>
+<option value="Central African Republic">Central African Republic</option>
+<option value="Chad">Chad</option>
+<option value="Chile">Chile</option>
+<option value="China">China</option>
+<option value="Christmas Island">Christmas Island</option>
+<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+<option value="Colombia">Colombia</option>
+<option value="Comoros">Comoros</option>
+<option value="Congo">Congo</option>
+<option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+<option value="Cook Islands">Cook Islands</option>
+<option value="Costa Rica">Costa Rica</option>
+<option value="Cote D'ivoire">Cote D'ivoire</option>
+<option value="Croatia">Croatia</option>
+<option value="Cuba">Cuba</option>
+<option value="Curacao">Curacao</option>
+<option value="Cyprus">Cyprus</option>
+<option value="Czech Republic">Czech Republic</option>
+<optgroup label="D">
+<option value="Denmark">Denmark</option>
+<option value="Djibouti">Djibouti</option>
+<option value="Dominica">Dominica</option>
+<option value="Dominican Republic">Dominican Republic</option>
+<optgroup label="E">
+<option value="Ecuador">Ecuador</option>
+<option value="Egypt">Egypt</option>
+<option value="El Salvador">El Salvador</option>
+<option value="Equatorial Guinea">Equatorial Guinea</option>
+<option value="Eritrea">Eritrea</option>
+<option value="Estonia">Estonia</option>
+<option value="Ethiopia">Ethiopia</option>
+<optgroup label="F">
+<option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+<option value="Faroe Islands">Faroe Islands</option>
+<option value="Fiji">Fiji</option>
+<option value="Finland">Finland</option>
+<option value="France">France</option>
+<option value="French Guiana">French Guiana</option>
+<option value="French Polynesia">French Polynesia</option>
+<option value="French Southern Territories">French Southern Territories</option>
+<optgroup label="G">
+<option value="Gabon">Gabon</option>
+<option value="Gambia">Gambia</option>
+<option value="Georgia">Georgia</option>
+<option value="Germany">Germany</option>
+<option value="Ghana">Ghana</option>
+<option value="Gibraltar">Gibraltar</option>
+<option value="Greece">Greece</option>
+<option value="Greenland">Greenland</option>
+<option value="Grenada">Grenada</option>
+<option value="Guadeloupe">Guadeloupe</option>
+<option value="Guam">Guam</option>
+<option value="Guatemala">Guatemala</option>
+<option value="Guernsey">Guernsey</option>
+<option value="Guinea">Guinea</option>
+<option value="Guinea-bissau">Guinea-bissau</option>
+<option value="Guyana">Guyana</option>
+<optgroup label="H">
+<option value="Haiti">Haiti</option>
+<option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+<option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+<option value="Honduras">Honduras</option>
+<option value="Hong Kong">Hong Kong</option>
+<option value="Hungary">Hungary</option>
+<optgroup label="I">        
+<option value="Iceland">Iceland</option>
+<option value="India">India</option>
+<option value="Indonesia">Indonesia</option>
+<option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+<option value="Iraq">Iraq</option>
+<option value="Ireland">Ireland</option>
+<option value="Isle of Man">Isle of Man</option>
+<option value="Israel">Israel</option>
+<option value="Italy">Italy</option>
+<optgroup label="J">        
+<option value="Jamaica">Jamaica</option>
+<option value="Japan">Japan</option>
+<option value="Jersey">Jersey</option>
+<optgroup label="K">
+<option value="Jordan">Jordan</option>
+<option value="Kazakhstan">Kazakhstan</option>
+<option value="Kenya">Kenya</option>
+<option value="Kiribati">Kiribati</option>
+<option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+<option value="Korea, Republic of">Korea, Republic of</option>
+<option value="Kuwait">Kuwait</option>
+<option value="Kyrgyzstan">Kyrgyzstan</option>
+<optgroup label="L">
+<option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+<option value="Latvia">Latvia</option>
+<option value="Lebanon">Lebanon</option>
+<option value="Lesotho">Lesotho</option>
+<option value="Liberia">Liberia</option>
+<option value="Libya">Libya</option>
+<option value="Liechtenstein">Liechtenstein</option>
+<option value="Lithuania">Lithuania</option>
+<option value="Luxembourg">Luxembourg</option>
+<optgroup label="M">
+<option value="Macao">Macao</option>
+<option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+<option value="Madagascar">Madagascar</option>
+<option value="Malawi">Malawi</option>
+<option value="Malaysia">Malaysia</option>
+<option value="Maldives">Maldives</option>
+<option value="Mali">Mali</option>
+<option value="Malta">Malta</option>
+<option value="Marshall Islands">Marshall Islands</option>
+<option value="Martinique">Martinique</option>
+<option value="Mauritania">Mauritania</option>
+<option value="Mauritius">Mauritius</option>
+<option value="Mayotte">Mayotte</option>
+<option value="Mexico">Mexico</option>
+<option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+<option value="Moldova, Republic of">Moldova, Republic of</option>
+<option value="Monaco">Monaco</option>
+<option value="Mongolia">Mongolia</option>
+<option value="Montenegro">Montenegro</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Morocco">Morocco</option>
+<option value="Mozambique">Mozambique</option>
+<option value="Myanmar">Myanmar</option>
+<optgroup label="N">
+<option value="Namibia">Namibia</option>
+<option value="Nauru">Nauru</option>
+<option value="Nepal">Nepal</option>
+<option value="Netherlands">Netherlands</option>
+<option value="New Caledonia">New Caledonia</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Nicaragua">Nicaragua</option>
+<option value="Niger">Niger</option>
+<option value="Nigeria">Nigeria</option>
+<option value="Niue">Niue</option>
+<option value="Norfolk Island">Norfolk Island</option>
+<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+<option value="Norway">Norway</option>
+<optgroup label="O">
+<option value="Oman">Oman</option>
+<optgroup label="P">
+<option value="Pakistan">Pakistan</option>
+<option value="Palau">Palau</option>
+<option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+<option value="Panama">Panama</option>
+<option value="Papua New Guinea">Papua New Guinea</option>
+<option value="Paraguay">Paraguay</option>
+<option value="Peru">Peru</option>
+<option value="Philippines">Philippines</option>
+<option value="Pitcairn">Pitcairn</option>
+<option value="Poland">Poland</option>
+<option value="Portugal">Portugal</option>
+<option value="Puerto Rico">Puerto Rico</option>
+<optgroup label="Q">
+<option value="Qatar">Qatar</option>
+<optgroup label="R">
+<option value="Reunion">Reunion</option>
+<option value="Romania">Romania</option>
+<option value="Russian Federation">Russian Federation</option>
+<option value="Rwanda">Rwanda</option>
+<optgroup label="S">
+<option value="Saint Barthelemy">Saint Barthelemy</option>
+<option value="Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha</option>
+<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+<option value="Saint Lucia">Saint Lucia</option>
+<option value="Saint Martin (French part)">Saint Martin (French part)</option>
+<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+<option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+<option value="Samoa">Samoa</option>
+<option value="San Marino">San Marino</option>
+<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+<option value="Saudi Arabia">Saudi Arabia</option>
+<option value="Senegal">Senegal</option>
+<option value="Serbia">Serbia</option>
+<option value="Seychelles">Seychelles</option>
+<option value="Sierra Leone">Sierra Leone</option>
+<option value="Singapore">Singapore</option>
+<option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option>
+<option value="Slovakia">Slovakia</option>
+<option value="Slovenia">Slovenia</option>
+<option value="Solomon Islands">Solomon Islands</option>
+<option value="Somalia">Somalia</option>
+<option value="South Africa">South Africa</option>
+<option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+<option value="South Sudan">South Sudan</option>
+<option value="Spain">Spain</option>
+<option value="Sri Lanka">Sri Lanka</option>
+<option value="Sudan">Sudan</option>
+<option value="Suriname">Suriname</option>
+<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+<option value="Swaziland">Swaziland</option>
+<option value="Sweden">Sweden</option>
+<option value="Switzerland">Switzerland</option>
+<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+<optgroup label="T">
+<option value="Taiwan, Province of China">Taiwan, Province of China</option>
+<option value="Tajikistan">Tajikistan</option>
+<option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+<option value="Thailand">Thailand</option>
+<option value="Timor-leste">Timor-leste</option>
+<option value="Togo">Togo</option>
+<option value="Tokelau">Tokelau</option>
+<option value="Tonga">Tonga</option>
+<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+<option value="Tunisia">Tunisia</option>
+<option value="Turkey">Turkey</option>
+<option value="Turkmenistan">Turkmenistan</option>
+<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+<option value="Tuvalu">Tuvalu</option>
+<optgroup label="U">
+<option value="Uganda">Uganda</option>
+<option value="Ukraine">Ukraine</option>
+<option value="United Arab Emirates">United Arab Emirates</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="United States">United States</option>
+<option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+<option value="Uruguay">Uruguay</option>
+<option value="Uzbekistan">Uzbekistan</option>
+<optgroup label="V">
+<option value="Vanuatu">Vanuatu</option>
+<option value="Venezuela, Bolivarian Republic of">Venezuela, Bolivarian Republic of</option>
+<option value="Viet Nam">Viet Nam</option>
+<option value="Virgin Islands, British">Virgin Islands, British</option>
+<option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+<optgroup label="W">
+<option value="Wallis and Futuna">Wallis and Futuna</option>
+<option value="Western Sahara">Western Sahara</option>
+<optgroup label="Y">
+<option value="Yemen">Yemen</option>
+<optgroup label="Z">
+<option value="Zambia">Zambia</option>
+<option value="Zimbabwe">Zimbabwe</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label r-mar-10">No option: Write 'X' to test...</label>
+                                    <select tabindex="-1" multiple class="chosen-select" data-placeholder="Choose your Country" >
+                                        <optgroup label="A">
+<option value="Afghanistan">Afghanistan</option>
+<option value="Aland Islands">Aland Islands</option>
+<option value="Albania">Albania</option>
+<option value="Algeria">Algeria</option>
+<option value="American Samoa">American Samoa</option>
+<option value="Andorra">Andorra</option>
+<option value="Angola">Angola</option>
+<option value="Anguilla">Anguilla</option>
+<option value="Antarctica">Antarctica</option>
+<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+<option value="Argentina">Argentina</option>
+<option value="Armenia">Armenia</option>
+<option value="Aruba">Aruba</option>
+<option value="Australia">Australia</option>
+<option value="Austria">Austria</option>
+<option value="Azerbaijan">Azerbaijan</option>
+<optgroup label="B">
+<option value="Bahamas">Bahamas</option>
+<option value="Bahrain">Bahrain</option>
+<option value="Bangladesh">Bangladesh</option>
+<option value="Barbados">Barbados</option>
+<option value="Belarus">Belarus</option>
+<option value="Belgium">Belgium</option>
+<option value="Belize">Belize</option>
+<option value="Benin">Benin</option>
+<option value="Bermuda">Bermuda</option>
+<option value="Bhutan">Bhutan</option>
+<option value="Bolivia, Plurinational State of">Bolivia, Plurinational State of</option>
+<option value="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</option>
+<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+<option value="Botswana">Botswana</option>
+<option value="Bouvet Island">Bouvet Island</option>
+<option value="Brazil">Brazil</option>
+<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+<option value="Brunei Darussalam">Brunei Darussalam</option>
+<option value="Bulgaria">Bulgaria</option>
+<option value="Burkina Faso">Burkina Faso</option>
+<option value="Burundi">Burundi</option>
+<optgroup label="C">
+<option value="Cambodia">Cambodia</option>
+<option value="Cameroon">Cameroon</option>
+<option value="Canada">Canada</option>
+<option value="Cape Verde">Cape Verde</option>
+<option value="Cayman Islands">Cayman Islands</option>
+<option value="Central African Republic">Central African Republic</option>
+<option value="Chad">Chad</option>
+<option value="Chile">Chile</option>
+<option value="China">China</option>
+<option value="Christmas Island">Christmas Island</option>
+<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+<option value="Colombia">Colombia</option>
+<option value="Comoros">Comoros</option>
+<option value="Congo">Congo</option>
+<option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+<option value="Cook Islands">Cook Islands</option>
+<option value="Costa Rica">Costa Rica</option>
+<option value="Cote D'ivoire">Cote D'ivoire</option>
+<option value="Croatia">Croatia</option>
+<option value="Cuba">Cuba</option>
+<option value="Curacao">Curacao</option>
+<option value="Cyprus">Cyprus</option>
+<option value="Czech Republic">Czech Republic</option>
+<optgroup label="D">
+<option value="Denmark">Denmark</option>
+<option value="Djibouti">Djibouti</option>
+<option value="Dominica">Dominica</option>
+<option value="Dominican Republic">Dominican Republic</option>
+<optgroup label="E">
+<option value="Ecuador">Ecuador</option>
+<option value="Egypt">Egypt</option>
+<option value="El Salvador">El Salvador</option>
+<option value="Equatorial Guinea">Equatorial Guinea</option>
+<option value="Eritrea">Eritrea</option>
+<option value="Estonia">Estonia</option>
+<option value="Ethiopia">Ethiopia</option>
+<optgroup label="F">
+<option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+<option value="Faroe Islands">Faroe Islands</option>
+<option value="Fiji">Fiji</option>
+<option value="Finland">Finland</option>
+<option value="France">France</option>
+<option value="French Guiana">French Guiana</option>
+<option value="French Polynesia">French Polynesia</option>
+<option value="French Southern Territories">French Southern Territories</option>
+<optgroup label="G">
+<option value="Gabon">Gabon</option>
+<option value="Gambia">Gambia</option>
+<option value="Georgia">Georgia</option>
+<option value="Germany">Germany</option>
+<option value="Ghana">Ghana</option>
+<option value="Gibraltar">Gibraltar</option>
+<option value="Greece">Greece</option>
+<option value="Greenland">Greenland</option>
+<option value="Grenada">Grenada</option>
+<option value="Guadeloupe">Guadeloupe</option>
+<option value="Guam">Guam</option>
+<option value="Guatemala">Guatemala</option>
+<option value="Guernsey">Guernsey</option>
+<option value="Guinea">Guinea</option>
+<option value="Guinea-bissau">Guinea-bissau</option>
+<option value="Guyana">Guyana</option>
+<optgroup label="H">
+<option value="Haiti">Haiti</option>
+<option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+<option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+<option value="Honduras">Honduras</option>
+<option value="Hong Kong">Hong Kong</option>
+<option value="Hungary">Hungary</option>
+<optgroup label="I">        
+<option value="Iceland">Iceland</option>
+<option value="India">India</option>
+<option value="Indonesia">Indonesia</option>
+<option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+<option value="Iraq">Iraq</option>
+<option value="Ireland">Ireland</option>
+<option value="Isle of Man">Isle of Man</option>
+<option value="Israel">Israel</option>
+<option value="Italy">Italy</option>
+<optgroup label="J">        
+<option value="Jamaica">Jamaica</option>
+<option value="Japan">Japan</option>
+<option value="Jersey">Jersey</option>
+<optgroup label="K">
+<option value="Jordan">Jordan</option>
+<option value="Kazakhstan">Kazakhstan</option>
+<option value="Kenya">Kenya</option>
+<option value="Kiribati">Kiribati</option>
+<option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+<option value="Korea, Republic of">Korea, Republic of</option>
+<option value="Kuwait">Kuwait</option>
+<option value="Kyrgyzstan">Kyrgyzstan</option>
+<optgroup label="L">
+<option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+<option value="Latvia">Latvia</option>
+<option value="Lebanon">Lebanon</option>
+<option value="Lesotho">Lesotho</option>
+<option value="Liberia">Liberia</option>
+<option value="Libya">Libya</option>
+<option value="Liechtenstein">Liechtenstein</option>
+<option value="Lithuania">Lithuania</option>
+<option value="Luxembourg">Luxembourg</option>
+<optgroup label="M">
+<option value="Macao">Macao</option>
+<option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+<option value="Madagascar">Madagascar</option>
+<option value="Malawi">Malawi</option>
+<option value="Malaysia">Malaysia</option>
+<option value="Maldives">Maldives</option>
+<option value="Mali">Mali</option>
+<option value="Malta">Malta</option>
+<option value="Marshall Islands">Marshall Islands</option>
+<option value="Martinique">Martinique</option>
+<option value="Mauritania">Mauritania</option>
+<option value="Mauritius">Mauritius</option>
+<option value="Mayotte">Mayotte</option>
+<option value="Mexico">Mexico</option>
+<option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+<option value="Moldova, Republic of">Moldova, Republic of</option>
+<option value="Monaco">Monaco</option>
+<option value="Mongolia">Mongolia</option>
+<option value="Montenegro">Montenegro</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Morocco">Morocco</option>
+<option value="Mozambique">Mozambique</option>
+<option value="Myanmar">Myanmar</option>
+<optgroup label="N">
+<option value="Namibia">Namibia</option>
+<option value="Nauru">Nauru</option>
+<option value="Nepal">Nepal</option>
+<option value="Netherlands">Netherlands</option>
+<option value="New Caledonia">New Caledonia</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Nicaragua">Nicaragua</option>
+<option value="Niger">Niger</option>
+<option value="Nigeria">Nigeria</option>
+<option value="Niue">Niue</option>
+<option value="Norfolk Island">Norfolk Island</option>
+<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+<option value="Norway">Norway</option>
+<optgroup label="O">
+<option value="Oman">Oman</option>
+<optgroup label="P">
+<option value="Pakistan">Pakistan</option>
+<option value="Palau">Palau</option>
+<option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+<option value="Panama">Panama</option>
+<option value="Papua New Guinea">Papua New Guinea</option>
+<option value="Paraguay">Paraguay</option>
+<option value="Peru">Peru</option>
+<option value="Philippines">Philippines</option>
+<option value="Pitcairn">Pitcairn</option>
+<option value="Poland">Poland</option>
+<option value="Portugal">Portugal</option>
+<option value="Puerto Rico">Puerto Rico</option>
+<optgroup label="Q">
+<option value="Qatar">Qatar</option>
+<optgroup label="R">
+<option value="Reunion">Reunion</option>
+<option value="Romania">Romania</option>
+<option value="Russian Federation">Russian Federation</option>
+<option value="Rwanda">Rwanda</option>
+<optgroup label="S">
+<option value="Saint Barthelemy">Saint Barthelemy</option>
+<option value="Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha</option>
+<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+<option value="Saint Lucia">Saint Lucia</option>
+<option value="Saint Martin (French part)">Saint Martin (French part)</option>
+<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+<option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+<option value="Samoa">Samoa</option>
+<option value="San Marino">San Marino</option>
+<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+<option value="Saudi Arabia">Saudi Arabia</option>
+<option value="Senegal">Senegal</option>
+<option value="Serbia">Serbia</option>
+<option value="Seychelles">Seychelles</option>
+<option value="Sierra Leone">Sierra Leone</option>
+<option value="Singapore">Singapore</option>
+<option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option>
+<option value="Slovakia">Slovakia</option>
+<option value="Slovenia">Slovenia</option>
+<option value="Solomon Islands">Solomon Islands</option>
+<option value="Somalia">Somalia</option>
+<option value="South Africa">South Africa</option>
+<option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+<option value="South Sudan">South Sudan</option>
+<option value="Spain">Spain</option>
+<option value="Sri Lanka">Sri Lanka</option>
+<option value="Sudan">Sudan</option>
+<option value="Suriname">Suriname</option>
+<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+<option value="Swaziland">Swaziland</option>
+<option value="Sweden">Sweden</option>
+<option value="Switzerland">Switzerland</option>
+<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+<optgroup label="T">
+<option value="Taiwan, Province of China">Taiwan, Province of China</option>
+<option value="Tajikistan">Tajikistan</option>
+<option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+<option value="Thailand">Thailand</option>
+<option value="Timor-leste">Timor-leste</option>
+<option value="Togo">Togo</option>
+<option value="Tokelau">Tokelau</option>
+<option value="Tonga">Tonga</option>
+<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+<option value="Tunisia">Tunisia</option>
+<option value="Turkey">Turkey</option>
+<option value="Turkmenistan">Turkmenistan</option>
+<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+<option value="Tuvalu">Tuvalu</option>
+<optgroup label="U">
+<option value="Uganda">Uganda</option>
+<option value="Ukraine">Ukraine</option>
+<option value="United Arab Emirates">United Arab Emirates</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="United States">United States</option>
+<option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+<option value="Uruguay">Uruguay</option>
+<option value="Uzbekistan">Uzbekistan</option>
+<optgroup label="V">
+<option value="Vanuatu">Vanuatu</option>
+<option value="Venezuela, Bolivarian Republic of">Venezuela, Bolivarian Republic of</option>
+<option value="Viet Nam">Viet Nam</option>
+<option value="Virgin Islands, British">Virgin Islands, British</option>
+<option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+<optgroup label="W">
+<option value="Wallis and Futuna">Wallis and Futuna</option>
+<option value="Western Sahara">Western Sahara</option>
+<optgroup label="Y">
+<option value="Yemen">Yemen</option>
+<optgroup label="Z">
+<option value="Zambia">Zambia</option>
+<option value="Zimbabwe">Zimbabwe</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label r-mar-10">Multiple Chosen Select Theme integration</label>
+                                    <select tabindex="-1" multiple class="chosen-select chosen-theme" data-placeholder="Choose your Country" >
+                                        <optgroup label="A">
+<option value="Afghanistan">Afghanistan</option>
+<option value="Aland Islands">Aland Islands</option>
+<option value="Albania">Albania</option>
+<option value="Algeria">Algeria</option>
+<option value="American Samoa">American Samoa</option>
+<option value="Andorra">Andorra</option>
+<option value="Angola">Angola</option>
+<option value="Anguilla">Anguilla</option>
+<option value="Antarctica">Antarctica</option>
+<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+<option value="Argentina">Argentina</option>
+<option value="Armenia">Armenia</option>
+<option value="Aruba">Aruba</option>
+<option value="Australia">Australia</option>
+<option value="Austria">Austria</option>
+<option value="Azerbaijan">Azerbaijan</option>
+<optgroup label="B">
+<option value="Bahamas">Bahamas</option>
+<option value="Bahrain">Bahrain</option>
+<option value="Bangladesh">Bangladesh</option>
+<option value="Barbados">Barbados</option>
+<option value="Belarus">Belarus</option>
+<option value="Belgium">Belgium</option>
+<option value="Belize">Belize</option>
+<option value="Benin">Benin</option>
+<option value="Bermuda">Bermuda</option>
+<option value="Bhutan">Bhutan</option>
+<option value="Bolivia, Plurinational State of">Bolivia, Plurinational State of</option>
+<option value="Bonaire, Sint Eustatius and Saba">Bonaire, Sint Eustatius and Saba</option>
+<option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+<option value="Botswana">Botswana</option>
+<option value="Bouvet Island">Bouvet Island</option>
+<option value="Brazil">Brazil</option>
+<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+<option value="Brunei Darussalam">Brunei Darussalam</option>
+<option value="Bulgaria">Bulgaria</option>
+<option value="Burkina Faso">Burkina Faso</option>
+<option value="Burundi">Burundi</option>
+<optgroup label="C">
+<option value="Cambodia">Cambodia</option>
+<option value="Cameroon">Cameroon</option>
+<option value="Canada">Canada</option>
+<option value="Cape Verde">Cape Verde</option>
+<option value="Cayman Islands">Cayman Islands</option>
+<option value="Central African Republic">Central African Republic</option>
+<option value="Chad">Chad</option>
+<option value="Chile">Chile</option>
+<option value="China">China</option>
+<option value="Christmas Island">Christmas Island</option>
+<option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+<option value="Colombia">Colombia</option>
+<option value="Comoros">Comoros</option>
+<option value="Congo">Congo</option>
+<option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
+<option value="Cook Islands">Cook Islands</option>
+<option value="Costa Rica">Costa Rica</option>
+<option value="Cote D'ivoire">Cote D'ivoire</option>
+<option value="Croatia">Croatia</option>
+<option value="Cuba">Cuba</option>
+<option value="Curacao">Curacao</option>
+<option value="Cyprus">Cyprus</option>
+<option value="Czech Republic">Czech Republic</option>
+<optgroup label="D">
+<option value="Denmark">Denmark</option>
+<option value="Djibouti">Djibouti</option>
+<option value="Dominica">Dominica</option>
+<option value="Dominican Republic">Dominican Republic</option>
+<optgroup label="E">
+<option value="Ecuador">Ecuador</option>
+<option value="Egypt">Egypt</option>
+<option value="El Salvador">El Salvador</option>
+<option value="Equatorial Guinea">Equatorial Guinea</option>
+<option value="Eritrea">Eritrea</option>
+<option value="Estonia">Estonia</option>
+<option value="Ethiopia">Ethiopia</option>
+<optgroup label="F">
+<option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+<option value="Faroe Islands">Faroe Islands</option>
+<option value="Fiji">Fiji</option>
+<option value="Finland">Finland</option>
+<option value="France">France</option>
+<option value="French Guiana">French Guiana</option>
+<option value="French Polynesia">French Polynesia</option>
+<option value="French Southern Territories">French Southern Territories</option>
+<optgroup label="G">
+<option value="Gabon">Gabon</option>
+<option value="Gambia">Gambia</option>
+<option value="Georgia">Georgia</option>
+<option value="Germany">Germany</option>
+<option value="Ghana">Ghana</option>
+<option value="Gibraltar">Gibraltar</option>
+<option value="Greece">Greece</option>
+<option value="Greenland">Greenland</option>
+<option value="Grenada">Grenada</option>
+<option value="Guadeloupe">Guadeloupe</option>
+<option value="Guam">Guam</option>
+<option value="Guatemala">Guatemala</option>
+<option value="Guernsey">Guernsey</option>
+<option value="Guinea">Guinea</option>
+<option value="Guinea-bissau">Guinea-bissau</option>
+<option value="Guyana">Guyana</option>
+<optgroup label="H">
+<option value="Haiti">Haiti</option>
+<option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
+<option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+<option value="Honduras">Honduras</option>
+<option value="Hong Kong">Hong Kong</option>
+<option value="Hungary">Hungary</option>
+<optgroup label="I">        
+<option value="Iceland">Iceland</option>
+<option value="India">India</option>
+<option value="Indonesia">Indonesia</option>
+<option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
+<option value="Iraq">Iraq</option>
+<option value="Ireland">Ireland</option>
+<option value="Isle of Man">Isle of Man</option>
+<option value="Israel">Israel</option>
+<option value="Italy">Italy</option>
+<optgroup label="J">        
+<option value="Jamaica">Jamaica</option>
+<option value="Japan">Japan</option>
+<option value="Jersey">Jersey</option>
+<optgroup label="K">
+<option value="Jordan">Jordan</option>
+<option value="Kazakhstan">Kazakhstan</option>
+<option value="Kenya">Kenya</option>
+<option value="Kiribati">Kiribati</option>
+<option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
+<option value="Korea, Republic of">Korea, Republic of</option>
+<option value="Kuwait">Kuwait</option>
+<option value="Kyrgyzstan">Kyrgyzstan</option>
+<optgroup label="L">
+<option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+<option value="Latvia">Latvia</option>
+<option value="Lebanon">Lebanon</option>
+<option value="Lesotho">Lesotho</option>
+<option value="Liberia">Liberia</option>
+<option value="Libya">Libya</option>
+<option value="Liechtenstein">Liechtenstein</option>
+<option value="Lithuania">Lithuania</option>
+<option value="Luxembourg">Luxembourg</option>
+<optgroup label="M">
+<option value="Macao">Macao</option>
+<option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
+<option value="Madagascar">Madagascar</option>
+<option value="Malawi">Malawi</option>
+<option value="Malaysia">Malaysia</option>
+<option value="Maldives">Maldives</option>
+<option value="Mali">Mali</option>
+<option value="Malta">Malta</option>
+<option value="Marshall Islands">Marshall Islands</option>
+<option value="Martinique">Martinique</option>
+<option value="Mauritania">Mauritania</option>
+<option value="Mauritius">Mauritius</option>
+<option value="Mayotte">Mayotte</option>
+<option value="Mexico">Mexico</option>
+<option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
+<option value="Moldova, Republic of">Moldova, Republic of</option>
+<option value="Monaco">Monaco</option>
+<option value="Mongolia">Mongolia</option>
+<option value="Montenegro">Montenegro</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Morocco">Morocco</option>
+<option value="Mozambique">Mozambique</option>
+<option value="Myanmar">Myanmar</option>
+<optgroup label="N">
+<option value="Namibia">Namibia</option>
+<option value="Nauru">Nauru</option>
+<option value="Nepal">Nepal</option>
+<option value="Netherlands">Netherlands</option>
+<option value="New Caledonia">New Caledonia</option>
+<option value="New Zealand">New Zealand</option>
+<option value="Nicaragua">Nicaragua</option>
+<option value="Niger">Niger</option>
+<option value="Nigeria">Nigeria</option>
+<option value="Niue">Niue</option>
+<option value="Norfolk Island">Norfolk Island</option>
+<option value="Northern Mariana Islands">Northern Mariana Islands</option>
+<option value="Norway">Norway</option>
+<optgroup label="O">
+<option value="Oman">Oman</option>
+<optgroup label="P">
+<option value="Pakistan">Pakistan</option>
+<option value="Palau">Palau</option>
+<option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
+<option value="Panama">Panama</option>
+<option value="Papua New Guinea">Papua New Guinea</option>
+<option value="Paraguay">Paraguay</option>
+<option value="Peru">Peru</option>
+<option value="Philippines">Philippines</option>
+<option value="Pitcairn">Pitcairn</option>
+<option value="Poland">Poland</option>
+<option value="Portugal">Portugal</option>
+<option value="Puerto Rico">Puerto Rico</option>
+<optgroup label="Q">
+<option value="Qatar">Qatar</option>
+<optgroup label="R">
+<option value="Reunion">Reunion</option>
+<option value="Romania">Romania</option>
+<option value="Russian Federation">Russian Federation</option>
+<option value="Rwanda">Rwanda</option>
+<optgroup label="S">
+<option value="Saint Barthelemy">Saint Barthelemy</option>
+<option value="Saint Helena, Ascension and Tristan da Cunha">Saint Helena, Ascension and Tristan da Cunha</option>
+<option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+<option value="Saint Lucia">Saint Lucia</option>
+<option value="Saint Martin (French part)">Saint Martin (French part)</option>
+<option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+<option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
+<option value="Samoa">Samoa</option>
+<option value="San Marino">San Marino</option>
+<option value="Sao Tome and Principe">Sao Tome and Principe</option>
+<option value="Saudi Arabia">Saudi Arabia</option>
+<option value="Senegal">Senegal</option>
+<option value="Serbia">Serbia</option>
+<option value="Seychelles">Seychelles</option>
+<option value="Sierra Leone">Sierra Leone</option>
+<option value="Singapore">Singapore</option>
+<option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option>
+<option value="Slovakia">Slovakia</option>
+<option value="Slovenia">Slovenia</option>
+<option value="Solomon Islands">Solomon Islands</option>
+<option value="Somalia">Somalia</option>
+<option value="South Africa">South Africa</option>
+<option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
+<option value="South Sudan">South Sudan</option>
+<option value="Spain">Spain</option>
+<option value="Sri Lanka">Sri Lanka</option>
+<option value="Sudan">Sudan</option>
+<option value="Suriname">Suriname</option>
+<option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
+<option value="Swaziland">Swaziland</option>
+<option value="Sweden">Sweden</option>
+<option value="Switzerland">Switzerland</option>
+<option value="Syrian Arab Republic">Syrian Arab Republic</option>
+<optgroup label="T">
+<option value="Taiwan, Province of China">Taiwan, Province of China</option>
+<option value="Tajikistan">Tajikistan</option>
+<option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
+<option value="Thailand">Thailand</option>
+<option value="Timor-leste">Timor-leste</option>
+<option value="Togo">Togo</option>
+<option value="Tokelau">Tokelau</option>
+<option value="Tonga">Tonga</option>
+<option value="Trinidad and Tobago">Trinidad and Tobago</option>
+<option value="Tunisia">Tunisia</option>
+<option value="Turkey">Turkey</option>
+<option value="Turkmenistan">Turkmenistan</option>
+<option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+<option value="Tuvalu">Tuvalu</option>
+<optgroup label="U">
+<option value="Uganda">Uganda</option>
+<option value="Ukraine">Ukraine</option>
+<option value="United Arab Emirates">United Arab Emirates</option>
+<option value="United Kingdom">United Kingdom</option>
+<option value="United States">United States</option>
+<option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+<option value="Uruguay">Uruguay</option>
+<option value="Uzbekistan">Uzbekistan</option>
+<optgroup label="V">
+<option value="Vanuatu">Vanuatu</option>
+<option value="Venezuela, Bolivarian Republic of">Venezuela, Bolivarian Republic of</option>
+<option value="Viet Nam">Viet Nam</option>
+<option value="Virgin Islands, British">Virgin Islands, British</option>
+<option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
+<optgroup label="W">
+<option value="Wallis and Futuna">Wallis and Futuna</option>
+<option value="Western Sahara">Western Sahara</option>
+<optgroup label="Y">
+<option value="Yemen">Yemen</option>
+<optgroup label="Z">
+<option value="Zambia">Zambia</option>
+<option value="Zimbabwe">Zimbabwe</option>
+                                    </select>
+                                </div>
+                                <div class="well to-center">
+                                    <p>Chosen is integrated with Theme color. Change Theme color to see how Chosen changes:</p>
+                                    <!-- Include the theme selector component -->
+                                    <div id="demo-themes-page">
+    <div class="theme-selector theme-default-background theme-selector-bordered" theme="default">
+     <div class="theme-selector-label" title="Default"></div>
+    </div>
+    <div class="theme-selector theme-white-background theme-selector-bordered" theme="white">
+     <div class="theme-selector-label" title="White Light"></div>
+    </div>
+    <div class="theme-selector theme-navy-background theme-selector-bordered" theme="navy">
+     <div class="theme-selector-label" title="Blue Navy"></div>
+    </div>
+    <div class="theme-selector theme-sky-background theme-selector-bordered" theme="sky">
+     <div class="theme-selector-label" title="Blue Sky"></div>
+    </div>
+    <div class="theme-selector theme-lime-background theme-selector-bordered" theme="lime">
+     <div class="theme-selector-label" title="Lime Lemon"></div>
+    </div>
+    <div class="theme-selector theme-dust-background theme-selector-bordered" theme="dust">
+     <div class="theme-selector-label" title="Star Dust"></div>
+    </div>
+    <div class="theme-selector theme-green-background theme-selector-bordered" theme="green">
+     <div class="theme-selector-label" title="Green Tea"></div>
+    </div>
+    
+    <div class="theme-selector theme-orange-background theme-selector-bordered" theme="orange">
+     <div class="theme-selector-label" title="Orange Round"></div>
+    </div>
+    <div class="theme-selector theme-yellow-background theme-selector-bordered" theme="yellow">
+     <div class="theme-selector-label" title="Yellow Sun"></div>
+    </div>
+    <div class="theme-selector theme-purple-background theme-selector-bordered" theme="purple">
+     <div class="theme-selector-label" title="Deep Purple"></div>
+    </div>
+    <div class="theme-selector theme-chocolate-background theme-selector-bordered" theme="chocolate">
+     <div class="theme-selector-label" title="Yummy Chocolate"></div>
+    </div>
+    <div class="theme-selector theme-dark-background theme-selector-bordered" theme="dark">
+     <div class="theme-selector-label" title="Dark Night"></div>
+    </div>
+    <div class="theme-selector theme-green-soft-background theme-selector-bordered" theme="green-soft">
+     <div class="theme-selector-label" title="Soft Green"></div>
+    </div>
+    <div class="theme-selector theme-red-background theme-selector-bordered" theme="red">
+     <div class="theme-selector-label" title="Wheel Red"></div>
+    </div>         
+</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                
+                <h1 class="bordered-dotted-dark mb-10">Maxlength</h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <p>More <strong>Maxlength</strong> info @ <a href="http://mimo84.github.io/bootstrap-maxlength/">http://mimo84.github.io/bootstrap-maxlength/</a></p>
+                                <hr class="dotted"/>
+                                <p>CSS Classes: Add <code>.maxlength</code> class and <code>maxlength</code> attribute to the element.</p>
+                                <hr class="dotted"/>
+                                <div class="form-group">
+                                    <input type="text" class="form-control maxlength mb-5" maxlength="50" placeholder="Write something...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+     
+                <h1 class="bordered-dotted-dark mb-10">Textarea</h1>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel">
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-md-6 no-l-pad">
+                                        <div class="form-group">
+                                            <label class="control-label">Textarea</label>
+                                            <textarea rows="4" class="form-control" placeholder="Default textarea"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 no-r-pad">
+                                        <div class="form-group">
+                                            <label class="control-label">Max length limit (20 characters)</label>
+                                            <textarea placeholder="20 character limit with no count character limit" rows="4" maxlength="20" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+            
+            <!-- Include the container-footer -->
+            <div id="container-footer" class="container-footer">
+    <div class="container-fluid">
+      <div class="row">
+          <component>container-footer</component>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              Dee Company © 2015-2016
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 to-right">
+              <i class="fa fa-code"></i>
+              <span>Version 1.2.0</span>
+          </div>
+      </div>
+    </div>
+</div>
+ 
+            
+        </div>
+    </div>
+
+    <!-- Scroll up -->
+    <a href="#" class="fa scrollup"></a>   
+
+    <!-- Scripts -->
+    <!-- Post Scripts -->
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/jquery-ui.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+
+<script src="js/main.min.js"></script>
+<script src="js/loremizer.min.js"></script>
+<script src="js/panels.min.js"></script>
+<script src="js/deepassword.min.js"></script>
+<script src="js/demo/demo.min.js"></script>
+
+<script src="js/vendor/toastr.min.js"></script>
+<script src="js/vendor/pace.min.js"></script>
+<script src="js/vendor/metisMenu.min.js"></script>
+<script src="js/vendor/jquery.slimscroll.min.js"></script>
+
+<script src="js/vendor/lodash.min.js"></script>
+<script src="js/vendor/moment.min.js"></script>
+
+<!-- / Post Scripts -->
+
+ 
+    
+    <script src="js/vendor/bootstrap-tagsinput.min.js"></script>
+    <script src="js/vendor/chosen.jquery.min.js"></script>
+    <script src="js/vendor/bootstrap-maxlength.min.js"></script>
+
+    
+    <script src="js/demo/demo-form-basic.js"></script>
+        
+</body>
+</html>

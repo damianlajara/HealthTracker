@@ -1,0 +1,2252 @@
+<!doctype html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    
+    <!-- Include the title -->
+    <title>Dee Admin | Components</title>     
+    
+    <!-- Include the head -->
+    <!-- Meta -->
+<meta name="description" content="Dee Admin Template Bootstrap">
+<meta name="keywords" content="admin,template,lightweight,dashboard,responsive,webapp,css3,html5,jquery,bootstrap">
+<meta name="author" content="Deemble">
+<!-- / Meta -->
+
+<!-- Fonts -->
+<link href='//fonts.googleapis.com/css?family=Raleway:300,400,600,700,800' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+<!-- / Fonts -->
+
+<!-- Style Sheets -->
+<link rel="stylesheet" href="styles/vendor/pace-theme-minimal.css">
+<link rel="stylesheet" href="styles/vendor/bootstrap.min.css">
+<link rel="stylesheet" href="styles/vendor/metisMenu.min.css">
+<link rel="stylesheet" href="styles/vendor/animate.min.css">
+<link rel="stylesheet" href="styles/vendor/toastr.min.css">
+<link rel="stylesheet" href="styles/vendor/font-awesome.min.css">
+<link rel="stylesheet" href="styles/style.min.css">
+<link rel="stylesheet" href="styles/themes/theme-all.min.css">
+<link rel="stylesheet" href="styles/demo.min.css">
+<!-- / Style Sheets -->
+
+
+    
+</head>
+<body data-theme="default">
+    <div id="wrapper">
+        <!-- Include the sidebar-nav -->
+        <nav id="sidebar-nav" class="sidebar-nav">
+    <div id="sidebar-wrapper" class="sidebar-wrapper" data-background="default">
+        <component>sidebar-nav</component>
+        <ul class="side-nav-top nav">
+            <li class="sidebar-nav-logo">
+                <component>sidebar-nav-logo</component>
+                <img src="img/sidebar-logo.png" alt="Dee Admin">
+                <span class="logo-text">
+                    <b>Dee</b> Template
+                </span>
+            </li>
+            <li class="sidebar-nav-profile">
+                <component>sidebar-nav-profile</component>
+                <div class="profile-left">
+                    <img src="img/user.jpg" alt="Peter Boussa">
+                </div>
+                <div class="profile-right">
+                    <span class="name">
+                        Peter Boussa<i id="user-profile-settings-toggler" class="fa fa-caret-down l-pad-5"></i>
+                    </span>
+                    <span class="info">
+                        Project Manager
+                    </span>
+                </div>
+            </li>
+            <!-- Profile settings -->
+            <li class="side-nav-profile-settings" style="display: none;">
+                <ul class="inline-list">
+                    <li>
+                        <a id="right-notifier-toggler-3" 
+                           class="btn btn-white-hover mb-5" 
+                           data-placement="top" 
+                           data-toggle="tooltip" 
+                           data-original-title="Notifications">
+                            <i class="fa fa-bell-o"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-white-hover mb-5"
+                           data-placement="top" 
+                           data-toggle="tooltip"
+                           data-original-title="Profile"
+                           href="profile.html">
+                            <i class="fa fa-user"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-white-hover mb-5"
+                           data-placement="top" 
+                           data-toggle="tooltip"
+                           data-original-title="Inbox"
+                           href="inbox.html">
+                            <i class="fa fa-inbox"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-white-hover mb-5" 
+                           data-placement="top" 
+                           data-toggle="tooltip" 
+                           data-original-title="Desktop">
+                            <i class="fa fa-desktop"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-white-hover mb-5"
+                           data-placement="top" 
+                           data-toggle="tooltip"
+                           data-original-title="Support">
+                            <i class="fa fa-support"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-white-hover mb-5"
+                           data-placement="top" 
+                           data-toggle="tooltip"
+                           data-original-title="Log out"
+                           href="login.html">
+                            <i class="fa fa-sign-out l-pad-5"></i>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!-- / Profile settings -->
+        </ul>
+        <ul id="side-nav" class="side-nav nav">
+            <li class="side-nav-group">
+                <span class="name">Options</span>
+            </li>
+            <li class="@@activate-dashboard">
+                <a href="dashboard.html">
+                    <i class="fa fa-tachometer"></i> 
+                    <span class="name">Dashboard</span>
+                </a>
+            </li>
+            <li class="active">
+                <a href="#">
+                    <i class="fa fa-desktop"></i> 
+                    <span class="name">UI Elements</span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="active">
+                        <a href="components.html">
+                            Components
+                        </a>
+                    </li>
+                    <li class="@@activate-buttons">
+                        <a href="buttons.html">
+                            Buttons
+                        </a>
+                    </li>
+                    <li class="@@activate-panels">
+                        <a href="panels.html">
+                            Panels
+                        </a>
+                    </li>
+                    <li class="@@activate-panel-grid">
+                        <a href="panelgrid.html">
+                            Panel grid
+                        </a>
+                    </li>
+                    <li class="@@activate-tabs">
+                        <a href="tabs.html">
+                            Tabs &amp; Accordions
+                        </a>
+                    </li>
+                    <li class="@@activate-spinners">
+                        <a href="spinners.html">
+                            Spinners
+                        </a>
+                    </li>
+                    <li class="@@activate-tooltips">
+                        <a href="tooltips.html">
+                            Tooltips &amp; Popovers
+                        </a>
+                    </li>
+                    <li class="@@activate-checkboxes">
+                        <a href="checkboxes.html">
+                            Checkbox &amp; Radio
+                        </a>
+                    </li>
+                    <li class="@@activate-switches">
+                        <a href="switches.html">
+                            Switches
+                        </a>
+                    </li>
+                    <li class="@@activate-modals">
+                        <a href="modals.html">
+                            Modal dialogs
+                        </a>
+                    </li>
+                    <li class="@@activate-alerts">
+                        <a href="alerts.html">
+                            Alert dialogs
+                        </a>
+                    </li>
+                    <li class="@@activate-page-message">
+                        <a href="page_message.html">
+                            Page messages
+                        </a>
+                    </li>
+                    <li class="@@activate-growls">
+                        <a href="growl.html">
+                            Growls
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-extra-pages">
+                <a href="#">
+                    <i class="fa fa-trophy"></i> 
+                    <span class="name">Extra pages</span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@@activate-faq">
+                        <a href="faq.html">
+                            FAQ Page
+                        </a>
+                    </li>
+                    <li class="@@activate-invoice">
+                        <a href="invoice.html">
+                            Invoice
+                        </a>
+                    </li>
+                    <li class="@@activate-timeline">
+                        <a href="timeline.html">
+                            Timeline
+                        </a>
+                    </li>
+                    <li class="@@activate-profile">
+                        <a href="profile.html">
+                            Profile
+                        </a>
+                    </li>
+                    <li class="@@activate-activity">
+                        <a href="activity.html">
+                            Activity feed
+                        </a>
+                    </li>
+                    <li class="@@activate-search">
+                        <a href="search.html">
+                            Search results
+                        </a>
+                    </li>
+                    <li class="@@activate-todo">
+                        <a href="todo.html">
+                            TODO List
+                            <span class="label label-warning label-s pull-right r-mar-10">New</span>
+                        </a>
+                    </li>
+                    <li class="@@activate-pricing">
+                        <a href="pricing.html">
+                            Pricing
+                            <span class="label label-warning label-s pull-right r-mar-10">New</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-app-pages">
+                <a href="#">
+                    <i class="fa fa-file-o"></i> 
+                    <span class="name">App pages</span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="login.html">
+                            Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="password.html">
+                            Forgot password
+                        </a>
+                    </li>
+                    <li>
+                        <a href="register.html">
+                            Register
+                        </a>
+                    </li>
+                    <li>
+                        <a href="error-404.html">
+                            404 Error
+                        </a>
+                    </li>
+                    <li>
+                        <a href="error-500.html">
+                            500 Error
+                        </a>
+                    </li>
+                    <li>
+                        <a href="coming_soon.html">
+                            Coming soon
+                            <span class="label label-warning label-s pull-right r-mar-10">New</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            
+            <li class="@@activate-mailbox">
+                <a href="#">
+                    <i class="fa fa-inbox"></i> 
+                    <span class="name">Mailbox</span>
+                    <span class="fa expand"></span>
+                    <span class="label label-warning label-s pull-right r-mar-10">3</span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@@activate-inbox">
+                        <a href="inbox.html">
+                            Inbox
+                        </a>
+                    </li>
+                    <li class="@@activate-mail-compose">
+                        <a href="email_compose.html">
+                            Email compose
+                        </a>
+                    </li>
+                    <li class="@@activate-mail-view">
+
+                        <a href="email_view.html">
+                            Email detail
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-calendar">
+                <a href="calendar.html">
+                    <i class="fa fa-calendar-o"></i> 
+                    <span class="name">Calendar</span>
+                </a>
+            </li>
+            <li class="@@activate-forms">
+                <a href="#">
+                    <i class="fa fa-edit"></i> 
+                    <span class="name">Forms</span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@@activate-form-basic">
+                        <a href="form_basic.html">
+                            Form basics
+                        </a>
+                    </li>
+                    <li class="@@activate-form-layouts">
+                        <a href="form_layouts.html">
+                            Form layouts
+                        </a>
+                    </li>
+                    <li class="@@activate-form-advanced-controls">
+                        <a href="form_advanced_controls.html">
+                            Advanced controls
+                        </a>
+                    </li>
+                    <li class="@@activate-form-text-editor">
+                        <a href="text-editor.html">
+                            Text editor
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-widgets">
+                <a href="widgets.html">
+                    <i class="fa fa-space-shuttle"></i> 
+                    <span class="name">Widgets</span>
+                </a>
+            </li>
+            <li class="@@activate-charts">
+                <a href="#">
+                    <i class="fa fa-pie-chart"></i> 
+                    <span class="name">Charts</span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@@activate-sparkline">
+                        <a href="sparkline.html">
+                            Sparkline / Peity
+                        </a>
+                    </li>
+                    <li class="@@activate-chartjs">
+                        <a href="chartjs.html">
+                            Chart.js
+                        </a>
+                    </li>
+                    <li class="@@activate-flotcharts">
+                        <a href="flotcharts.html">
+                            Flot Charts
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-tables">
+                <a href="#">
+                    <i class="fa fa-table"></i> 
+                    <span class="name">
+                        Tables
+                    </span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li class="@@activate-basic-tables">
+                        <a href="tables.html">
+                            Table basics
+                        </a>
+                    </li>
+                    <li class="@@activate-datatables">
+                        <a href="datatables.html">
+                            DataTables
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-grids">
+                <a href="grids.html">
+                    <i class="fa fa-th"></i> 
+                    <span class="name">Grids</span>
+                </a>
+            </li>
+            <li class="@@activate-layouts">
+                <a href="#">
+                    <i class="fa fa-laptop"></i> 
+                    <span class="name">Layouts</span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="#" class="container-navbar-fixer-nav">Fixed top navbar</a>
+                    </li>
+                    <li>
+                        <a href="#" class="container-footer-fixer-nav">Fixed footer</a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-collapser-nav">Sidebar collapsed </a>
+                    </li>
+                    <li>
+                        <a href="#" class="sidebar-fixed-nav">Fixed sidebar</a>
+                    </li>
+                    <li>
+                        <a href="#" class="boxed-selector-nav">Boxed</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-css-animate">
+                <a href="css-animate.html">
+                    <i class="fa fa-fighter-jet"></i>
+                    <span class="name">CSS Animations</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-align-left"></i> 
+                    <span class="name">Menu levels</span>
+                    <span class="fa expand"></span>
+                </a>
+                <ul class="nav nav-second-level collapse">
+                    <li>
+                        <a href="javascript:void(0);">
+                            Item 1.1<span class="fa expand"></span>
+                        </a>
+                        <ul class="nav nav-third-level collapse">
+                            <li>
+                                <a href="javascript:void(0);">
+                                    Item 1.1.1<span class="fa expand"></span>
+                                </a>
+                                <ul class="nav nav-fourth-level collapse">
+                                    <li>
+                                        <a href="javascript:void(0);">Item 1.1.1.1</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);">Item 1.1.1.2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);">Item 1.1.2</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Item 1.2</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Item 1.3</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="@@activate-colors">
+                <a href="colors.html">
+                    <i class="fa fa-adjust"></i> 
+                    <span class="name">Colors</span>
+                </a>
+            </li>
+            <li class="@@activate-typography">
+                <a href="typography.html">
+                    <i class="fa fa-text-width"></i> 
+                    <span class="name">Typography</span>
+                </a>
+            </li>
+            <li class="@@activate-classes">
+                <a href="classes.html">
+                    <i class="fa fa-cubes"></i> 
+                    <span class="name">Generic classes</span>
+                </a>
+            </li>    
+            <li class="side-nav-group">
+                <span class="name">Information</span>
+            </li>
+            <li class="@@activate-features">
+                <a href="features.html">
+                    <i class="fa fa-cube"></i> 
+                    <span class="name">Features</span>
+                </a>
+            </li>
+            <li class="@@activate-next">
+                <a href="next.html">
+                    <i class="fa fa-clock-o"></i> 
+                    <span class="name">In progress</span>
+                </a>
+            </li>
+            <li class="@@activate-credits">
+                <a href="credits.html">
+                    <i class="fa fa-credit-card"></i> 
+                    <span class="name">Credits</span>
+                </a>
+            </li>
+            <li class="@@activate-versions">
+                <a href="versions.html">
+                    <i class="fa fa-database"></i> 
+                    <span class="name">Versions</span>
+                </a>
+            </li>
+            <li class="side-nav-group">
+                <span class="name">Status</span>
+            </li>
+            <li class="side-nav-info">
+                <div class="row">
+                    <div class="col-md-9">
+                        Pending tasks
+                    </div>
+                    <div class="col-md-3">
+                        <span class="badge badge-warning">6</span>
+                    </div>
+                </div>
+            </li>
+            <li class="side-nav-separator">
+            <li class="side-nav-info">
+                <div class="row">
+                    <div class="col-md-12">
+                        <small>
+                            Application server progress
+                        </small>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="progress progress-striped active progress-xs no-mb mt-5">
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%">
+                                <span class="sr-only">5%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="side-nav-info">
+                <div class="row">
+                    <div class="col-md-12">
+                        <small>
+                            Database backup progress 
+                        </small>
+                    </div>
+                </div>
+                <div class="row mb-5">
+                    <div class="col-md-12">
+                        <div class="progress progress-striped active progress-xs no-mb mt-5">
+                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
+                                <span class="sr-only">75%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+        <div id="container-wrapper" class="container-wrapper">
+            
+            <!-- Include the container navbar -->
+            <div id="container-navbar" class="container-navbar navbar">
+    <component>container-navbar</component>
+    <div class="l-container-navbar">
+        <a href="#" class="sidebar-minimalizer btn btn-theme">
+            <i class="fa"></i> 
+        </a>
+        <span id="navbar-search" class="navbar-search-input-icon l-mar-10">
+            <i class="fa fa-search navbar-search-icon"></i>
+            <input class="navbar-search" type="text" placeholder="Search ...">
+        </span>
+    </div>
+    <div class="r-container-navbar">
+        <!-- Notification sidebar -->
+        <a id="right-notifier-toggler" class="btn btn-default btn-bordered">
+            <span class="fa fa-bell-o"></span>
+            <span class="badge badge-danger badge-xs upbadges">9</span>
+        </a>
+        <!-- User information -->
+        <span class="dropdown" id="profile-toggler">
+            <a class="btn btn-default btn-bordered dropdown-toggle" data-toggle="dropdown">
+                <span class="fa fa-magic"></span>
+            </a>
+            <!-- Include the theme selector component -->
+            <ul class="dropdown-menu dropdown-arrowed dropdown-menu-center w250" style="margin-right: -119px">
+    <li class="dropdown-header">
+        <h3 class="bold">Profile status</h3>
+        <small>79% Complete</small>
+        <div class="progress progress-striped progress-xs">
+            <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="79" aria-valuemin="0" aria-valuemax="100" style="width: 79%">
+                <span class="sr-only"></span>
+            </div>
+        </div>
+    </li>
+    <li>
+        <div>
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab-top-1" data-toggle="tab-hover" aria-expanded="false">
+                        <i class="fa fa-cog"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-top-2" data-toggle="tab-hover" aria-expanded="true">
+                        <i class="fa fa-user"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab-top-1">
+                <div class="tab-pane-title">
+                    <h3><strong>Settings</strong></h3>
+                </div>
+                <div class="to-center">
+                    <!-- Include the theme selector component -->
+                    <div id="demo-themes-page">
+    <div class="theme-selector theme-default-background theme-selector-bordered" theme="default">
+     <div class="theme-selector-label" title="Default"></div>
+    </div>
+    <div class="theme-selector theme-white-background theme-selector-bordered" theme="white">
+     <div class="theme-selector-label" title="White Light"></div>
+    </div>
+    <div class="theme-selector theme-navy-background theme-selector-bordered" theme="navy">
+     <div class="theme-selector-label" title="Blue Navy"></div>
+    </div>
+    <div class="theme-selector theme-sky-background theme-selector-bordered" theme="sky">
+     <div class="theme-selector-label" title="Blue Sky"></div>
+    </div>
+    <div class="theme-selector theme-lime-background theme-selector-bordered" theme="lime">
+     <div class="theme-selector-label" title="Lime Lemon"></div>
+    </div>
+    <div class="theme-selector theme-dust-background theme-selector-bordered" theme="dust">
+     <div class="theme-selector-label" title="Star Dust"></div>
+    </div>
+    <div class="theme-selector theme-green-background theme-selector-bordered" theme="green">
+     <div class="theme-selector-label" title="Green Tea"></div>
+    </div>
+    <br/>
+    <div class="theme-selector theme-orange-background theme-selector-bordered" theme="orange">
+     <div class="theme-selector-label" title="Orange Round"></div>
+    </div>
+    <div class="theme-selector theme-yellow-background theme-selector-bordered" theme="yellow">
+     <div class="theme-selector-label" title="Yellow Sun"></div>
+    </div>
+    <div class="theme-selector theme-purple-background theme-selector-bordered" theme="purple">
+     <div class="theme-selector-label" title="Deep Purple"></div>
+    </div>
+    <div class="theme-selector theme-chocolate-background theme-selector-bordered" theme="chocolate">
+     <div class="theme-selector-label" title="Yummy Chocolate"></div>
+    </div>
+    <div class="theme-selector theme-dark-background theme-selector-bordered" theme="dark">
+     <div class="theme-selector-label" title="Dark Night"></div>
+    </div>
+    <div class="theme-selector theme-green-soft-background theme-selector-bordered" theme="green-soft">
+     <div class="theme-selector-label" title="Soft Green"></div>
+    </div>
+    <div class="theme-selector theme-red-background theme-selector-bordered" theme="red">
+     <div class="theme-selector-label" title="Wheel Red"></div>
+    </div>         
+</div>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab-top-2">
+                <div class="tab-pane-title">
+                    <h3><strong>Profile</strong></h3>
+                </div>
+                <div>
+                    Peter Boussa<br/>
+                    <small>
+                        Project Manager
+                    </small>
+                </div>
+            </div>
+        </div>
+    </li>
+
+    <li>
+        <a id="right-notifier-toggler-2">
+            <i class="fa fa-bullhorn r-pad-15"></i>Messages
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <i class="fa fa-power-off r-pad-15"></i>Logout
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <i class="fa fa-question-circle r-pad-15"></i>Lockscreen
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <i class="fa fa-info-circle r-pad-15"></i>Help
+        </a>
+    </li>
+</ul>
+        </span>
+        <!-- Fullscreen toggler -->
+        <a id="fullscreen-toggler" class="btn btn-default btn-bordered">
+            <span class="fa fa-arrows-alt"></span>
+        </a>
+        <!-- Log out -->
+        <a class="btn btn-default btn-bordered" href="login.html">
+            <span class="fa fa-sign-out r-mar-5"></span>Log out
+        </a>
+    </div>
+    <!-- Include the right notifier -->
+    <div id="right-notifier">
+    <div class="right-notifier-content">
+        <div class="right-notifier-tabs">
+            <ul class="nav nav-tabs">
+                <li class="active">
+                    <a href="#tab-1" data-toggle="tab" aria-expanded="false">
+                        <i class="fa fa-bullhorn"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-2" data-toggle="tab" aria-expanded="true">
+                        <i class="fa fa-server"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-3" data-toggle="tab" aria-expanded="true">
+                        <i class="fa fa-tasks"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#tab-4" data-toggle="tab" aria-expanded="true">
+                        <i class="fa fa-users r-pad-5"></i>
+                        Friends
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab-1">
+                <div class="right-notifier-title">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3><strong>Notifications</strong></h3>
+                            <small>
+                                You have 10 notifications
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-twitter fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    You have one new follower!
+                                    <br/>
+                                    <small>@deeTemplate is following you</small>
+                                    <br/>
+                                    <i><small>12/11/2022 11:26h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-facebook fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    You have one new friend!
+                                    <br/>
+                                    <small>Dee Admin Template is your friend</small>
+                                    <br/>
+                                    <i><small>12/11/2022 11:11h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-envelope fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    You have 4 new mails!
+                                    <br/>
+                                    <small>Go to webmail to read it</small>
+                                    <br/>
+                                    <i><small>12/11/2022 11:01h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-linkedin-square fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    Someone visited you professional profile!
+                                    <br/>
+                                    <small>Go to Linkedin and check-it</small>
+                                    <br/>
+                                    <i><small>12/11/2022 10:42h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-google-plus fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    You have been added to the Dee Circle!
+                                    <br/>
+                                    <small>Go to Google+ and check-it</small>
+                                    <br/>
+                                    <i><small>12/11/2022 10:31h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-facebook fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    You have 30 likes in your publication
+                                    <br/>
+                                    <small>Congratulations for the post!</small>
+                                    <br/>
+                                    <i><small>12/11/2022 10:21h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-spotify fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    Dee Admin Template follows your playlists
+                                    <br/>
+                                    <small>You listen amazing music!</small>
+                                    <br/>
+                                    <i><small>12/11/2022 10:20h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-paypal fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    You received 9.000,00$ in your account
+                                    <br/>
+                                    <small>Great job!</small>
+                                    <br/>
+                                    <i><small>12/11/2022 10:12h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-bitcoin fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    Bitcoin raises 410,00%
+                                    <br/>
+                                    <small>¿Time to sell?</small>
+                                    <br/>
+                                    <i><small>12/11/2022 10:10h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-dropbox fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-10 l-pad-10">
+                                    DeeTemplate shared a file with you
+                                    <br/>
+                                    <small>Visit Dropbox to see content</small>
+                                    <br/>
+                                    <i><small>12/11/2022 10:02h</small></i>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab-2">
+                <div class="right-notifier-title">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3><strong>Server Statistics</strong></h3>
+                            <small>
+                                Actual server status
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul>
+                        <li class="right-notifier-element">
+                            <h5><strong>Server status</strong></h5>
+                            <div class="progress">
+                                <div style="width: 45%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" role="progressbar" 
+                                     class="progress-bar progress-bar-info">Server load (45%)</div>
+                            </div>
+                            <div class="progress">
+                                <div style="width: 85%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" role="progressbar" 
+                                     class="progress-bar progress-bar-danger">Database requests (+85%)</div>
+                            </div>
+                            <div class="progress">
+                                <div style="width: 65%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="65" role="progressbar" 
+                                     class="progress-bar progress-bar-warning">Database connections (+65%)</div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <h5><strong>Maintenance</strong></h5>
+                            <h6>Application server script progress</h6>
+                            <div class="progress progress-striped active progress-xs">
+                                <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" 
+                                     class="progress-bar">
+                                    <span class="sr-only">90%</span>
+                                </div>
+                            </div>
+                            <h6>Database maintenance progress</h6>
+                            <div class="progress progress-striped active progress-xs">
+                                <div style="width: 55%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="55" role="progressbar" 
+                                     class="progress-bar">
+                                    <span class="sr-only">55%</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <h5><strong>Server statistics</strong></h5>
+                            <h6>Traffic (last hour)</h6>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    132 requests
+                                </div>
+                                <div class="col-xs-6 to-right">
+                                    <i class="fa fa-caret-up pad-h-5"></i>22.2%
+                                </div>
+                            </div>
+                            <h6>Average server response (last hour)</h6>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    100 ms
+                                </div>
+                                <div class="col-xs-6 to-right">
+                                    <i class="fa fa-caret-up pad-h-5"></i>12.1%
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab-3">
+                <div class="right-notifier-title">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3><strong>Tasks</strong></h3>
+                            <small>
+                                You have 4 pending tasks
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul>
+                        <li class="right-notifier-element">
+                            <input type="checkbox"/>&nbsp;&nbsp;
+                            Partner evaluation
+                            <br/>
+                            <i><small>12/11/2022 10:00h</small></i>
+                        </li>
+                        <li class="right-notifier-element">
+                            <input type="checkbox"/>&nbsp;&nbsp;
+                            Meeting at main office
+                            <br/>
+                            <i><small>12/11/2022 10:30h</small></i>
+                        </li>
+                        <li class="right-notifier-element">
+                            <input type="checkbox"/>&nbsp;&nbsp;
+                            Check sales status
+                            <br/>
+                            <i><small>12/11/2022 11:00h</small></i>
+                        </li>
+                        <li class="right-notifier-element">
+                            <input type="checkbox"/>&nbsp;&nbsp;
+                            Add new entrance to blog
+                            <br/>
+                            <i><small>12/11/2022 17:00h</small></i>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab-4">
+                <div class="right-notifier-title">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3><strong>Friends</strong></h3>
+                            <small>
+                                Keep in contact with your friends
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-user fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Ronald C. Stevens
+                                    <br/>
+                                    <i class="fa fa-circle color-success r-pad-5"></i><small>Online</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-facebook-color label-s">
+                                        <i class="fa fa-facebook"></i>
+                                    </span>
+                                    <br/><i><small>Yesterday</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-fax fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Chanell W. Orcutt
+                                    <br/>
+                                    <i class="fa fa-circle color-success r-pad-5"></i><small>Online</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-facebook-color label-s">
+                                        <i class="fa fa-facebook"></i>
+                                    </span>
+                                    <br/><i><small>2 days ago</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                             <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-user fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Blake J. Gibson
+                                    <br/>
+                                    <i class="fa fa-circle color-success r-pad-5"></i><small>Online</small>
+                                </div>
+                                 <div class="col-xs-3 to-right">
+                                    <span class="label social-google-color label-s">
+                                        <i class="fa fa-google-plus"></i>
+                                    </span>
+                                    <br/><i><small>last week</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-institution fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Laura E. Fagin
+                                    <br/>
+                                    <i class="fa fa-circle color-danger r-pad-5"></i><small>Offline</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-twitter-color label-s">
+                                        New
+                                        <i class="fa fa-twitter"></i>
+                                    </span>
+                                    <br/><i><small>22 oct</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-user-md fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Bobby V. Becker
+                                    <br/>
+                                    <i class="fa fa-circle color-success r-pad-5"></i><small>Online</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-linkedin-color label-s">
+                                        <i class="fa fa-linkedin"></i>
+                                    </span>
+                                    <br/><i><small>11 dec</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-user fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Evelyn M. Drennon
+                                    <br/>
+                                    <i class="fa fa-circle color-success r-pad-5"></i><small>Online</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-linkedin-color label-s">
+                                        <i class="fa fa-linkedin"></i>
+                                    </span>
+                                    <br/><i><small>12 nov</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-male fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Jose S. Smith
+                                    <br/>
+                                    <i class="fa fa-circle color-danger r-pad-5"></i><small>Offline</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-linkedin-color label-s">
+                                        <i class="fa fa-linkedin"></i>
+                                    </span>
+                                    <br/><i><small>9 nov</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-female fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Melody M. Rooney
+                                    <br/>
+                                    <i class="fa fa-circle color-success r-pad-5"></i><small>Online</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-instagram-color label-s">
+                                        <i class="fa fa-instagram"></i>
+                                    </span>
+                                    <br/><i><small>3 days ago</small></i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="right-notifier-element">
+                            <div class="row">
+                                <div class="col-xs-2 no-h-pad to-center text-shadow-inset-dark">
+                                    <i class="fa fa-user fa-3x opacity-25"></i>
+                                </div>
+                                <div class="col-xs-7 l-pad-10">
+                                    Brenda J. Heenan
+                                    <br/>
+                                    <i class="fa fa-circle color-danger r-pad-5"></i><small>Offline</small>
+                                </div>
+                                <div class="col-xs-3 to-right">
+                                    <span class="label social-instagram-color label-s">
+                                        <i class="fa fa-instagram"></i>
+                                    </span>
+                                    <br/><i><small>5 days ago</small></i>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+            
+            <!-- Include the container-header -->
+            <div id="container-header" class="container-header">
+    <component>container-header</component>
+      <div class="row">
+        <div class="col-md-12">
+            <h2>Components</h2>
+        </div>
+      </div>
+</div>
+            
+            <!-- Include the container-breadcrumb -->
+            <div id="container-breadcrumb" class="container-breadcrumb">
+    <component>container-breadcrumb</component>
+    <div class="row">
+        <div class="col-lg-10">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">
+                        <i class="fa fa-home"></i> Home
+                    </a>
+                </li>
+                <li class="">
+                    UI Elements
+                </li>
+                <li class="active">
+                    Components
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>
+            
+            <div id="container-content" class="container-content">
+                
+                <!-- Include the demo settings -->
+                <div id="demo-settings">
+     <a id="demo-settings-toggler" href="#" class="r-pad-5">
+        <i class="fa fa-cogs"></i> 
+     </a>
+     <h5 class="header">
+         Settings
+    </h5>
+    <div id="demo-config">
+        <div class="container-fluid">
+            <div class="row">
+                 <div class="col-md-8">
+                    Fixed sidebar
+                 </div>
+                 <div class="col-md-2">
+                    <div class="switch">
+                        <input id="onoff-fixed-sidebar"
+                               type="checkbox" 
+                               name="switch" 
+                               class="switch-checkbox">
+                        <label class="switch-label sidebar-fixed" 
+                               for="onoff-fixed-sidebar">
+                            <span class="switch-inner"></span>
+                            <span class="switch-switcher"></span>
+                        </label>
+                    </div> 
+                 </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    Fixed footer
+                </div>
+                <div class="col-md-2">
+                    <div class="switch">
+                        <input id="onoff-footer-fixer"
+                               type="checkbox" 
+                               name="switch" 
+                               class="switch-checkbox">
+                        <label class="switch-label container-footer-fixer" 
+                               for="onoff-footer-fixer">
+                            <span class="switch-inner"></span>
+                            <span class="switch-switcher"></span>
+                        </label>
+                    </div> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    Fixed top navbar
+                </div>
+                <div class="col-md-2">
+                    <div class="switch">
+                        <input id="onoff-navbar-fixer"
+                               type="checkbox" 
+                               name="switch" 
+                               class="switch-checkbox">
+                        <label class="switch-label container-navbar-fixer" 
+                               for="onoff-navbar-fixer">
+                            <span class="switch-inner"></span>
+                            <span class="switch-switcher"></span>
+                        </label>
+                    </div> 
+                </div>
+            </div>
+            
+             <div class="row">
+                 <div class="col-md-8">
+                    Collapse sidebar
+                 </div>
+                 <div class="col-md-2">
+                    <div class="switch">
+                        <input id="onoff-collapse-sidebar"
+                               type="checkbox" 
+                               name="switch" 
+                               class="switch-checkbox">
+                        <label class="switch-label sidebar-collapser" 
+                               for="onoff-collapse-sidebar">
+                            <span class="switch-inner"></span>
+                            <span class="switch-switcher"></span>
+                        </label>
+                    </div> 
+                 </div>
+             </div>
+             
+             <div class="row">
+                 <div class="col-md-8">
+                    Boxed
+                 </div>
+                 <div class="col-md-2">
+                    <div class="switch">
+                        <input id="onoff-boxed"
+                               type="checkbox" 
+                               name="switch" 
+                               class="switch-checkbox">
+                        <label class="switch-label boxed-selector" 
+                               for="onoff-boxed">
+                            <span class="switch-inner"></span>
+                            <span class="switch-switcher"></span>
+                        </label>
+                    </div> 
+                 </div>
+             </div>
+         </div>
+     </div>
+    <h5 class="header">
+         Background
+    </h5>
+    <div id="demo-background">
+        <div class="background-selector background-selector-default" background="default">
+             <div class="background-selector-label">Default</div>
+        </div>
+        <div class="background-selector background-selector-dark" background="dark">
+             <div class="background-selector-label">Dark</div>
+        </div>
+        <div class="background-selector background-selector-light" background="light">
+             <div class="background-selector-label">Light</div>
+        </div>
+    </div>
+    <h5 class="header">
+         Themes
+     </h5>
+     <div id="demo-themes">
+         <div class="theme-selector theme-default-background" theme="default">
+             <div class="theme-selector-label">Default</div>
+         </div>
+         <div class="theme-selector theme-white-background" theme="white">
+             <div class="theme-selector-label">White Light</div>
+         </div>
+         <div class="theme-selector theme-navy-background" theme="navy">
+             <div class="theme-selector-label">Blue Navy</div>
+         </div>
+         <div class="theme-selector theme-sky-background" theme="sky">
+             <div class="theme-selector-label">Blue Sky</div>
+         </div>
+         <div class="theme-selector theme-lime-background" theme="lime">
+             <div class="theme-selector-label">Lime Lemon</div>
+         </div>
+         <div class="theme-selector theme-dust-background" theme="dust">
+             <div class="theme-selector-label">Star Dust</div>
+         </div>
+         <div class="theme-selector theme-green-background" theme="green">
+             <div class="theme-selector-label">Green Tea</div>
+         </div>
+         <div class="theme-selector theme-orange-background" theme="orange">
+             <div class="theme-selector-label">Orange Round</div>
+         </div>
+         <div class="theme-selector theme-yellow-background" theme="yellow">
+             <div class="theme-selector-label">Yellow Sun</div>
+         </div>
+         <div class="theme-selector theme-purple-background" theme="purple">
+             <div class="theme-selector-label">Deep Purple</div>
+         </div>
+         <div class="theme-selector theme-chocolate-background" theme="chocolate">
+             <div class="theme-selector-label">Yummy Chocolate</div>
+         </div>
+         <div class="theme-selector theme-dark-background" theme="dark">
+             <div class="theme-selector-label">Dark Night</div>
+         </div>
+         <div class="theme-selector theme-green-soft-background" theme="green-soft">
+             <div class="theme-selector-label">Soft Green</div>
+         </div>
+        <div class="theme-selector theme-red-background" theme="red">
+             <div class="theme-selector-label">Wheel Red</div>
+         </div>         
+     </div>
+</div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel">
+                            <div class="panel-body">
+                                Bootstrap reusable components built to provide alerts, notifications, progress bars, labels, badges, wells, thumbnails, pagination, shapes and list groups.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Alerts -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Component <strong>Alerts</strong></h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+                                </p>
+                                <p>Wrap any text and an optional dismiss button in <code>.alert</code> and one of the four contextual classes (e.g., <code>.alert-success</code>) for basic alert messages.</p>
+                                <p>Use the <code>.alert-link</code> utility class to quickly provide matching colored links within any alert.</p>
+                                <hr class="dotted">
+                                <div class="alert alert-success">
+                                    <button class="close" data-dismiss="alert">×</button>
+                                    <strong>Well done!</strong> You successfully read <a class="alert-link" href="javascript:void(0);">this important alert message</a>
+                                </div>
+                                <div class="alert alert-warning">
+                                    <button class="close" data-dismiss="alert">×</button>
+                                    <strong>Warning!</strong> Better check yourself, you're not looking too good
+                                </div>
+                                <div class="alert alert-info">
+                                    <button class="close" data-dismiss="alert">×</button>
+                                    <strong>Heads up!</strong> This <a class="alert-link" href="javascript:void(0);">alert needs your attention</a>, but it's not super important
+                                </div>
+                                <div class="alert alert-danger">
+                                    <button class="close" data-dismiss="alert">×</button>
+                                    <strong>Oh snap!</strong> Change a few things up and try submitting again
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Alerts -->
+                        <!-- Progress bars -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Component <strong>Progress bars</strong></h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    Provide up-to-date feedback on the progress of a workflow or action with simple yet flexible progress bars.
+                                </p>
+                                <hr class="dotted">
+                                <h5><strong>Basic</strong></h5>
+                                <div class="progress">
+                                    <div style="width: 25%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" role="progressbar" 
+                                         class="progress-bar progress-bar-warning">
+                                        <span class="sr-only"> 25% Complete</span>
+                                    </div>
+                                </div>
+                                <h5><strong>Labeled</strong></h5>
+                                <div class="progress">
+                                    <div style="width: 50%;" aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" role="progressbar" 
+                                         class="progress-bar progress-bar-info">50%</div>
+                                </div>
+                                <h5><strong>Striped</strong></h5>
+                                <div class="progress progress-striped progress-sm">
+                                    <div style="width: 65%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="65" role="progressbar" 
+                                         class="progress-bar progress-bar-danger">
+                                        <span class="sr-only"> 65% Complete</span>
+                                    </div>
+                                </div>
+                                <h5><strong>Animated</strong></h5>
+                                <div class="progress progress-striped active progress-xs">
+                                    <div style="width: 55%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="55" role="progressbar" 
+                                         class="progress-bar">
+                                        <span class="sr-only"> 55% near the end</span>
+                                    </div>
+                                </div>
+                                <h5><strong>Stacked</strong></h5>
+                                <div class="progress">
+                                    <div style="width: 15%" class="progress-bar progress-bar-success">35% Success</div>
+                                    <div style="width: 25%" class="progress-bar progress-bar-warning">25% Warning</div>
+                                    <div style="width: 30%" class="progress-bar progress-bar-danger">30% Errors</div>
+                                </div>
+                                <h5><strong>Sizes</strong></h5>
+                                
+                                <p>Add <code>.progress-xs</code>, <code>.progress-s</code>, <code>.progress-m</code>, <code>.progress-l</code> or <code>.progress-xl</code> to resize the badges.</p>
+                                <div class="progress progress-striped progress-xs">
+                                    <div style="width: 30%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="30" role="progressbar" 
+                                         class="progress-bar progress-bar-danger">
+                                        <span class="sr-only"> 30% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="progress progress-striped progress-s">
+                                    <div style="width: 35%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="35" role="progressbar" 
+                                         class="progress-bar progress-bar-primary">
+                                        <span class="sr-only"> 35% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="progress progress-striped progress-m">
+                                    <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" 
+                                         class="progress-bar progress-bar-info">
+                                        <span class="sr-only"> 40% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="progress progress-striped progress-l">
+                                    <div style="width: 45%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" role="progressbar" 
+                                         class="progress-bar progress-bar-warning">
+                                        <span class="sr-only"> 45% Complete</span>
+                                    </div>
+                                </div>
+                                <div class="progress progress-striped progress-xl">
+                                    <div style="width: 50%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" role="progressbar" 
+                                         class="progress-bar progress-bar-primary">
+                                        <span class="sr-only"> 50% Complete</span>
+                                    </div>
+                                </div>
+                                
+                                <h5><strong>Theme colors</strong></h5>
+                                <div class="progress">
+                                    <div style="width: 35%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="35" role="progressbar" 
+                                         class="progress-bar theme-green-background">
+                                        35% Complete (Green)
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div style="width: 40%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" role="progressbar" 
+                                         class="progress-bar theme-yellow-background">
+                                        40% Complete (Yellow)
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div style="width: 45%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="45" role="progressbar" 
+                                         class="progress-bar theme-orange-background">
+                                        45% Complete (Orange)
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div style="width: 50%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="50" role="progressbar" 
+                                         class="progress-bar theme-sky-background">
+                                        50% Complete (Blue sky)
+                                    </div>
+                                </div>
+                                <div class="progress">
+                                    <div style="width: 60%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="60" role="progressbar" 
+                                         class="progress-bar theme-green-soft-background">
+                                        60% Complete (Soft green)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / Progress bars -->
+                         <!-- Thumbnails -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Component <strong>Thumbnails</strong></h4>
+                            </div>
+                            <div class="panel-body">
+                                <p class="to-justify">Extend Bootstrap's grid system with the thumbnail component to easily display grids of images, videos, text, and more. By default, Bootstrap's thumbnails are designed to showcase linked images with minimal required markup.</p>
+                                <hr class="dotted">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="javascript:void(0);">
+                                            <img data-src="holder.js/100px140?textmode=literal"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="javascript:void(0);">
+                                            <img data-src="holder.js/100px140?textmode=literal"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="javascript:void(0);">
+                                            <img data-src="holder.js/100px140?textmode=literal"/>
+                                        </a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="thumbnail" href="javascript:void(0);">
+                                            <img data-src="holder.js/100px140?textmode=literal"/>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="thumbnail">
+                                            <img data-src="holder.js/100px180?textmode=literal"/>
+                                            <div class="caption">
+                                                <h2><span loremizer loremizer-nodot loremizer-words="2"></span></h2>
+                                                <p class="to-justify">
+                                                    <span loremizer loremizer-words="24"></span>
+                                                </p>
+                                                <p>
+                                                    <a class="btn btn-success" href="javascript:void(0);">
+                                                        Do it!
+                                                    </a>
+                                                    <a class="btn btn-success btn-lighten" href="javascript:void(0);">
+                                                        Don't
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="thumbnail">
+                                            <img data-src="holder.js/100px180?textmode=literal"/>
+                                            <div class="caption">
+                                                <h2><span loremizer loremizer-nodot loremizer-words="2"></span></h2>
+                                                <p class="to-justify">
+                                                    <span loremizer loremizer-words="24"></span>
+                                                </p>
+                                                <p>
+                                                    <a class="btn btn-warning" href="javascript:void(0);">
+                                                        Do it!
+                                                    </a>
+                                                    <a class="btn btn-warning btn-lighten" href="javascript:void(0);">
+                                                        Don't
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Thumbnails -->
+                        
+                        <!-- Paginator -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Component <strong>Paginator</strong></h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    Provide pagination links for your site or app with the multi-page pagination component, or the simpler pager alternative.
+                                </p>
+                                <hr class="dotted">
+                                <!-- Default -->
+                                <h5><strong>Default</strong></h5>
+                                <nav>
+                                  <ul class="pagination">
+                                    <li>
+                                        <a href="javascript:void(0);" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li><a href="javascript:void(0);">1</a></li>
+                                    <li><a href="javascript:void(0);">2</a></li>
+                                    <li><a href="javascript:void(0);">3</a></li>
+                                    <li><a href="javascript:void(0);">4</a></li>
+                                    <li><a href="javascript:void(0);">5</a></li>
+                                    <li>
+                                        <a href="javascript:void(0);" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                  </ul>
+                                </nav>
+                                <!-- / Default -->
+                                
+                                <!-- Theme integration -->
+                                <h5>
+                                    <strong>Theme integration</strong>
+                                </h5>
+                                <p>
+                                    Add <code>.pagination-theme</code> to color paginator with theme color <code>.pagination-sm</code> for additional sizes.
+                                </p>
+                                <div class="to-center well pad-5">
+                                    Change Theme color to see how pagination changes:
+                                    <!-- Include the theme selector component -->
+                                    <div id="demo-themes-page">
+    <div class="theme-selector theme-default-background theme-selector-bordered" theme="default">
+     <div class="theme-selector-label" title="Default"></div>
+    </div>
+    <div class="theme-selector theme-white-background theme-selector-bordered" theme="white">
+     <div class="theme-selector-label" title="White Light"></div>
+    </div>
+    <div class="theme-selector theme-navy-background theme-selector-bordered" theme="navy">
+     <div class="theme-selector-label" title="Blue Navy"></div>
+    </div>
+    <div class="theme-selector theme-sky-background theme-selector-bordered" theme="sky">
+     <div class="theme-selector-label" title="Blue Sky"></div>
+    </div>
+    <div class="theme-selector theme-lime-background theme-selector-bordered" theme="lime">
+     <div class="theme-selector-label" title="Lime Lemon"></div>
+    </div>
+    <div class="theme-selector theme-dust-background theme-selector-bordered" theme="dust">
+     <div class="theme-selector-label" title="Star Dust"></div>
+    </div>
+    <div class="theme-selector theme-green-background theme-selector-bordered" theme="green">
+     <div class="theme-selector-label" title="Green Tea"></div>
+    </div>
+    
+    <div class="theme-selector theme-orange-background theme-selector-bordered" theme="orange">
+     <div class="theme-selector-label" title="Orange Round"></div>
+    </div>
+    <div class="theme-selector theme-yellow-background theme-selector-bordered" theme="yellow">
+     <div class="theme-selector-label" title="Yellow Sun"></div>
+    </div>
+    <div class="theme-selector theme-purple-background theme-selector-bordered" theme="purple">
+     <div class="theme-selector-label" title="Deep Purple"></div>
+    </div>
+    <div class="theme-selector theme-chocolate-background theme-selector-bordered" theme="chocolate">
+     <div class="theme-selector-label" title="Yummy Chocolate"></div>
+    </div>
+    <div class="theme-selector theme-dark-background theme-selector-bordered" theme="dark">
+     <div class="theme-selector-label" title="Dark Night"></div>
+    </div>
+    <div class="theme-selector theme-green-soft-background theme-selector-bordered" theme="green-soft">
+     <div class="theme-selector-label" title="Soft Green"></div>
+    </div>
+    <div class="theme-selector theme-red-background theme-selector-bordered" theme="red">
+     <div class="theme-selector-label" title="Wheel Red"></div>
+    </div>         
+</div>
+                                </div>
+                                <nav>
+                                    <ul class="pagination pagination-theme">
+                                        <li><a aria-label="Previous" href="javascript:void(0);"><span aria-hidden="true">«</span></a></li>
+                                        <li class="active"><a href="javascript:void(0);">1</a></li>
+                                        <li><a href="javascript:void(0);">2</a></li>
+                                        <li><a href="javascript:void(0);">3</a></li>
+                                        <li><a href="javascript:void(0);">4</a></li>
+                                        <li><a href="javascript:void(0);">5</a></li>
+                                        <li><a href="javascript:void(0);">6</a></li>
+                                        <li><a href="javascript:void(0);">7</a></li>
+                                        <li><a href="javascript:void(0);">8</a></li>
+                                        <li><a aria-label="Next" href="javascript:void(0);"><span aria-hidden="true">»</span></a></li>
+                                    </ul>
+                                </nav>
+                                <!-- / Theme integration -->
+                                <!-- Disabled and active states -->
+                                <h5>
+                                    <strong>Disabled and active states</strong>
+                                </h5>
+                                <p>Links are customizable for different circumstances. Use <code>.disabled</code> for unclickable links and <code>.active</code> to indicate the current page.</p>
+                                <nav>
+                                  <ul class="pagination">
+                                    <li class="disabled"><a aria-label="Previous" href="javascript:void(0);"><span aria-hidden="true">«</span></a></li>
+                                    <li class="active"><a href="javascript:void(0);">1 <span class="sr-only">(current)</span></a></li>
+                                    <li><a href="javascript:void(0);">2</a></li>
+                                    <li><a href="javascript:void(0);">3</a></li>
+                                    <li><a href="javascript:void(0);">4</a></li>
+                                    <li><a href="javascript:void(0);">5</a></li>
+                                    <li><a aria-label="Next" href="javascript:void(0);"><span aria-hidden="true">»</span></a></li>
+                                 </ul>
+                               </nav>
+                                <!-- / Disabled and active states -->
+                                <!-- Sizes -->
+                                <h5>
+                                    <strong>Sizes</strong>
+                                </h5>
+                                <p>Add <code>.pagination-lg</code> or <code>.pagination-sm</code> for additional sizes.</p>
+                                <code>.pagination-lg</code>
+                                <nav>
+                                  <ul class="pagination pagination-lg">
+                                    <li><a aria-label="Previous" href="javascript:void(0);"><span aria-hidden="true">«</span></a></li>
+                                    <li><a href="javascript:void(0);">1</a></li>
+                                    <li><a href="javascript:void(0);">2</a></li>
+                                    <li><a href="javascript:void(0);">3</a></li>
+                                    <li><a href="javascript:void(0);">4</a></li>
+                                    <li><a href="javascript:void(0);">5</a></li>
+                                    <li><a aria-label="Next" href="javascript:void(0);"><span aria-hidden="true">»</span></a></li>
+                                  </ul>
+                                </nav>
+                                <code>.pagination-sm</code>
+                                <nav>
+                                  <ul class="pagination pagination-sm">
+                                    <li><a aria-label="Previous" href="javascript:void(0);"><span aria-hidden="true">«</span></a></li>
+                                    <li><a href="javascript:void(0);">1</a></li>
+                                    <li><a href="javascript:void(0);">2</a></li>
+                                    <li><a href="javascript:void(0);">3</a></li>
+                                    <li><a href="javascript:void(0);">4</a></li>
+                                    <li><a href="javascript:void(0);">5</a></li>
+                                    <li><a aria-label="Next" href="javascript:void(0);"><span aria-hidden="true">»</span></a></li>
+                                  </ul>
+                                </nav>
+                                <!-- / Sizes -->
+                                <!-- Pager -->
+                                <h5>
+                                    <strong>Pager</strong>
+                                </h5>
+                                <p>Quick previous and next links for simple pagination implementations with light markup and styles. It's great for simple sites like blogs or magazines.</p>
+                                <nav>
+                                  <ul class="pager">
+                                    <li><a href="javascript:void(0);">Previous</a></li>
+                                    <li><a href="javascript:void(0);">Next</a></li>
+                                  </ul>
+                                </nav>
+                                <h5>
+                                    <strong>Pager Aligned  </strong>
+                                </h5>
+                                <nav>
+                                  <ul class="pager">
+                                    <li class="previous"><a href="javascript:void(0);"><span aria-hidden="true">&larr;</span> Older</a></li>
+                                    <li class="next"><a href="javascript:void(0);">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                                  </ul>
+                                </nav>
+                                <h5>
+                                    <strong>Pager disabled </strong>
+                                </h5>
+                                <nav>
+                                  <ul class="pager">
+                                    <li class="previous disabled"><a href="javascript:void(0);"><span aria-hidden="true">&larr;</span> Older</a></li>
+                                    <li class="next"><a href="javascript:void(0);">Newer <span aria-hidden="true">&rarr;</span></a></li>
+                                  </ul>
+                                </nav>
+                                <!-- / Pager -->
+                            </div>
+                        </div>
+                        <!-- / Paginator -->
+                        
+                        <!-- Image shapes -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Image <strong>Shapes</strong></h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    Easily shape images by adding a <code>.img-rounded .img-circle .img-thumbnail</code> to your images.
+                                </p>
+                                <hr class="dotted">
+                                <div class="to-center">
+                                    <img alt="120x120" class="img-rounded r-mar-10" data-src="holder.js/120x120">
+                                    <img alt="120x120" class="img-circle r-mar-10" data-src="holder.js/120x120" >
+                                    <img alt="120x120" class="img-thumbnail" data-src="holder.js/120x120">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / Image shapes -->
+                        
+                    </div>
+                    <div class="col-md-6">
+                        <!-- Notifications -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Component <strong>Notifications</strong></h4>
+                            </div>
+                            <div class="panel-body">
+                                <div class="alert alert-block alert-danger fade in">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <h2><i class="fa fa-times"></i>&nbsp;&nbsp;Error!</h2>
+                                    <p>
+                                        <span loremizer loremizer-words="12"></span>
+                                    </p>
+                                    <p>
+                                        <a class="btn btn-danger btn-darken" href="javascript:void(0);">Do something</a>
+                                        <a class="btn btn-danger btn-lighten" href="javascript:void(0);">Do nothing</a>
+                                    </p>
+                                </div>
+                                <div class="alert alert-block alert-success fade in">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <h2><i class="fa fa-check"></i>&nbsp;&nbsp;Success!</h2>
+                                    <p>
+                                        <span loremizer loremizer-words="12"></span>
+                                    </p>
+                                    <p>
+                                        <a class="btn btn-success btn-darken" href="javascript:void(0);">Do something</a>
+                                        <a class="btn btn-success btn-lighten" href="javascript:void(0);">Do nothing</a>
+                                    </p>
+                                </div>
+                                <div class="alert alert-block alert-info fade in">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <h2><i class="fa fa-info-circle"></i>&nbsp;&nbsp;Info!</h2>
+                                    <p>
+                                        <span loremizer loremizer-words="12"></span>
+                                    </p>
+                                    <p>
+                                        <a class="btn btn-info btn-darken" href="javascript:void(0);">Do something</a>
+                                        <a class="btn btn-info btn-lighten" href="javascript:void(0);">Do nothing</a>
+                                    </p>
+                                </div>
+                                <div class="alert alert-block alert-warning fade in">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <h2><i class="fa fa-warning"></i>&nbsp;&nbsp;Warning!</h2>
+                                    <p>
+                                        <span loremizer loremizer-words="12"></span>
+                                    </p>
+                                    <p>
+                                        <a class="btn btn-info btn-warning" href="javascript:void(0);">Do something</a>
+                                        <a class="btn btn-info btn-warning" href="javascript:void(0);">Do nothing</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / Notifications -->
+                        <!-- Labels -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Component <strong>Labels</strong></h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>Easily create text labels adding a <code>&lt;span class="label"&gt;</code> to your code.</p>
+                                <hr class="dotted">
+                                <h5 class="mt-10">
+                                    <strong>Basic</strong> label
+                                </h5>
+                                <span class="label label-basic label-s">Basic</span>
+                                <span class="label label-default label-s">Default</span>
+                                <span class="label label-primary label-s">Primary</span>
+                                <span class="label label-success label-s">Success</span>
+                                <span class="label label-info label-s">Info</span>
+                                <span class="label label-warning label-s">Warning</span>
+                                <span class="label label-danger label-s">Danger</span>
+                                <span class="label label-inverse label-s">Inverse</span>
+                                <h5 class="mt-15">
+                                    <strong>Theme color</strong> label
+                                </h5>
+                                <span class="label label-theme label-m mb-10">Theme Label</span>
+                                <div class="to-center well pad-5">
+                                    Change Theme color to see how label changes: <br/>
+                                    <!-- Include the theme selector component -->
+                                    <div id="demo-themes-page">
+    <div class="theme-selector theme-default-background theme-selector-bordered" theme="default">
+     <div class="theme-selector-label" title="Default"></div>
+    </div>
+    <div class="theme-selector theme-white-background theme-selector-bordered" theme="white">
+     <div class="theme-selector-label" title="White Light"></div>
+    </div>
+    <div class="theme-selector theme-navy-background theme-selector-bordered" theme="navy">
+     <div class="theme-selector-label" title="Blue Navy"></div>
+    </div>
+    <div class="theme-selector theme-sky-background theme-selector-bordered" theme="sky">
+     <div class="theme-selector-label" title="Blue Sky"></div>
+    </div>
+    <div class="theme-selector theme-lime-background theme-selector-bordered" theme="lime">
+     <div class="theme-selector-label" title="Lime Lemon"></div>
+    </div>
+    <div class="theme-selector theme-dust-background theme-selector-bordered" theme="dust">
+     <div class="theme-selector-label" title="Star Dust"></div>
+    </div>
+    <div class="theme-selector theme-green-background theme-selector-bordered" theme="green">
+     <div class="theme-selector-label" title="Green Tea"></div>
+    </div>
+    
+    <div class="theme-selector theme-orange-background theme-selector-bordered" theme="orange">
+     <div class="theme-selector-label" title="Orange Round"></div>
+    </div>
+    <div class="theme-selector theme-yellow-background theme-selector-bordered" theme="yellow">
+     <div class="theme-selector-label" title="Yellow Sun"></div>
+    </div>
+    <div class="theme-selector theme-purple-background theme-selector-bordered" theme="purple">
+     <div class="theme-selector-label" title="Deep Purple"></div>
+    </div>
+    <div class="theme-selector theme-chocolate-background theme-selector-bordered" theme="chocolate">
+     <div class="theme-selector-label" title="Yummy Chocolate"></div>
+    </div>
+    <div class="theme-selector theme-dark-background theme-selector-bordered" theme="dark">
+     <div class="theme-selector-label" title="Dark Night"></div>
+    </div>
+    <div class="theme-selector theme-green-soft-background theme-selector-bordered" theme="green-soft">
+     <div class="theme-selector-label" title="Soft Green"></div>
+    </div>
+    <div class="theme-selector theme-red-background theme-selector-bordered" theme="red">
+     <div class="theme-selector-label" title="Wheel Red"></div>
+    </div>         
+</div>
+                                </div>
+                                <!-- Iconed -->
+                                <h5 class="mt-15">
+                                    <strong>Iconed</strong> label
+                                </h5>
+                                <span class="label theme-dust-background label-m">
+                                    <i class="fa fa-heart-o"></i>
+                                    Iconed
+                                </span>
+                                <!-- / Iconed -->
+                                <!-- Inset -->
+                                <h5 class="mt-15">
+                                    <strong>Inset</strong> label
+                                </h5>
+                                <p>Add <code>.label-inset</code> to the label.</p>
+                                <span class="label label-default label-inset label-m">
+                                    <i class="fa fa-heart-o"></i>
+                                    Inset label
+                                </span>
+                                <!-- / Inset -->
+                                <!-- Sizes -->
+                                <h5 class="mt-15">
+                                    Label <strong>Sizes</strong>
+                                </h5>
+                                <p>Add <code>.label-xs</code>, <code>.label-s</code>, <code>.label-m</code>, <code>.label-l</code> or <code>.label-xl</code> to resize the labels.</p>
+                                <span class="label label-danger label-xs">Label XS</span>
+                                <span class="label label-warning label-s">Label S</span>
+                                <span class="label label-info label-m">Label M</span>
+                                <span class="label label-primary label-l">Label L</span>
+                                <span class="label label-default label-xl">Label XL</span>
+                                <!-- / Sizes -->
+                            </div>
+                        </div>
+                        <!-- / Labels -->
+                        <!-- Badges -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Component <strong>Badges</strong></h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>
+                                    Easily highlight new or unread items by adding a <code>&lt;span class="badge"&gt;</code> to links, Bootstrap navs, and more.
+                                </p>
+                                <hr class="dotted">
+                                <h5 class="mt-10">
+                                    <strong>Basic</strong> badges
+                                </h5>
+                                <span class="badge badge-default badge-s">1</span>
+                                <span class="badge badge-primary badge-s">2</span>
+                                <span class="badge badge-success badge-s">3</span>
+                                <span class="badge badge-info badge-s">4</span>
+                                <span class="badge badge-warning badge-s">5</span>
+                                <span class="badge badge-danger badge-s">6</span>
+                                <h5 class="mt-15">
+                                    <strong>Theme color</strong> badges
+                                    <span class="badge badge-theme badge-m l-mar-5">9</span>
+                                </h5>
+                                
+                                <div class="to-center well pad-5">
+                                    Change Theme color to see how badge changes: <br/>
+                                    <!-- Include the theme selector component -->
+                                    <div id="demo-themes-page">
+    <div class="theme-selector theme-default-background theme-selector-bordered" theme="default">
+     <div class="theme-selector-label" title="Default"></div>
+    </div>
+    <div class="theme-selector theme-white-background theme-selector-bordered" theme="white">
+     <div class="theme-selector-label" title="White Light"></div>
+    </div>
+    <div class="theme-selector theme-navy-background theme-selector-bordered" theme="navy">
+     <div class="theme-selector-label" title="Blue Navy"></div>
+    </div>
+    <div class="theme-selector theme-sky-background theme-selector-bordered" theme="sky">
+     <div class="theme-selector-label" title="Blue Sky"></div>
+    </div>
+    <div class="theme-selector theme-lime-background theme-selector-bordered" theme="lime">
+     <div class="theme-selector-label" title="Lime Lemon"></div>
+    </div>
+    <div class="theme-selector theme-dust-background theme-selector-bordered" theme="dust">
+     <div class="theme-selector-label" title="Star Dust"></div>
+    </div>
+    <div class="theme-selector theme-green-background theme-selector-bordered" theme="green">
+     <div class="theme-selector-label" title="Green Tea"></div>
+    </div>
+    
+    <div class="theme-selector theme-orange-background theme-selector-bordered" theme="orange">
+     <div class="theme-selector-label" title="Orange Round"></div>
+    </div>
+    <div class="theme-selector theme-yellow-background theme-selector-bordered" theme="yellow">
+     <div class="theme-selector-label" title="Yellow Sun"></div>
+    </div>
+    <div class="theme-selector theme-purple-background theme-selector-bordered" theme="purple">
+     <div class="theme-selector-label" title="Deep Purple"></div>
+    </div>
+    <div class="theme-selector theme-chocolate-background theme-selector-bordered" theme="chocolate">
+     <div class="theme-selector-label" title="Yummy Chocolate"></div>
+    </div>
+    <div class="theme-selector theme-dark-background theme-selector-bordered" theme="dark">
+     <div class="theme-selector-label" title="Dark Night"></div>
+    </div>
+    <div class="theme-selector theme-green-soft-background theme-selector-bordered" theme="green-soft">
+     <div class="theme-selector-label" title="Soft Green"></div>
+    </div>
+    <div class="theme-selector theme-red-background theme-selector-bordered" theme="red">
+     <div class="theme-selector-label" title="Wheel Red"></div>
+    </div>         
+</div>
+                                </div>
+                                <h5 class="mt-15">
+                                    <strong>Iconed</strong> badges
+                                </h5>
+                                <span class="badge theme-dust-background badge-m">
+                                    <i class="fa fa-heart-o"></i>
+                                </span>
+                                <h5 class="mt-15">
+                                    <strong>Inset</strong> badges
+                                </h5>
+                                <span class="badge badge-default badge-inset badge-xl">
+                                    <i class="fa fa-heart-o"></i>
+                                </span>
+                                <h5 class="mt-15">
+                                    Badges <strong>Sizes</strong>
+                                </h5>
+                                <p>
+                                    Add <code>.badge-xs</code>, <code>.badge-s</code>, <code>.badge-m</code>, <code>.badge-l</code> or <code>.badge-xl</code> to resize the badges.
+                                </p>
+                                <span class="badge badge-danger badge-xs">1-XS</span>
+                                <span class="badge badge-warning badge-s">2-S</span>
+                                <span class="badge badge-info badge-m">3-M</span>
+                                <span class="badge badge-primary badge-l">4-L</span>
+                                <span class="badge badge-default badge-xl">5-XL</span>
+                            </div>
+                        </div>
+                        <!-- / Badges -->
+                        <!-- Wells -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Component <strong>Wells</strong></h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>Easily create wells by adding a <code>&lt;div class="well"&gt;</code></p>
+                                <div class="well">Look, I'm in a well!</div>
+                                <p>Add <code>.well-lg</code> to make it larger</p>
+                                <div class="well well-lg">Look, I'm in a large well!</div>
+                                <p>Add <code>.well-sm</code> to make it smaller</p>
+                                <div class="well well-sm">Look, I'm in a small well!</div>
+                            </div>
+                        </div>
+                        <!-- / Wells -->
+                                                                        
+                        <!-- List group -->
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Component <strong>List group</strong></h4>
+                            </div>
+                            <div class="panel-body">
+                                <p>List groups are a flexible and powerful component for displaying not only simple lists of elements, but complex ones with custom content.</p>
+                                <hr class="dotted">
+                                <!-- Basic -->
+                                <h5>
+                                    <strong>Basic</strong>
+                                </h5>
+                                <p>The most basic list group is simply an unordered list with list items, and the proper classes. Build upon it with the options that follow, or your own CSS as needed.</p>
+                                <ul class="list-group">
+                                    <li class="list-group-item">Cras justo odio</li>
+                                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                                    <li class="list-group-item">Morbi leo risus</li>
+                                    <li class="list-group-item">Porta ac consectetur ac</li>
+                                    <li class="list-group-item">Vestibulum at eros</li>
+                                </ul>
+                                <!-- /Basic -->
+                                
+                                <!-- Badges -->
+                                <h5 class="mt-20">
+                                    <strong>Badges</strong>
+                                </h5>
+                                <p>Add the badges component to any list group item and it will automatically be positioned on the right.</p>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <span class="badge">14</span>
+                                        Cras justo odio
+                                    </li>
+                                </ul>
+                                <!-- /Badges -->
+                                
+                                <!-- Linked items -->
+                                <h5 class="mt-20">
+                                    <strong>Linked items</strong>
+                                </h5>
+                                <p>Linkify list group items by using anchor tags instead of list items (that also means a parent <code>div</code> instead of an <code>ul</code>). No need for individual parents around each element.</p>
+                                <div class="list-group">
+                                    <a href="javascript:void(0);" class="list-group-item active">Cras justo odio</a>
+                                    <a href="javascript:void(0);" class="list-group-item">Dapibus ac facilisis in</a>
+                                    <a href="javascript:void(0);" class="list-group-item">Morbi leo risus</a>
+                                    <a href="javascript:void(0);" class="list-group-item">Porta ac consectetur ac</a>
+                                    <a href="javascript:void(0);" class="list-group-item">Vestibulum at eros</a>
+                                </div>
+                                <!-- / Linked items -->
+                                
+                                <!-- Disabled items -->
+                                <h5 class="mt-20">
+                                    <strong>Disabled items</strong>
+                                </h5>
+                                <p>Add <code>.disabled</code> to a <code>.list-group-item</code> to gray it out to appear disabled.</p>
+                                <div class="list-group">
+                                    <a href="javascript:void(0);" class="list-group-item disabled">Cras justo odio</a>
+                                    <a href="javascript:void(0);" class="list-group-item">Dapibus ac facilisis in</a>
+                                    <a href="javascript:void(0);" class="list-group-item">Morbi leo risus</a>
+                                    <a href="javascript:void(0);" class="list-group-item">Porta ac consectetur ac</a>
+                                    <a href="javascript:void(0);" class="list-group-item">Vestibulum at eros</a>
+                                </div>
+                                <!-- / Disabled items -->
+                                
+                                <!-- Contextual classes -->
+                                <h5 class="mt-20">
+                                    <strong>Contextual classes</strong>
+                                </h5>
+                                <p>Use contextual classes to style list items, default or linked. Also includes <code>.active</code> state.</p>
+                                <ul class="list-group">
+                                    <li class="list-group-item list-group-item-success">Dapibus ac facilisis in</li>
+                                    <li class="list-group-item list-group-item-info">Cras sit amet nibh libero</li>
+                                    <li class="list-group-item list-group-item-warning">Porta ac consectetur ac</li>
+                                    <li class="list-group-item list-group-item-danger">Vestibulum at eros</li>
+                                </ul>
+                                <!-- / Contextual classes -->
+                            </div>
+                        </div>
+                        <!-- / List group -->
+                     </div>
+                </div>
+                
+                
+            </div>
+                
+            <!-- Include the container-footer -->
+            <div id="container-footer" class="container-footer">
+    <div class="container-fluid">
+      <div class="row">
+          <component>container-footer</component>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+              Dee Company © 2015-2016
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 to-right">
+              <i class="fa fa-code"></i>
+              <span>Version 1.2.0</span>
+          </div>
+      </div>
+    </div>
+</div>
+ 
+            
+        </div>
+    </div>
+
+    <!-- Scroll up -->
+    <a href="#" class="fa scrollup"></a>   
+
+    <!-- Scripts -->
+    <!-- Post Scripts -->
+<script src="js/vendor/jquery.min.js"></script>
+<script src="js/vendor/jquery-ui.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+
+<script src="js/main.min.js"></script>
+<script src="js/loremizer.min.js"></script>
+<script src="js/panels.min.js"></script>
+<script src="js/deepassword.min.js"></script>
+<script src="js/demo/demo.min.js"></script>
+
+<script src="js/vendor/toastr.min.js"></script>
+<script src="js/vendor/pace.min.js"></script>
+<script src="js/vendor/metisMenu.min.js"></script>
+<script src="js/vendor/jquery.slimscroll.min.js"></script>
+
+<script src="js/vendor/lodash.min.js"></script>
+<script src="js/vendor/moment.min.js"></script>
+
+<!-- / Post Scripts -->
+
+ 
+    <script src="js/vendor/holder.min.js"></script>
+    
+</body>
+</html>
