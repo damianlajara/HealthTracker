@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'momentjs-rails'
+gem 'fullcalendar-rails'
+gem "twitter-bootstrap-rails"
 gem 'jquery-ui-rails'
 gem 'seed_dump'
 gem 'chart-js-rails'
@@ -32,7 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  #View database in browser 
+  #View database in browser
   gem 'rails_db'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -67,3 +70,4 @@ end
 
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'devise'
+gem "font-awesome-rails"

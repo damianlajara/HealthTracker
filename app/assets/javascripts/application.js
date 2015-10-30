@@ -12,7 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require jquery-ui
+//= require moment
+//= require fullcalendar
 //= require Chart
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
