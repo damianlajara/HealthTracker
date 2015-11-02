@@ -21,6 +21,10 @@ class AppointmentsController < ApplicationController
     render "calendar/show"
   end
 
+  def responseblake
+    @appointment = Appointment.first
+  end
+
   # GET /appointments/1/edit
   def edit
   end

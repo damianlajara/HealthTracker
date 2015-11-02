@@ -13,12 +13,21 @@ $('#pending-events div.pending-event').each(function() {
 
 /* Fullcalendar initialization */
 $(document).ready(function() {
-
+    $.get("/responseblake.json", function(events) {
+        
+    var events = [events];
     var today = new Date();
     var todayD = today.getDate();
     var todayM = today.getMonth();
     var todayY = today.getFullYear();
 
+    events.forEach(function(event) {
+        var year = parseInt(new Date().toISOString().slice(0,4));
+        var month = parseInt(new Date().toISOString().slice(5,7));
+        var day = parseInt(new Date().toISOString().slice(8,10));
+        event["start"] = new Date(year, month, day);
+    })
+    debugger
     $('#calendar').fullCalendar({
         header: {
             left:   "today prev, next",
@@ -52,35 +61,38 @@ $(document).ready(function() {
                 $('#pending-events-container').remove();
             }
             $('#pending-counter').html(nEvents);
-        }
-
-    });
-
-    $('#calendar-today').fullCalendar({
-        header: {
-            left:   false,
-            center: false,
-            right:  false
         },
-        defaultView: 'basicDay',
-        events: [
-            {
-                title: 'Long Event',
-                start: new Date(todayY, todayM, todayD),
-                end: new Date(todayY, todayM, todayD+2),
-                allDay: true
-            },
-            {
-                title: 'Meeting',
-                start: new Date(todayY, todayM, todayD, 10, 30, 00),
-                end: new Date(todayY, todayM, todayD, 11, 30, 00)
-            },
-            {
-                title: 'Product Meeting',
-                start: new Date(todayY, todayM, todayD, 15, 30, 00),
-                end: new Date(todayY, todayM, todayD, 17, 30, 00)
-            }
-        ]
+        events: events
     });
+    })
+
+    // $('#calendar-today').fullCalendar({
+    //     header: {
+    //         left:   false,
+    //         center: false,
+    //         right:  false
+    //     },
+    //     defaultView: 'basicDay',
+    //     events: [
+    //         {
+    //             title: 'Long Event',
+    //             start: new Date(todayY, todayM, todayD),
+    //             end: new Date(todayY, todayM, todayD+2),
+    //             allDay: true
+    //         },
+    //         {
+    //             title: 'Meeting',
+    //             start: new Date(todayY, todayM, todayD, 10, 30, 00),
+    //             end: new Date(todayY, todayM, todayD, 11, 30, 00)
+    //         },
+    //         {
+    //             title: 'Product Meeting',
+    //             start: new Date(todayY, todayM, todayD, 15, 30, 00),
+    //             end: new Date(todayY, todayM, todayD, 17, 30, 00)
+    //         }
+    //     ]
+    // });
+
+
     $('#calendar-today .fc-toolbar').remove();
 });
