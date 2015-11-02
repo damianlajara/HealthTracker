@@ -42,8 +42,9 @@ function illness_field(possible_illnesses) {
   $("#field-3").show();
   $("a[href=#field-3]")[0].click()
 
+
   $.each(possible_illnesses, function(index, value) {
-    $("#routine_illnesses").append('<option class="illness_list" value="' + value +'">' + value + '</option>')
+    $("ul.routine_illnesses").append('<li class="illness_list" value="' + value +'">' + value + '</li>')
   });
 
 };

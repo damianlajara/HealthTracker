@@ -11,6 +11,7 @@ class RoutinesController < ApplicationController
     respond_to do |format|
        format.json { render json: SymptomChecker.possible_illnesses(symptoms).uniq }
      end
+     binding.pry
   end
   
   def create 
