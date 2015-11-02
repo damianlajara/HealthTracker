@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :routines
 
   get 'routines/symptom_check/:symptoms' => 'routines#symptom_check'
+  get 'calendar' => 'appointments#calendar'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

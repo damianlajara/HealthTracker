@@ -17,6 +17,10 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new
   end
 
+  def calendar 
+    render "calendar/show"
+  end
+
   # GET /appointments/1/edit
   def edit
   end
