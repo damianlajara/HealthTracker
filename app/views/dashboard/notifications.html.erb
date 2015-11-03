@@ -1,0 +1,22 @@
+<h1>Notifications</h1>
+
+<ul id="notifications">
+</ul>
+
+
+<script type="text/javascript">
+
+var notifier = setInterval(notify, 1000);
+var i = 0;
+
+function notify() {
+    $("ul#notifications").append('<li>Notification ' + i + '</li>');
+    i++;
+    if(i == 6) {
+   		clearInterval(notifier);
+    }
+};
+
+</script>
+
+

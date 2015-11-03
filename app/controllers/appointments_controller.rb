@@ -10,7 +10,7 @@ class AppointmentsController < ApplicationController
   # GET /appointments/1
   # GET /appointments/1.json
   def show
-    
+
   end
 
   # GET /appointments/new
@@ -20,6 +20,10 @@ class AppointmentsController < ApplicationController
 
   def calendar 
     render "calendar/show"
+  end
+
+  def notifications
+    render "dashboard/notifications"
   end
 
   def responseblake

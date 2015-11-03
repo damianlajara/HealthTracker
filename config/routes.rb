@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get 'routines/symptom_check/:symptoms' => 'routines#symptom_check'
   get 'calendar' => 'appointments#calendar'
   get 'responseblake(.:format)' => 'appointments#responseblake'
+  get 'notifications' => 'appointments#notifications'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
