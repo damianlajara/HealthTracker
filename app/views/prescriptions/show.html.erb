@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+ 
+
+<p>
+  <strong>Name:</strong>
+  <%= @prescription.name %>
+</p>
+
+<p>
+  <strong>Doctor:</strong>
+  <%= @prescription.doctor %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @prescription.amount %>
+</p>
+
+<p>
+  <strong>Dosage:</strong>
+  <%= @prescription.dosage %>
+</p>
+
+<p>
+  <strong>Schedule:</strong>
+  <%= @prescription.schedule %>
+</p>
+
+<p>
+  <strong>Refills:</strong>
+  <%= @prescription.refills %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @prescription.start %>
+</p>
+
+<%= link_to 'Edit', edit_prescription_path(@prescription) %> |
+<%= link_to 'Back', prescriptions_path %>

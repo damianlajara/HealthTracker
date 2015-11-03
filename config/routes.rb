@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :prescriptions
+
   resources :circles
   resources :symptoms
   resources :feelings
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :routines
+
 
   get 'routines/symptom_check/:symptoms' => 'routines#symptom_check'
   get 'calendar' => 'appointments#calendar'
@@ -30,7 +33,7 @@ Rails.application.routes.draw do
 
   post 'circles/add_user' => 'circles#add_user'
    
-
+  get 'prescriptions' => 'prescriptions#index'
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
