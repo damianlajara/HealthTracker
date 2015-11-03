@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :prescriptions
+
   resources :circles
   resources :symptoms
   resources :feelings
