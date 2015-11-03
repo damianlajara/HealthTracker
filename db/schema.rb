@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20151102223915) do
 
   create_table "food_groups", force: :cascade do |t|
     t.string   "name"
+    t.integer  "usda_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -52,6 +53,7 @@ ActiveRecord::Schema.define(version: 20151102223915) do
   create_table "foods", force: :cascade do |t|
     t.string   "name"
     t.integer  "calories"
+    t.integer  "usda_id"
     t.integer  "food_group_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false

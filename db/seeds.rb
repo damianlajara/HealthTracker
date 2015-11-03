@@ -55,49 +55,46 @@ UserStatus.create!([
   {user_id: 1, status: "Energized"}
 ])
 
-food_groups = "~0100~^~Dairy and Egg Products~
-~0200~^~Spices and Herbs~
-~0300~^~Baby Foods~
-~0400~^~Fats and Oils~
-~0500~^~Poultry Products~
-~0600~^~Soups, Sauces, and Gravies~
-~0700~^~Sausages and Luncheon Meats~
-~0800~^~Breakfast Cereals~
-~0900~^~Fruits and Fruit Juices~
-~1000~^~Pork Products~
-~1100~^~Vegetables and Vegetable Products~
-~1200~^~Nut and Seed Products~
-~1300~^~Beef Products~
-~1400~^~Beverages~
-~1500~^~Finfish and Shellfish Products~
-~1600~^~Legumes and Legume Products~
-~1700~^~Lamb, Veal, and Game Products~
-~1800~^~Baked Products~
-~1900~^~Sweets~
-~2000~^~Cereal Grains and Pasta~
-~2100~^~Fast Foods~
-~2200~^~Meals, Entrees, and Side Dishes~
-~2500~^~Snacks~
-~3500~^~American Indian/Alaska Native Foods~".split("\n")
 
-csv_array = CSV.read("./db/food_seed_source.csv")[1..-1]
+food_array = CSV.read("./db/food_seed_source.csv")[1..-1]
+food_groups = File.read("./db/food_groups.txt").split("\n")
+food_group_connections = CSV.read("./db/food_group_connection.csv")
 
-csv_array.each_with_index do |row|
-  @food = Food.create(name: row[1].gsub(",", ", "), calories: row[3].to_i)
-
+food_array.each do |row| 
+  food_data = {
+    name: row[1].gsub(",", ", "),
+    calories: row[3].to_i,
+    usda_id: row[0].to_i
+  }
+  @food = Food.create(food_data)
 end
-
-last_group_amount = 0
 
 food_groups.each do |group| 
-  group_name = group.match(/\^~(\D+)~/)[1]
-  group_amount = group.match(/~(\d+)/)[1].to_i
+  group_data = {
+    name: group.match(/\^~(\D+)~/)[1],
+    usda_id: group.match(/~(\d+)/)[1].to_i
+  }
+  @food_group = FoodGroup.create(group_data)
+end
 
-  @food_group = FoodGroup.create(name: group_name)
-  group_amount.times do |n|
-    @food_group.foods << Food.find(last_group_amount + 1 + n)
+food_group_connections.each do |row|
+
+  usda_food_id = row[0].match(/~(\d{5})/)[1].to_i
+  usda_group_id = row[0].match(/\^~(\d+)/)[1].to_i
+
+
+  @food = Food.find_by(usda_id: usda_food_id)
+  @group = FoodGroup.find_by(usda_id: usda_group_id)
+  begin
+    @group.foods << @food
+    @group.save
+  rescue
   end
 end
+
+
+
+
 
 
 
