@@ -18,9 +18,7 @@
   <tbody>
     <% @user_stats.each do |user_stat| %>
       <tr>
-        <td><%= user_stat.belongs_to %></td>
         <td><%= user_stat.feeling %></td>
-        <td><%= user_stat.date %></td>
         <td><%= user_stat.sleep %></td>
         <td><%= user_stat.calories %></td>
         <td><%= user_stat.exercise %></td>

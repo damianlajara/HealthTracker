@@ -46,7 +46,6 @@ class UserStatsController < ApplicationController
     
     respond_to do |format|
       if @user_stat = @todays_stat.save
-        binding.pry
         format.html { redirect_to @todays_stat, notice: 'User stat was successfully created.' }
         format.json { render :show, status: :created, location: @user_stat }
       else

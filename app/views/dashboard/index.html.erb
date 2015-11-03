@@ -1,3 +1,4 @@
+<p id="notice"><%= notice %></p>
 <h>How are you feeling today?</h><br>
 
 <form action='dashboard/user_status' method="POST">
@@ -13,4 +14,6 @@
 
 </form>
 
+
+<%= render partial: "user_stats/form", locals: {user_stat: UserStat.new}%>
 
