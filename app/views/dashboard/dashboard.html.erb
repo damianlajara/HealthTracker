@@ -410,57 +410,48 @@
                             <!-- Server Statistics -->
                             <div class="panel mar-10">
                                 <div class="panel-body">
-                                    <ul class="non-styled-list">
-                                        
+                                 <h2>Prescription Notifications</h2>
+                                 <%= form_for(@prescription) do |f| %>
+                                  <% if @prescription.errors.any? %>
+                                    <div id="error_explanation">
+                                      <h2><%= pluralize(@prescription.errors.count, "error") %> prohibited this prescription from being saved:</h2>
+
+                                      <ul>
+                                      <% @prescription.errors.full_messages.each do |message| %>
+                                        <li><%= message %></li>
+                                      <% end %>
+                                      </ul>
+                                    </div>
+                                  <% end %>
+
+                                  <div class="field">
+                                    <%= f.label :name %><br>
+                                    <%= f.text_field :name %>
+                                  </div>
+                                  <div class="field">
+                                    <%= f.label :amount %><br>
+                                    <%= f.number_field :amount %>
+                                  </div>
+                                  <div class="field">
+                                    <%= f.label :refill %><br>
+                                    <%= f.number_field :refill %>
+                                  </div>
+                                  <div class="field">
+                                    <%= f.label :dosage %><br>
+                                    <%= f.number_field :dosage %>
+                                  </div>
+                                  <div class="field">
+                                    <%= f.label :frequency %><br>
+                                    <%= f.number_field :frequency %>
+                                  </div>
+                                  <div class="actions">
+                                    <%= f.submit %>
+                                  </div>
+                                <% end %>
+                                
+                                    <ul class="striped-list"> 
                                         <li>
-                                            <div class="row">
-                                                <div class="col-md-12 no-h-pad to-center">
-                                                    <div class="well mb-10">
-                                                        <span class="peityCPULoad no-mb">55,65,60,64,55,58,62,75,80,90,80,84,82,79,25,30,35,35,38,35</span>
-                                                        <div id="wellcpu" class="well no-v-pad no-mb color-white pad-v-5">
-                                                            <small>Server load (<span id="cpuload">55</span>%)</small>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <h5><strong>Maintenance</strong></h5>
-                                            <h6>Application server script progress</h6>
-                                            <div class="progress progress-striped active progress-xs">
-                                                <div style="width: 90%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="90" role="progressbar" 
-                                                     class="progress-bar">
-                                                    <span class="sr-only">90%</span>
-                                                </div>
-                                            </div>
-                                            <h6>Database maintenance progress</h6>
-                                            <div class="progress progress-striped active progress-xs">
-                                                <div style="width: 55%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="55" role="progressbar" 
-                                                     class="progress-bar">
-                                                    <span class="sr-only">55%</span>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <h5><strong>Server statistics</strong></h5>
-                                            <h6>Traffic (last hour)</h6>
-                                            <div class="row">
-                                                <div class="col-xs-6">
-                                                    132 requests
-                                                </div>
-                                                <div class="col-xs-6 to-right color-success bold">
-                                                    <i class="fa fa-caret-up pad-h-5"></i>22.2%
-                                                </div>
-                                            </div>
-                                            <h6>Average server response (last hour)</h6>
-                                            <div class="row">
-                                                <div class="col-xs-6">
-                                                    100 ms
-                                                </div>
-                                                <div class="col-xs-6 to-right color-warning bold">
-                                                    <i class="fa fa-caret-up pad-h-5"></i>12.1%
-                                                </div>
-                                            </div>
+                                            
                                         </li>
                                     </ul>
                                 </div>
