@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def root
-    render "test/dashboard"
+    render "dashboard/dashboard"
   end
 
   private

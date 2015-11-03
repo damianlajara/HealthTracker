@@ -1,13 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<ul>
-  <% Appointment.where(user_id = current_user.id).each do  |s| %>
-  <li><%= s.date %></li>
-  <li><%= s.doctor %></li>
-  <li><%= s.location %></li>
-  <li><%= s.reasons %></li>
-  <% end %>
-</ul>
+
+<title>Appointment with <%= @appointment.doctor %></title>
+
 
 <%= link_to 'Edit', edit_appointment_path(@appointment) %> |
 <%= link_to 'Back', appointments_path %>

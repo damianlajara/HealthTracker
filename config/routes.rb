@@ -12,19 +12,18 @@ Rails.application.routes.draw do
 
   get 'routines/symptom_check/:symptoms' => 'routines#symptom_check'
   get 'calendar' => 'appointments#calendar'
+  get 'responseblake(.:format)' => 'appointments#responseblake'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'application#index'
+  root 'application#root'
 
-  get 'test' => 'application#root'
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
-  get 'dashboard' => 'dashboard#index'
 
   post 'dashboard/user_status' => 'dashboard#user_status' 
 

@@ -19,6 +19,10 @@ $(document).ready(function() {
     var todayM = today.getMonth();
     var todayY = today.getFullYear();
 
+    $.get("/responseblake.json", function(events) {
+
+    var events = [events]
+
     $('#calendar').fullCalendar({
         header: {
             left:   "today prev, next",
@@ -35,7 +39,7 @@ $(document).ready(function() {
                 eventData = {
                     title: title,
                     start: start,
-                    end: end
+                    url: url
                 };
                 $('#calendar').fullCalendar('renderEvent', eventData, true);
                 $('#calendar-today').fullCalendar('renderEvent', eventData, true);
@@ -52,8 +56,16 @@ $(document).ready(function() {
                 $('#pending-events-container').remove();
             }
             $('#pending-counter').html(nEvents);
+        },
+        events: events,
+        eventClick: function(event) {
+            if (event.url) {
+                window.open(event.url);
+                return false;
+            }
         }
 
+       });
     });
 
     $('#calendar-today').fullCalendar({
@@ -66,7 +78,7 @@ $(document).ready(function() {
         events: [
             {
                 title: 'Long Event',
-                start: new Date(todayY, todayM, todayD),
+                start: 'Nov 02 2015 00:00:00 GMT-0500 (EST)',
                 end: new Date(todayY, todayM, todayD+2),
                 allDay: true
             },
@@ -84,3 +96,5 @@ $(document).ready(function() {
     });
     $('#calendar-today .fc-toolbar').remove();
 });
+                     
+

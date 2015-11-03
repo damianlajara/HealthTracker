@@ -10,6 +10,7 @@ class AppointmentsController < ApplicationController
   # GET /appointments/1
   # GET /appointments/1.json
   def show
+    
   end
 
   # GET /appointments/new
@@ -21,6 +22,10 @@ class AppointmentsController < ApplicationController
     render "calendar/show"
   end
 
+  def responseblake
+    @appointment = Appointment.first
+  end
+
   # GET /appointments/1/edit
   def edit
   end
@@ -28,10 +33,18 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
-
+    
     @appointment = Appointment.new(appointment_params)
     @appointment.user = current_user
+    
+    month = Date::ABBR_MONTHNAMES[appointment_params["date(2i)"].to_i]
+    day = appointment_params["date(3i)"]
+    year = appointment_params["date(1i)"]
+    time = "#{appointment_params["date(4i)"]}:#{appointment_params["date(5i)"]}:00"
+
+    @appointment.cal_date = "#{month} #{day} #{year} #{time} GMT-0500 (EST)"
     @appointment.save
+    
 
     respond_to do |format|
       if @appointment.save
