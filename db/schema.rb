@@ -116,9 +116,9 @@ ActiveRecord::Schema.define(version: 20151102165029) do
   create_table "user_stats", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "feeling"
-    t.time     "sleep"
+    t.integer  "sleep"
     t.integer  "calories"
-    t.time     "exercise"
+    t.integer  "exercise"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

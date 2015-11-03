@@ -3,9 +3,9 @@ class CreateUserStats < ActiveRecord::Migration
     create_table :user_stats do |t|
       t.belongs_to :user
       t.string :feeling
-      t.time :sleep
+      t.integer :sleep
       t.integer :calories
-      t.time :exercise
+      t.integer :exercise
 
       t.timestamps null: true
     end

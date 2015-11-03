@@ -25,19 +25,22 @@ class UserStatsController < ApplicationController
   # POST /user_stats.json
   def create
 
-    @todays_stat = current_user.user_stats.where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).first
-    params = user_stat_params
-    if @todays_stat
+    form_data = {
+      "calories" => user_stat_params["calories"].to_i,
+      "sleep" => user_stat_params["sleep(4i)"].to_i * 60 + user_stat_params["sleep(5i)"].to_i,
+      "exercise" => user_stat_params["exercise(4i)"].to_i * 60 + user_stat_params["exercise(5i)"].to_i
+    }
 
-      params["calories"] = (params["calories"].to_i + @todays_stat.calories).to_s
-      params["sleep(4i)"] = (params["sleep(4i)"].to_i + @todays_stat.sleep.hour).to_s
-      params["sleep(5i)"] = (params["sleep(4i)"].to_i + @todays_stat.sleep.min).to_s
-      params["exercise(4i)"] = (params["exercise(4i)"].to_i + @todays_stat.exercise.hour).to_s
-      params["exercise(5i)"] = (params["exercise(5i)"].to_i + @todays_stat.exercise.min).to_s
-      binding.pry
-      @todays_stat.update(params)
+    @todays_stat = current_user.user_stats.where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).first
+    
+    if @todays_stat
+      form_data["calories"] = form_data["calories"] + @todays_stat.calories
+      form_data["sleep"] = form_data["sleep"] + @todays_stat.sleep
+      form_data["exercise"] = form_data["exercise"] + @todays_stat.exercise
+
+      @todays_stat.update(form_data)
     else 
-      @todays_stat = UserStat.new(params)
+      @todays_stat = UserStat.new(form_data)
       @todays_stat.user = current_user
     end
     
