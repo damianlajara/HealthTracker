@@ -53,3 +53,61 @@ UserStatus.create!([
   {user_id: 7, status: "Energized"},
   {user_id: 1, status: "Energized"}
 ])
+
+YearlyCheckup.create!([
+  {name: "Phyical", location: "Brooklyn", checkup_date: Date.current + 1.month},
+  {name: "Dental", location: "Queens", checkup_date: Date.current + 1.month},
+  {name: "Optical", location: "LI", checkup_date: Date.current + 1.month},
+  {name: "Flu_shot", location: "Manhattan", checkup_date: Date.current + 1.month}
+])
+
+CheckupsUser.create!([
+  {
+    user_id: User.find_by_email("damian@flatironschool.com").id,
+    yearly_checkup_id: YearlyCheckup.find_by_name("Phyical").id
+  },
+  {
+    user_id: User.find_by_email("isaac@flatironschool.com").id,
+    yearly_checkup_id: YearlyCheckup.find_by_name("Phyical").id
+  },
+  {
+    user_id: User.find_by_email("marley@flatironschool.com").id,
+    yearly_checkup_id: YearlyCheckup.find_by_name("Phyical").id
+  },
+  {
+    user_id: User.find_by_email("damian@flatironschool.com").id,
+    yearly_checkup_id: YearlyCheckup.find_by_name("Dental").id
+  },
+  {
+    user_id: User.find_by_email("isaac@flatironschool.com").id,
+    yearly_checkup_id: YearlyCheckup.find_by_name("Dental").id
+  },
+  {
+    user_id: User.find_by_email("marley@flatironschool.com").id,
+    yearly_checkup_id: YearlyCheckup.find_by_name("Dental").id
+  },
+  {
+    user_id: User.find_by_email("damian@flatironschool.com").id,
+    yearly_checkup_id: YearlyCheckup.find_by_name("Optical").id
+  },
+  {
+    user_id: User.find_by_email("isaac@flatironschool.com").id,
+    yearly_checkup_id: YearlyCheckup.find_by_name("Optical").id
+  },
+  {
+    user_id: User.find_by_email("marley@flatironschool.com").id,
+    yearly_checkup_id: YearlyCheckup.find_by_name("Optical").id
+  },
+  {
+    user_id: User.find_by_email("damian@flatironschool.com").id,
+    yearly_checkup_id: YearlyCheckup.find_by_name("Flu_shot").id
+  },
+  {
+    user_id: User.find_by_email("isaac@flatironschool.com").id,
+    yearly_checkup_id: YearlyCheckup.find_by_name("Flu_shot").id
+  },
+  {
+    user_id: User.find_by_email("marley@flatironschool.com").id,
+    yearly_checkup_id: YearlyCheckup.find_by_name("Flu_shot").id
+  }
+])

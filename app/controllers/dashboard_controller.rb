@@ -11,4 +11,7 @@ class DashboardController < ApplicationController
     @user_status.save
   end
 
+  def stats
+    @user = User_Stats.where(id: current_user.id)
+  end
 end

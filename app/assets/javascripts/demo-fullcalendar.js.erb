@@ -19,10 +19,6 @@ $(document).ready(function() {
     var todayM = today.getMonth();
     var todayY = today.getFullYear();
 
-    $.get("/responseblake.json", function(events) {
-
-    var events = [events]
-
     $('#calendar').fullCalendar({
         header: {
             left:   "today prev, next",
@@ -39,7 +35,7 @@ $(document).ready(function() {
                 eventData = {
                     title: title,
                     start: start,
-                    url: url
+                    end: end
                 };
                 $('#calendar').fullCalendar('renderEvent', eventData, true);
                 $('#calendar-today').fullCalendar('renderEvent', eventData, true);
@@ -57,15 +53,35 @@ $(document).ready(function() {
             }
             $('#pending-counter').html(nEvents);
         },
-        events: events,
-        eventClick: function(event) {
-            if (event.url) {
-                window.open(event.url);
-                return false;
-            }
-        }
-
-       });
+        // events: [
+        //     {
+        //         title: 'Long Event',
+        //         start: new Date(todayY, todayM, todayD),
+        //         end: new Date(todayY, todayM, todayD+2),
+        //         allDay: true
+        //     },
+        //     {
+        //         title: 'Meeting',
+        //         start: new Date(todayY, todayM, todayD, 10, 30, 00),
+        //         end: new Date(todayY, todayM, todayD, 11, 30, 00)
+        //     },
+        //     {
+        //         title: 'Product Meeting',
+        //         start: new Date(todayY, todayM, todayD, 15, 30, 00),
+        //         end: new Date(todayY, todayM, todayD, 17, 30, 00)
+        //     }
+        // ]
+        events: [
+          <%# binding.pry %>
+          <% Appointment.all.take(3).collect do |a| %>
+            {
+                title: "Appointment with <%= a.doctor %>",
+                start: new Date(todayY, todayM, todayD),
+                end: new Date(todayY, todayM, todayD+2),
+                allDay: true
+            },
+          <% end %>
+        ]
     });
 
     $('#calendar-today').fullCalendar({
@@ -78,7 +94,7 @@ $(document).ready(function() {
         events: [
             {
                 title: 'Long Event',
-                start: 'Nov 02 2015 00:00:00 GMT-0500 (EST)',
+                start: new Date(todayY, todayM, todayD),
                 end: new Date(todayY, todayM, todayD+2),
                 allDay: true
             },
@@ -96,5 +112,3 @@ $(document).ready(function() {
     });
     $('#calendar-today .fc-toolbar').remove();
 });
-                     
-

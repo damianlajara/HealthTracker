@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get 'calendar' => 'appointments#calendar'
   get 'responseblake(.:format)' => 'appointments#responseblake'
   get 'notifications' => 'appointments#notifications'
+  get 'dashboard/user_stats(.:format)' => 'dashboard#stats'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -21,15 +22,15 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#root'
 
-  
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
 
-  post 'dashboard/user_status' => 'dashboard#user_status' 
+  post 'dashboard/user_status' => 'dashboard#user_status'
 
   post 'circles/add_user' => 'circles#add_user'
-   
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

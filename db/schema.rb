@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102234742) do
+ActiveRecord::Schema.define(version: 20151103200759) do
 
   create_table "appointments", force: :cascade do |t|
     t.string   "doctor"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20151102234742) do
     t.datetime "updated_at", null: false
     t.string   "cal_date"
   end
+
+  create_table "checkups_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "yearly_checkup_id"
+  end
+
+  add_index "checkups_users", ["user_id"], name: "index_checkups_users_on_user_id"
+  add_index "checkups_users", ["yearly_checkup_id"], name: "index_checkups_users_on_yearly_checkup_id"
 
   create_table "circles", force: :cascade do |t|
     t.string   "name"
@@ -38,7 +46,7 @@ ActiveRecord::Schema.define(version: 20151102234742) do
 
   create_table "feelings", force: :cascade do |t|
     t.integer  "user_id"
-    t.boolean  "sick"
+    t.integer  "sick"
     t.date     "day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -130,15 +138,6 @@ ActiveRecord::Schema.define(version: 20151102234742) do
 
   add_index "user_statuses", ["user_id"], name: "index_user_statuses_on_user_id"
 
-  create_table "user_symptoms", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "symptom_id"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -157,9 +156,6 @@ ActiveRecord::Schema.define(version: 20151102234742) do
     t.date     "birthdate"
     t.integer  "height"
     t.integer  "weight"
-    t.string   "work"
-    t.string   "home"
-    t.string   "school"
     t.string   "gender"
     t.integer  "zipcode"
     t.string   "avatar_file_name"
@@ -170,5 +166,11 @@ ActiveRecord::Schema.define(version: 20151102234742) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "yearly_checkups", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.date   "checkup_date"
+  end
 
 end
