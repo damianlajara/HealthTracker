@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory :food do
-    item "MyString"
-calories 1
-group nil
+
+    name "MyString"
+    calories 1
+
   end
 
 end

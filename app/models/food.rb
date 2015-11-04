@@ -1,3 +1,3 @@
 class Food < ActiveRecord::Base
-  belongs_to :group
+  belongs_to :food_group
 end

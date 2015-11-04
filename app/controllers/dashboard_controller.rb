@@ -1,6 +1,7 @@
 class DashboardController < ApplicationController
 
   def index
+    @food_groups = FoodGroup.all
     render 'dashboard/index'
   end
 

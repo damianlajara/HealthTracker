@@ -1,10 +1,20 @@
-<%= form_for(user_stat, html: {id: "user_stat"}) do |f| %>
+<%= form_for(:user_stat, html: {id: "user_stat"}) do |f| %>
   <div class="field">
     <%= f.label :sleep %><br>
     <%= f.time_select :sleep %>
   </div>
   <div class="field">
-    <%= f.label :calories %><br>
+    <%= label_tag :groups, "Narrow Food Scope"  %>
+    <%= select_tag(:group, options_for_select(@groups.collect {|group| [group.name, group.id]) %>
+    <%= label_tag :foods, "Add Foods"  %>
+    <%= text_field_tag :foods %> </br>
+    <%= label_tag :costum_calories, "Add Costom Calories" %>
+    <%= text_field_tag :costum_calories %></br>
+
+    <%= button_tag(type: 'button') do %>
+      <%= content_tag(:strong, 'Calculate Total') %>
+    <% end %>
+
     <%= f.number_field :calories, :value => 0 %>
   </div>
   <div class="field">
