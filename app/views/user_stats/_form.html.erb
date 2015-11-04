@@ -1,0 +1,33 @@
+<%= form_for(user_stat, html: {id: "user_stat"}) do |f| %>
+  <div class="field">
+    <%= f.label :sleep %><br>
+    <%= f.time_select :sleep %>
+  </div>
+  <div class="field">
+    <%= f.label :calories %><br>
+    <%= f.number_field :calories, :value => 0 %>
+  </div>
+  <div class="field">
+    <%= f.label :exercise %><br>
+    <%= f.time_select :exercise %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script>
+  $("#user_stat").submit(function(event){
+    event.preventDefault();
+    var values = {};
+    $.each($('#user_stat').serializeArray(), function(i, field) {
+       values[field.name] = field.value;
+    });
+    $.post("/user_stats", values, function(data) {
+      console.log(data);
+      $("#notice").css({"background-color": "#0a0", "color": "black"})
+      $("#notice").text("Succesfully added!");
+      $("#notice").delay(1000).fadeOut("slow");
+    });
+  });
+</script> 

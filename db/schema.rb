@@ -38,19 +38,21 @@ ActiveRecord::Schema.define(version: 20151103200759) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "exercises", force: :cascade do |t|
+  create_table "food_groups", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "feelings", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "sick"
-    t.date     "day"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "foods", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "calories"
+    t.integer  "food_group_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
+
+  add_index "foods", ["food_group_id"], name: "index_foods_on_food_group_id"
 
   create_table "illness_symptoms", force: :cascade do |t|
     t.integer  "illness_id"
@@ -87,15 +89,6 @@ ActiveRecord::Schema.define(version: 20151103200759) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_exercises", force: :cascade do |t|
-    t.integer  "exercise_id"
-    t.integer  "user_id"
-    t.integer  "regular_frequency"
-    t.text     "irregular_frequency"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-  end
-
   create_table "user_illnesses", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "illness_id"
@@ -128,6 +121,16 @@ ActiveRecord::Schema.define(version: 20151103200759) do
   end
 
   add_index "user_sleeps", ["user_id"], name: "index_user_sleeps_on_user_id"
+
+  create_table "user_stats", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "feeling"
+    t.integer  "sleep"
+    t.integer  "calories"
+    t.integer  "exercise"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_statuses", force: :cascade do |t|
     t.integer  "user_id"
