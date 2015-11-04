@@ -5,7 +5,7 @@
   </div>
   <div class="field">
     <%= label_tag :groups, "Narrow Food Scope"  %>
-    <%= select_tag(:group, options_for_select(@groups.collect {|group| [group.name, group.id]) %>
+    <%= select_tag(:group, options_for_select(@food_groups.collect {|group| [group.name, group.id]}), {include_blank: true} ) %></br>
     <%= label_tag :foods, "Add Foods"  %>
     <%= text_field_tag :foods %> </br>
     <%= label_tag :costum_calories, "Add Costom Calories" %>
