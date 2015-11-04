@@ -12,6 +12,33 @@ class UserStatsController < ApplicationController
   def show
   end
 
+  # GET /user_stats/foods
+  def foods
+    group = params[:group]
+    if group == "all"
+      @foods = Food.all
+    else
+      group = FoodGroup.find(group.to_i)
+      @foods = group.foods.map {|food| food.name}
+    end
+    respond_to do |format|
+       format.json { render json: @foods }
+     end
+  end
+
+  def calculate_calories
+    food = params[:foods].gsub(/, $/, "")
+    total_calories = 0 
+    
+    if food = Food.find_by(name: food)
+      total_calories += food.calories
+    end
+
+    respond_to do |format|
+       format.json { render json: total_calories }
+    end
+  end
+
   # GET /user_stats/new
   def new
     @user_stat = UserStat.new
