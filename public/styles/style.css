@@ -9645,3 +9645,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child::before, tabl
 .search-input-icon {
   display: inline-block;
   position: relative; }
+
+p {
+  color: black;
+}

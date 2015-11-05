@@ -51,20 +51,20 @@ class UserStatsController < ApplicationController
   # POST /user_stats
   # POST /user_stats.json
   def create
-
+    
     form_data = {
-      "calories" => user_stat_params["calories"].to_i,
-      "sleep" => user_stat_params["sleep(4i)"].to_i * 60 + user_stat_params["sleep(5i)"].to_i,
-      "exercise" => user_stat_params["exercise(4i)"].to_i * 60 + user_stat_params["exercise(5i)"].to_i
+      "calories" => params["calories"].to_i,
+      "sleep" => params["sleep(4i)"].to_i * 60 + params["sleep(5i)"].to_i,
+      "exercise" => params["exercise(4i)"].to_i * 60 + params["exercise(5i)"].to_i
     }
-
+    
     @todays_stat = current_user.user_stats.where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).first
     
     if @todays_stat
       form_data["calories"] = form_data["calories"] + @todays_stat.calories
       form_data["sleep"] = form_data["sleep"] + @todays_stat.sleep
       form_data["exercise"] = form_data["exercise"] + @todays_stat.exercise
-
+      
       @todays_stat.update(form_data)
     else 
       @todays_stat = UserStat.new(form_data)
@@ -73,6 +73,7 @@ class UserStatsController < ApplicationController
     
     respond_to do |format|
       if @user_stat = @todays_stat.save
+        
         format.html { redirect_to @todays_stat, notice: 'User stat was successfully created.' }
         format.json { render :show, status: :created, location: @user_stat }
       else
