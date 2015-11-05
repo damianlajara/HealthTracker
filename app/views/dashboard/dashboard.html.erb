@@ -422,7 +422,7 @@
                         <div id="no-refills">
                             <%= image_tag 'doctor-done.png', :id => "doc" %>
                             <div class="doc-message">
-                                <strong class="larger">All Done!</strong></br>I hope you're feeling better. Click the prescription icon to add a new one, or click <span id="dismiss">dismiss</span>
+                                <strong class="larger">All Done!</strong></br>I hope you're feeling better. Click the prescription icon to add a new one.
                             </div>
                         </div>
                         <div id="pill-bottle">
@@ -518,7 +518,6 @@
                                     <%= f.submit %>
                                   </div>
                                 <% end %>
-                                <ul id="p-notifs" class="striped-list"></ul>
 <script>
   // Slide form up on load
   $("#presc-form").slideToggle();
@@ -567,20 +566,6 @@
             var calcHeight = (presc.remainder / presc.amount) * 100
             var fillHeight = (calcHeight - 15) + '%'
             $("#fill").css("height", fillHeight)
-
-            // var today = new Date()
-            // var current_hour = today.getHours()
-            // var current_minute = today.getMinutes()
-            // var current_time = (current_hour * 60) + current_minute
-
-            // var firstDose = presc.first_dose
-            // var frequency = presc.frequency
-
-            // if(current_time < firstDose){
-            //     var ttnr = firstDose - current_time 
-            // } else {
-            //     var ttnr = (current_time - firstDose) % frequency 
-            // }
 
             var interval = presc.frequency * 1000;
             var notifier = setInterval(notify, interval);
@@ -938,3 +923,5 @@
                 </div>    
             
             </div>
+
+    <script src="./../js/vendor/gridstack.min.js"></script>

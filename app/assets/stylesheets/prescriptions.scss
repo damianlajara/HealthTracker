@@ -305,3 +305,155 @@ img#doc {
   left: 10px;
   font-family: 'Open Sans';
 }
+
+/* LARGE, INDEX PAGE */
+
+#presc-large #cap-bottom {
+    width: 260px;
+    height: 55px;
+    }
+
+#presc-large #cap-top {
+    height: 30px;
+    width: 220px;
+    }
+
+#presc-large #bottle-body {
+    height: 400px;
+    width: 220px;
+    }
+
+#presc-large #pill-bottle {
+  width: 760px;
+    height: 600px;
+  }
+
+#presc-large #pill-count {
+    height: 60px;
+    width: 60px;
+    font-size: 30px;
+    line-height: 60px;
+    }
+
+#presc-large #presc-label {
+  right: -75px;
+    font-size: 30px;
+    top: 140px;
+    width: 230px;
+  }
+
+#presc-large .pill {
+  width: 90px;
+    height: 80px;
+  }
+
+#presc-large .pill4 {
+  top: 150px;
+  }
+
+#presc-large .pill2 {
+    left: 60px;
+    top: 80px;
+    }
+
+#presc-large .pill1 {
+  top: 25px;
+  }
+
+#presc-large #refills {
+  height: 400px;
+}
+
+#presc-large #refill,
+#presc-large #edit-presc  {
+  width: 65px;
+  height: 65px;
+  font-size: 31px;
+  line-height: 65px !important;
+}
+
+#presc-large #pill-panel {
+  width: 65px;
+    right:60px;
+    }
+
+#presc-large #bottle-cap {
+  margin-top: 30px;
+}
+
+#presc-large #container-footer{
+  display: none;
+  }
+
+#presc-large {
+  display: flex;
+  transition: .6s width ease;
+  width: 785px;
+  margin: 0 auto !important;
+}
+
+#presc-large.expanded {
+  width: 100% !important
+}
+
+#presc-large .doc-message {
+    font-size: 30px;
+    margin: 20px;
+    padding: 30px;
+}
+
+#presc-large #no-refills,
+#presc-large #need-refill {
+    width: calc(100% - 180px);
+}
+
+#presc-large #presc-reminder {
+    display: block !important;
+    position: absolute;
+    left: -30px;
+    top: -30px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50% !important;
+    z-index:10
+}
+
+#presc-large #presc-reminder h2 {
+  font-size: 17px;
+  }
+
+#presc-form {
+  width: 100%;
+  height:600px;
+  color: #222;
+  background: url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/tiny_grid.png);
+}
+
+#presc-form input {
+    width: 50%;
+    height: 30px;
+    border: 5px solid #416173;
+}
+
+#presc-large .rotateOutUpLeft {
+  pointer-events: none;
+}
+
+#presc-large #pill-bottle {
+  z-index:5;
+}
+
+#presc-large #presc-form {
+  font-size: 17px;
+  border: 4px solid #416173;
+}
+
+#presc-large #presc-form input[type="submit"] {
+  background: #416173;
+  color: #fff;
+  height: 40px;
+}
+
+
+
+
