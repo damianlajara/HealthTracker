@@ -1,1 +1,1 @@
-json.extract! @prescription, :id, :name, :amount, :refill, :dosage, :frequency, :created_at, :updated_at
+json.extract! @prescription, :id, :name, :amount, :refills, :first_dose, :dosage, :frequency, :remainder, :used_refills

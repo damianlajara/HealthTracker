@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103180401) do
+ActiveRecord::Schema.define(version: 20151104182757) do
 
   create_table "appointments", force: :cascade do |t|
     t.string   "doctor"
@@ -65,14 +65,26 @@ ActiveRecord::Schema.define(version: 20151103180401) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "prescription_id"
+    t.string  "message"
+    t.string  "date"
+  end
+
+  add_index "notifications", ["prescription_id"], name: "index_notifications_on_prescription_id"
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id"
+
   create_table "prescriptions", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "amount"
-    t.integer  "refill"
-    t.integer  "dosage"
-    t.integer  "frequency"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.string  "name"
+    t.integer "amount"
+    t.integer "refills"
+    t.integer "dosage"
+    t.integer "frequency"
+    t.integer "remainder"
+    t.time    "first_dose"
+    t.integer "used_refills"
   end
 
   create_table "symptoms", force: :cascade do |t|

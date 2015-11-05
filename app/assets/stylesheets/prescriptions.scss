@@ -1,3 +1,307 @@
 // Place all the styles related to the Prescriptions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#edit-presc.pulsing {
+  box-shadow: 0 0 10px 5px #AED6FF;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+
+.pulsing {
+  -webkit-animation: pulse 2s ease-out;
+  -moz-animation: pulse 2s ease-out;
+  animation: pulse 2s ease-out;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@-moz-keyframes pulse {
+ 0% {
+    -moz-transform: scale(0);
+ }
+ 25% {
+    -moz-transform: scale(0);
+ }
+ 50% {
+    -moz-transform: scale(0.3);
+ }
+ 75% {
+    -moz-transform: scale(2);
+    background-color: #65a6c6  !important;
+ }
+ 100% {
+    -moz-transform: scale(1);
+    background-color: #65a6c6  !important;
+ }
+}
+
+@-webkit-keyframes "pulse" {
+ 0% {
+    -webkit-transform: scale(0);
+ }
+ 25% {
+    -webkit-transform: scale(0);
+ }
+ 50% {
+    -webkit-transform: scale(0.3);
+ }
+ 75% {
+    background-color: #65a6c6 !important;
+    -webkit-transform: scale(2);
+ }
+ 100% {
+    -webkit-transform: scale(1);
+    background-color: #65a6c6  !important;
+ }
+}
+
+
+
+.doc-message {
+  color: #fff;
+  padding: 15px;
+  margin: 0 10px;
+  background: rgba(255, 255, 255, 0.21);
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.panel {
+  position: relative;
+}
+
+img#doc {
+  width: 50%;
+  margin: 10px
+}
+
+#no-refills,
+#need-refill {
+  width: calc(100% - 130px);
+  height:0;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index:10000;
+  height: 0;
+  transition: .5s height ease-out;
+  overflow:hidden;
+  text-align: center
+}
+
+#need-refill {  background: #921E92;}
+#no-refills {  background: #0096DC;}
+
+#no-refills.active, 
+#need-refill.active {
+  height: 100% !important
+}
+
+#fill {
+    transition: 1s height ease-out
+}
+
+#refill {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  font-size: 21px;
+  line-height: 35px;
+  text-align: center;
+  margin: 0 auto;
+  transition: .2s background ease;
+  color: #222;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+
+
+
+#refill.avail-ref {
+  line-height: 38px !important;
+  color: #FF1A1A !important;
+  background: rgba(255, 255, 255, 1) !important;
+}
+
+#refill.avail-ref:hover {
+  color: #FF5858 !important;
+  cursor: pointer !important;
+}
+
+#refills {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+  height:calc(170px);
+}
+
+#pill-panel {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  position: absolute;
+  right:30px;
+  text-align: center;
+}
+
+#edit-presc {
+	display: inline-block;
+  font-size: 25px;
+  color: #fff;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  background: rgba(128, 128, 128, 0.35);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  padding-left: 5px;
+  border-radius: 7px;
+  transition: .2s all ease;
+  position: relative
+}
+
+#edit-presc:hover {
+	background: #65a6c6;
+	cursor: pointer;
+}
+
+#pill-bottle {
+	padding: 30px;
+	background: #0E334C;
+  position: relative
+}
+
+#presc-reminder {
+	  text-align: center;
+    color: #fff;
+    background: #C70000;
+    padding: 20px;
+    box-shadow: 0 0 10px 5px #FF6565;
+    font-size: 30px;
+}
+
+#cap-top {
+  height:20px;
+  width:120px;
+  border-radius: 15px 15px 0 0;
+  margin: 0 auto;
+  background: rgb(255,255,255); /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 46%, rgba(252,252,252,1) 64%, rgba(209,209,209,1) 100%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(46%,rgba(255,255,255,1)), color-stop(64%,rgba(252,252,252,1)), color-stop(100%,rgba(209,209,209,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 46%,rgba(252,252,252,1) 64%,rgba(209,209,209,1) 100%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 46%,rgba(252,252,252,1) 64%,rgba(209,209,209,1) 100%,rgba(255,255,255,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
+
+#cap-bottom {
+  display: flex;
+  margin: 0 auto;
+  width:140px;
+  height:25px;
+  background: #fff;
+  justify-content: space-between;
+  padding:5px;
+  border-radius: 8px 8px 0 0;
+}
+
+.ridge {
+  width: 6px;
+  background: gray;
+  border-radius: 3px
+}
+
+
+
+#bottle-body {
+  height: 200px;
+  background: #ffaa75;
+  width:120px;
+  padding: 5px;
+  margin: 0 auto;
+  position:relative;
+  box-shadow: inset 0 10px 10px -8px #555;
+  overflow:hidden;
+  border-bottom:5px solid  #ffaa75;
+}
+
+#fill {
+  width: calc(100% - 10px);
+  background: #efefef;
+  position: absolute;
+  bottom: 0;
+}
+
+.pill {
+  width:50px;
+  height:40px;
+  background: #ddd;
+  border-radius:50%;
+  position: absolute;
+}
+
+.pill1 {
+  transform:rotate(30deg) scale(.93);
+  border-bottom: 5px solid #fff;
+  border-left: 5px solid #fff;
+  top: -5px;
+}
+
+.pill2 {
+  left: 30px;
+  top: 30px;
+  transform:rotate(-30deg);
+  border-top: 5px solid #fff;
+  border-left: 5px solid #fff;
+}
+
+.pill3 {
+  left: 60px;
+  top: -10px;
+  transform:rotate(40deg);
+  border-top: 5px solid #fff;
+  border-left: 5px solid #fff;
+}
+
+.pill4 {
+  left: 20px;
+  top: 90px;
+  transform:rotate(40deg) scale(.9);
+  border-top: 3px solid #fff;
+  border-left: 3px solid #fff;
+}
+
+#presc-label {
+  background: #fff;
+  text-align: center;
+  transform: rotate(90deg);
+  position: absolute;
+  z-index:1000;
+  right: -55px;
+  top:90px;
+  width:130px;
+  padding: 5px 15px;
+  box-shadow: 2px 1px 2px gray;
+  background: yellow;
+}
+
+#pill-count {
+  height:30px;
+  width: 30px;
+  border-radius: 50%;
+  line-height: 30px;
+  text-align: center; 
+  background: green;
+  color: #fff;
+  position: absolute;
+  bottom:15px;
+  left: 10px;
+  font-family: 'Open Sans';
+}

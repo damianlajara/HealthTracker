@@ -17,6 +17,25 @@ class PrescriptionsController < ApplicationController
     @prescription = Prescription.new
   end
 
+  def most_recent
+    @prescription = Prescription.where(user_id = current_user.id).last
+    if @prescription.nil?
+      render plain: "none"
+    else
+      render "show.json"
+    end
+  end
+
+  def refill 
+    @prescription = Prescription.where(user_id = current_user.id).last
+    if @prescription.used_refills < @prescription.refills 
+      @prescription.remainder = @prescription.amount
+      @prescription.used_refills += 1
+      @prescription.save
+    end
+    render :plain => "ok!"
+  end
+
   # GET /prescriptions/1/edit
   def edit
   end
@@ -24,7 +43,24 @@ class PrescriptionsController < ApplicationController
   # POST /prescriptions
   # POST /prescriptions.json
   def create
-    @prescription = Prescription.new(prescription_params)
+    @prescription = Prescription.new
+    params = prescription_params
+
+    @prescription.name = params[:name]
+    @prescription.amount = params[:amount]
+    @prescription.dosage = params[:dosage]
+    @prescription.refills = params[:refills]
+    @prescription.remainder = params[:amount]
+    @prescription.used_refills = 0
+
+    @prescription.first_dose = (params["first_dose(4i)"].to_i * 60) + params["first_dose(5i)"].to_i
+    #converted to minutes
+
+    @prescription.frequency = (params["frequency(4i)"].to_i * 60) + params["frequency(5i)"].to_i
+    # Currently minutes and seconds, converted to seconds. Multiply by 60 to make it hours and minutes.
+   
+    @prescription.user_id = current_user.id
+    @prescription.save
 
     respond_to do |format|
       if @prescription.save
@@ -35,6 +71,14 @@ class PrescriptionsController < ApplicationController
         format.json { render json: @prescription.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def reduce
+    @prescription = Prescription.last
+    rem = @prescription.remainder.to_i - @prescription.dosage.to_i
+    @prescription.remainder = rem
+    @prescription.save
+    render "show.json"
   end
 
   # PATCH/PUT /prescriptions/1
@@ -69,6 +113,6 @@ class PrescriptionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def prescription_params
-      params.require(:prescription).permit(:name, :amount, :refill, :dosage, :frequency)
+      params.require(:prescription).permit(:name, :first_dose, :amount, :used_refills, :refills, :dosage, :frequency, :user_id)
     end
 end
