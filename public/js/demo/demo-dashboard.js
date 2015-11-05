@@ -169,8 +169,8 @@ $( document ).ready(function() {
         ]
     };
     var options = {};
-    var chartjsLineChartCtx = document.getElementById("chartjsLineChart").getContext("2d");
-    var chartjsLineChart = new Chart(chartjsLineChartCtx).Line(data, options);
+    //var chartjsLineChartCtx = document.getElementById("chartjsLineChart").getContext("2d");
+    //var chartjsLineChart = new Chart(chartjsLineChartCtx).Line(data, options);
 
     // Toastr
     setTimeout(function() {
@@ -179,6 +179,6 @@ $( document ).ready(function() {
             showMethod: 'slideDown',
             timeOut: 2500
         };
-        toastr.success('Welcome to Dee Admin Template');
+        toastr.success('Welcome to Health Tracker');
     }, 150);
 });

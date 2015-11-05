@@ -24,17 +24,4 @@ $(document).ready(function() {
     $("span.page-title").html(title);
     var path = window.location.pathname;
     $("span.url").html(path);
-
-    // Toastr
-    var showToastr = function(message) {
-      setTimeout(function(message) {
-          toastr.options = {
-              progressBar: true,
-              showMethod: 'slideDown',
-              timeOut: 2500
-          };
-          toastr.success(message);
-      }, 150);
-    }
-
 });

@@ -2,7 +2,6 @@
 <%# binding.pry %>
 <%# UserStat.where(user_id: current_user.id) %>
 <%= render partial: "user_stats/form", locals: {user_stat: UserStat.new} %>
-<button type="button" name="button" onclick="showToastr('hello')"></button>
 <div class="container-fluid">
   <div class="row">
     <!-- <div class="col-md-8 no-pad">
@@ -106,7 +105,7 @@
                     </div>
                     <div class="widget-content to-center">
                       <i class="fa fa-user r-mar-5"></i>
-                      Calories Between yesterday and today
+                      Total Calories this week
                       <h3 class="bold">2.048</h3>
                     </div>
                   </div>
@@ -118,7 +117,7 @@
                     </div>
                     <div class="widget-content to-center">
                       <i class="fa fa-dollar r-mar-5"></i>
-                      Sleep Between yesterday and today
+                      Total Sleep this week
                       <h3 class="bold">120.000,00$</h3>
                     </div>
                   </div>
@@ -130,7 +129,7 @@
                     </div>
                     <div class="widget-content to-center">
                       <i class="fa fa-shopping-cart r-mar-5"></i>
-                      Exercise Between yesterday and today
+                      Total Exercise this week
                       <h3 class="bold">128</h3>
                     </div>
                   </div>

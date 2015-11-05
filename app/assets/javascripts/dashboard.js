@@ -27,6 +27,7 @@
 $(document).ready(function() {
 
   var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
   $.get("dashboard/user_stats", function(user_stats) {
 
@@ -52,7 +53,9 @@ $(document).ready(function() {
 
     var date =
       $.map(user_stats, function(stat) {
-        return days[new Date(stat.created_at).getDay()];
+        var date = new Date(stat.created_at)
+        // debugger
+        return days[date.getDay()] + " " + date.getDay() + "/" + date.getMonth() + " (" + stat.feeling + ")";
       });
 
     Chart.defaults.global = {
@@ -213,3 +216,13 @@ $(document).ready(function() {
 
   });
 });
+
+// Toastr
+// setTimeout(function(message) {
+//     toastr.options = {
+//         progressBar: true,
+//         showMethod: 'slideDown',
+//         timeOut: 2500
+//     };
+//     toastr.success(message);
+// }, 150);
