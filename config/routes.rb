@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :prescriptions
+
   resources :circles
   resources :symptoms
   resources :feelings
@@ -14,6 +16,10 @@ Rails.application.routes.draw do
   get 'calendar' => 'appointments#calendar'
   get 'responseblake(.:format)' => 'appointments#responseblake'
   get 'notifications' => 'appointments#notifications'
+  get 'dashboard' => 'application#root'
+  get 'recent-prescription' => 'prescriptions#most_recent'
+  get 'prescription-reduce' => 'prescriptions#reduce'
+  get 'refill' => 'prescriptions#refill'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -29,6 +35,8 @@ Rails.application.routes.draw do
   post 'dashboard/user_status' => 'dashboard#user_status' 
 
   post 'circles/add_user' => 'circles#add_user'
+
+  get 'dashboard/zalman' => "dashboard#zalman"
    
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

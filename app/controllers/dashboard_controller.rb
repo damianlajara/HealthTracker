@@ -11,4 +11,8 @@ class DashboardController < ApplicationController
     @user_status.save
   end
 
+  def zalman
+    render 'dashboard/zalman'
+  end
+
 end
