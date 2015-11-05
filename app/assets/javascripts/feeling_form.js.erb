@@ -1,0 +1,117 @@
+var symptom_list = <%= Symptom.all.map {|symptom| symptom.common_term } %> 
+
+$( document ).ready(function() {
+  smoothScroll();
+  $(".health-form").hide();
+  radio_field();
+  
+});
+
+function radio_field() {
+  $("#field-1").show();
+
+  $("#field-1 button").click(function(){
+    value = $("input[type=radio]:checked").val()
+
+    if(value === "true"){
+      symptom_field();
+    } 
+    else if($("input[type=radio]:checked").val() === undefined) {
+
+    }
+    else {
+      window.location="/routines/dashboard"
+    }
+  });
+};
+
+function symptom_field(){
+  $("#field-2").show();
+  // trigger ancher tag. Page will scroll to #field-2. 
+  $("a[href=#field-2]")[0].click()
+
+  setAutoComplete("#routine_symptoms", symptom_list)
+  $(".ui-helper-hidden-accessible").remove();
+
+  $("#field-2 button").click(function(){
+    $.get('/routines/symptom_check/' + $("textarea[id=routine_symptoms").val(), illness_field)
+  });
+}
+
+function illness_field(possible_illnesses) {
+  $("#field-3").show();
+  $("a[href=#field-3]")[0].click()
+
+
+  $.each(possible_illnesses, function(index, value) {
+    $("ul.routine_illnesses").append('<li class="illness_list" value="' + value +'">' + value + '</li>')
+  });
+
+};
+
+function setAutoComplete(input_id, list){
+
+  function split( val ) {
+    return val.split( /,\s*/ );
+  }
+  function extractLast( term ) {
+    return split( term ).pop();
+  }
+
+  $( input_id )
+  // don't navigate away from the field on tab when selecting an item
+    .bind( "keydown", function( event ) {
+      if ( event.keyCode === $.ui.keyCode.TAB &&
+          $( this ).autocomplete( "instance" ).menu.active ) {
+        event.preventDefault();
+      }
+    })
+    .autocomplete({
+      minLength: 0,
+      source: function( request, response ) {
+        // delegate back to autocomplete, but extract the last term
+        response( $.ui.autocomplete.filter(
+          list, extractLast( request.term ) ) );
+      },
+      focus: function() {
+        // prevent value inserted on focus
+        return false;
+      },
+      select: function( event, ui ) {
+        var terms = split( this.value );
+        
+        // remove the current input
+        terms.pop();
+        // add the selected item
+        terms.push( ui.item.value );
+        // add placeholder to get the comma-and-space at the end
+        terms.push( "" );
+        this.value = terms.join( ", " );
+        return false;
+      },
+      messages: {
+        noResults: '',
+        results: function() {}
+      },
+
+    });
+}
+
+function smoothScroll() {
+  $(".scroll").click(function(event){
+         event.preventDefault();
+         //calculate destination place
+         var dest=0;
+         if($(this.hash).offset().top > $(document).height()-$(window).height()){
+              dest=$(document).height()-$(window).height();
+         }else{
+              dest=$(this.hash).offset().top;
+         }
+         //go to destination
+         $('html,body').animate({scrollTop:dest}, 1000,'swing');
+     });
+}
+
+
+
+

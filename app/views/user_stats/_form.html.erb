@@ -1,0 +1,117 @@
+<div id="sleep_form"> 
+  <%= form_for(:sleep, html: {id: "user_stat"}) do |f| %>
+    <div class="field">
+      <%= f.label :sleep %><br>
+      <%= f.time_select :sleep, {:default => {:hour => '00', :minute => '00'}} %>
+    </div>
+     <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
+
+<div id="exercise_form">
+  <%= form_for(:exercise, html: {id: "user_stat"}) do |f| %>
+    <div class="field">
+      <%= f.label :exercise %><br>
+      <%= f.time_select :exercise, {:default => {:hour => '00', :minute => '00'}} %>
+    </div>
+     <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
+
+<div id="calories_form">
+  <%= form_for(:calories, html: {id: "user_stat"}) do |f| %>
+    <div class="field">
+      <%= label_tag :groups, "Narrow Food Scope"  %></br>
+      <%= select_tag(:group, options_for_select(@food_groups.collect {|group| [group.name, group.id]}), {include_blank: true} ) %></br>
+      <%= label_tag :foods, "Add Foods"  %></br>
+      <%= text_area_tag :foods %> </br>
+
+      <%= button_tag(type: 'button', id: 'calculate_food') do %>
+        <%= content_tag(:strong, 'Add to Total') %>
+      <% end %></br>
+
+      <%= label_tag :costum_calories, "Add Costom Calories" %></br>
+      <%= text_field_tag :costum_calories %></br>
+
+      <%= button_tag(type: 'button', id: 'calculate_costum') do %>
+        <%= content_tag(:strong, 'Add to Total') %>
+      <% end %></br>
+
+      <%= f.number_field :calories, :value => 0 %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
+<script>
+// 
+
+  $("select#group").change(function(){
+    sendFoodRequest($("#group").val())
+  });
+
+  function sendFoodRequest(group_name){
+    list = $.get('/user_stats/foods/' + group_name, function(food_source){
+      setAutoComplete("#foods", food_source)
+    });
+  };
+  
+  function add_food_calories(){
+    if($("#foods").val() != "") {
+      
+      $.get('/user_stats/calculate_calories/' + encodeURIComponent($("#foods").val()), function(returned_number){
+
+        total = returned_number + parseInt($("#user_stat_calories").val());
+        $("#user_stat_calories").val(total)
+        $("#foods").val("");
+      });
+
+    }
+  };
+
+  function add_custom_calories(){
+    total = parseInt($("#costum_calories").val()) + parseInt($("#user_stat_calories").val());
+    $("#user_stat_calories").val(total)
+    $("#costum_calories").val("")
+  };
+
+  $("#calculate_costum").click(function(){
+    add_custom_calories();
+  }); 
+
+  $("#calculate_food").click(function(){
+    add_food_calories();
+  });
+
+  function ajaxFormSubmit(form_id){
+    event.preventDefault();
+    var values = {};
+    $.each($(form_id).serializeArray(), function(i, field) {
+       values[field.name] = field.value;
+    });
+
+    $.post("/user_stats", values, function(data) {
+      $("#notice").css({"background-color": "#0a0", "color": "black"})
+      $("#notice").text("Succesfully added!");
+      $("#notice").delay(1000).fadeOut("slow");
+    });
+  };
+
+  $("#calories_form").submit(function(event){
+    ajaxFormSubmit("#calories_form")
+  });
+
+  $("#exercise_form").submit(function(event){
+    ajaxFormSubmit("#exercise_form")
+  });
+
+  $("#sleep_form").submit(function(event){
+    ajaxFormSubmit("#sleep_form")
+  });
+
+</script> 

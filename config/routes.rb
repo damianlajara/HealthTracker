@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'user_stats/foods/:group' => 'user_stats#foods'
+
+  get 'user_stats/calculate_calories/:foods' => 'user_stats#calculate_calories'
+
+  resources :user_stats
 
   resources :prescriptions
 
@@ -37,7 +42,7 @@ Rails.application.routes.draw do
   post 'circles/add_user' => 'circles#add_user'
 
   get 'dashboard/zalman' => "dashboard#zalman"
-   
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

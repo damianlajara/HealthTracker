@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Feeling:</strong>
+  <%= @user_stat.feeling %>
+</p>
+
+
+<p>
+  <strong>Sleep:</strong>
+  <%= @user_stat.sleep %>
+</p>
+
+<p>
+  <strong>Calories:</strong>
+  <%= @user_stat.calories %>
+</p>
+
+<p>
+  <strong>Exercise:</strong>
+  <%= @user_stat.exercise %>
+</p>
+
+<%= link_to 'Edit', edit_user_stat_path(@user_stat) %> |
+<%= link_to 'Back', user_stats_path %>
