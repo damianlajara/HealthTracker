@@ -19,10 +19,22 @@
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
 
+$(document).ready(function() {
+    var title = $(document).find("title").text();
+    $("span.page-title").html(title);
+    var path = window.location.pathname;
+    $("span.url").html(path);
 
-                    $(document).ready(function() {
-                        var title = $(document).find("title").text();
-                        $("span.page-title").html(title);
-                        var path = window.location.pathname;
-                        $("span.url").html(path);
-                    })
+    // Toastr
+    var showToastr = function(message) {
+      setTimeout(function(message) {
+          toastr.options = {
+              progressBar: true,
+              showMethod: 'slideDown',
+              timeOut: 2500
+          };
+          toastr.success(message);
+      }, 150);
+    }
+
+});

@@ -1,10 +1,5 @@
 //TODO Remove inline maps to the functions here
-// function getFeelingsFrom(user_stats) {
-//   $.map(user_stats, function(stat) {
-//     return stat.feeling;
-//   });
-// }
-//
+
 // function getSleepFrom(user_stats) {
 //   $.map(user_stats, function(stat) {
 //     return stat.sleep;
@@ -184,6 +179,37 @@ $(document).ready(function() {
     var options = {};
     var barGraphContext = document.getElementById("healthChart").getContext("2d");
     var chartjsBarChart = new Chart(barGraphContext).Bar(data, options);
+
+    $("#calories-mini-chart").sparkline(calories, {
+      type: 'line',
+      lineColor: 'rgba(74, 121, 147, 0.9)',
+      fillColor: 'rgba(74, 121, 147, 0.2)',
+      width: '100%',
+      height: '48',
+      chartRangeMin: 0,
+      tooltipChartTitle: 'Calories'
+    });
+
+    $("#sleep-mini-chart").sparkline(sleep, {
+      type: 'line',
+      lineColor: 'rgba(74, 121, 147, 0.9)',
+      fillColor: 'rgba(74, 121, 147, 0.6)',
+      width: '100%',
+      height: '48',
+      chartRangeMin: 0,
+      tooltipChartTitle: 'Sleep',
+      tooltipSuffix: ' %'
+    });
+
+    $("#exercise-mini-chart").sparkline(exercise, {
+      type: 'line',
+      lineColor: 'rgba(74, 121, 147, 0.9)',
+      fillColor: 'rgba(100, 147, 80, 0.9)',
+      width: '100%',
+      height: '48',
+      chartRangeMin: 0,
+      tooltipChartTitle: 'Exercise'
+    });
 
   });
 });
