@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :user_stats
+  resources :prescriptions
 
   resources :circles
   resources :symptoms
@@ -16,7 +17,13 @@ Rails.application.routes.draw do
   get 'calendar' => 'appointments#calendar'
   get 'responseblake(.:format)' => 'appointments#responseblake'
   get 'notifications' => 'appointments#notifications'
+
   get 'dashboard/user_stats' => 'dashboard#get_user'
+
+  get 'dashboard' => 'application#root'
+  get 'recent-prescription' => 'prescriptions#most_recent'
+  get 'prescription-reduce' => 'prescriptions#reduce'
+  get 'refill' => 'prescriptions#refill'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

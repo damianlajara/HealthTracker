@@ -48,6 +48,8 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'whenever', require: false
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
