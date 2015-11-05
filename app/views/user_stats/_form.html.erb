@@ -71,13 +71,10 @@
     add_food_calories();
   });
 
-
-  $("#user_stat").submit(function(event){
-    
-    
+  function ajaxFormSubmit(form_id){
     event.preventDefault();
     var values = {};
-    $.each($('#user_stat').serializeArray(), function(i, field) {
+    $.each($(form_id).serializeArray(), function(i, field) {
        values[field.name] = field.value;
     });
 
@@ -86,5 +83,18 @@
       $("#notice").text("Succesfully added!");
       $("#notice").delay(1000).fadeOut("slow");
     });
+  };
+
+  $("#calories_form").submit(function(event){
+    ajaxFormSubmit("#calories_form")
   });
+
+  $("#exercise_form").submit(function(event){
+    ajaxFormSubmit("#exercise_form")
+  });
+
+  $("#sleep_form").submit(function(event){
+    ajaxFormSubmit("#sleep_form")
+  });
+
 </script> 
