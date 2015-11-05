@@ -565,6 +565,8 @@
             var calcHeight = (presc.remainder / presc.amount) * 100
             var fillHeight = (calcHeight - 15) + '%'
             $("#fill").css("height", fillHeight)
+
+
             var interval = presc.frequency * 1000;
             var notifier = setInterval(notify, interval);
             // if(ttnr == 0){
@@ -910,6 +912,7 @@
                             <!-- / Today's tasks -->
                         </div>
                     </div>
+
                 </div>
 
             </div>
