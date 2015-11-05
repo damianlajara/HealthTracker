@@ -1,5 +1,7 @@
 <title>TEST Dashboard</title>
-
+<%# binding.pry %>
+<%# UserStat.where(user_id: current_user.id) %>
+<%= render partial: "user_stats/form", locals: {user_stat: UserStat.new} %>
 <div class="container-fluid">
   <div class="row">
     <!-- <div class="col-md-8 no-pad">
@@ -90,7 +92,7 @@
           <div class="panel mar-10">
             <div class="panel-body">
               <h4 class="mb-10">
-                <strong>Sales</strong>
+                <strong>Health Progress</strong>
                 Expected / Real</h4>
               <div class="mt-10 mb-10" style="height: 256px">
                 <canvas id="healthChart"></canvas>
@@ -103,7 +105,7 @@
                     </div>
                     <div class="widget-content to-center">
                       <i class="fa fa-user r-mar-5"></i>
-                      Visitors expected
+                      Calories Between yesterday and today
                       <h3 class="bold">2.048</h3>
                     </div>
                   </div>
@@ -115,7 +117,7 @@
                     </div>
                     <div class="widget-content to-center">
                       <i class="fa fa-dollar r-mar-5"></i>
-                      Anual incomes
+                      Sleep Between yesterday and today
                       <h3 class="bold">120.000,00$</h3>
                     </div>
                   </div>
@@ -127,7 +129,7 @@
                     </div>
                     <div class="widget-content to-center">
                       <i class="fa fa-shopping-cart r-mar-5"></i>
-                      Sales expected
+                      Exercise Between yesterday and today
                       <h3 class="bold">128</h3>
                     </div>
                   </div>

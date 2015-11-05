@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'calendar' => 'appointments#calendar'
   get 'responseblake(.:format)' => 'appointments#responseblake'
   get 'notifications' => 'appointments#notifications'
-  get 'dashboard/user_stats(.:format)' => 'dashboard#stats'
+  get 'dashboard/user_stats' => 'dashboard#get_user'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

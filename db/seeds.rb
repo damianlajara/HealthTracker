@@ -111,3 +111,87 @@ CheckupsUser.create!([
     yearly_checkup_id: YearlyCheckup.find_by_name("Flu_shot").id
   }
 ])
+
+UserStat.create!([
+    {
+      user_id: 1,
+      feeling: "Tired",
+      sleep: 600,
+      calories: 500,
+      exercise: 520,
+      created_at: Time.now + 600000,
+      updated_at: Time.now + 600000
+    },
+    {
+      user_id: 1,
+      feeling: "Energized",
+      sleep: 600,
+      calories: 500,
+      exercise: 520,
+      created_at: Time.now + 650000,
+      updated_at: Time.now + 650000
+    },
+    {
+      user_id: 1,
+      feeling: "Happy",
+      sleep: 600,
+      calories: 500,
+      exercise: 520,
+      created_at: Time.now + 750000,
+      updated_at: Time.now + 750000
+    },
+    {
+      user_id: 2,
+      feeling: "Tired",
+      sleep: 900,
+      calories: 200,
+      exercise: 720,
+      created_at: Time.now + 600000,
+      updated_at: Time.now + 600000
+    },
+    {
+      user_id: 2,
+      feeling: "Energized",
+      sleep: 200,
+      calories: 560,
+      exercise: 590,
+      created_at: Time.now + 650000,
+      updated_at: Time.now + 650000
+    },
+    {
+      user_id: 2,
+      feeling: "Happy",
+      sleep: 900,
+      calories: 600,
+      exercise: 580,
+      created_at: Time.now + 750000,
+      updated_at: Time.now + 750000
+    },
+    {
+      user_id: 3,
+      feeling: "Tired",
+      sleep: 200,
+      calories: 530,
+      exercise: 528,
+      created_at: Time.now + 600000,
+      updated_at: Time.now + 600000
+    },
+    {
+      user_id: 3,
+      feeling: "Energized",
+      sleep: 300,
+      calories: 100,
+      exercise: 220,
+      created_at: Time.now + 650000,
+      updated_at: Time.now + 650000
+    },
+    {
+      user_id: 3,
+      feeling: "Happy",
+      sleep: 500,
+      calories: 800,
+      exercise: 320,
+      created_at: Time.now + 750000,
+      updated_at: Time.now + 750000
+    },
+])
