@@ -1,27 +1,24 @@
-/* Drag and drop pending events */
-$('#pending-events div.pending-event').each(function() {
-    $(this).data('event', {
-        title: $(this).text().trim(),
-        stick: true
-    });
-    $(this).draggable({
-        zIndex: 99999999,
-        revertDuration: 0,
-        revert: true
-    });
-});
-
 /* Fullcalendar initialization */
+
+
+
 $(document).ready(function() {
+
+    $("#appt-form").submit(function(event){
+        event.preventDefault();
+        var values = {};
+        $.each($('#appt-form').serializeArray(), function(i, field) {
+           values[field.name] = field.value;
+        });
+        $.post("/new-appointment", values, function(data) {
+            $('#calendar').fullCalendar("refetchEvents");
+        });
+    });
 
     var today = new Date();
     var todayD = today.getDate();
     var todayM = today.getMonth();
     var todayY = today.getFullYear();
-
-    $.get("/responseblake.json", function(events) {
-
-    var events = [events]
 
     $('#calendar').fullCalendar({
         header: {
@@ -29,18 +26,32 @@ $(document).ready(function() {
             center: "title",
             right:  "month, agendaWeek, agendaDay"
         },
+        minTime: "08:00:00",
         editable: true,
         selectable: true,
         selectHelper:true,
-        select: function(start, end) {
+
+        select: function(start, end, event) {
+            debugger
+
             var title = prompt('Event Title:');
             var eventData;
             if (title) {
                 eventData = {
                     title: title,
                     start: start,
-                    url: url
+                    end: end,
                 };
+
+            // $.ajax({
+            //   url: 'new-appointment',
+            //   contentType: 'application/json',
+            //   data: eventData,
+            //   type: 'GET'
+            // }).done(function(data) {
+            //     console.log('Successful! ', data);
+            // });
+
                 $('#calendar').fullCalendar('renderEvent', eventData, true);
                 $('#calendar-today').fullCalendar('renderEvent', eventData, true);
             }
@@ -57,15 +68,12 @@ $(document).ready(function() {
             }
             $('#pending-counter').html(nEvents);
         },
-        events: events,
-        eventClick: function(event) {
-            if (event.url) {
-                window.open(event.url);
-                return false;
-            }
-        }
 
-       });
+        eventSources: [{
+                url: '/responseblake',
+                backgroundColor: 'yellow',   // an option!
+                textColor: 'white' // an option!
+            }],
     });
 
     $('#calendar-today').fullCalendar({
@@ -78,7 +86,7 @@ $(document).ready(function() {
         events: [
             {
                 title: 'Long Event',
-                start: 'Nov 02 2015 00:00:00 GMT-0500 (EST)',
+                start: new Date(todayY, todayM, todayD),
                 end: new Date(todayY, todayM, todayD+2),
                 allDay: true
             },
@@ -95,6 +103,10 @@ $(document).ready(function() {
         ]
     });
     $('#calendar-today .fc-toolbar').remove();
-});
-                     
+
+});  
+           
+
+
+
 

@@ -27,17 +27,21 @@ class AppointmentsController < ApplicationController
   end
 
   def responseblake
-    @appointment = Appointment.first
+
+    @appointments = Appointment.where(user_id: current_user.id)
+    # binding.pry
+    render "responseblake.json"
+    
   end
 
   # GET /appointments/1/edit
   def edit
   end
 
+
   # POST /appointments
   # POST /appointments.json
   def create
-    
     @appointment = Appointment.new(appointment_params)
     @appointment.user = current_user
     

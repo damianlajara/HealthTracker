@@ -13,6 +13,11 @@ class ApplicationController < ActionController::Base
     render "dashboard/dashboard"
   end
 
+  def send_reminder
+    # binding.pry   
+    sms_fu.deliver("9175749130","AT&T","Hello World!")
+  end
+
   private
 
       def configure_permitted_parameters

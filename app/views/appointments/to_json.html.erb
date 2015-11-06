@@ -1,0 +1,9 @@
+
+[
+   <% @appointments.each do |a| %>
+	<%= a.as_json %>
+		<% unless a == @appointments.last %>
+		,
+		<% end %>
+	<% end %>
+]

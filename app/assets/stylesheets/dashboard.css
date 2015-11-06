@@ -1,0 +1,14 @@
+#new-appt {
+	background: #416173;
+	padding: 20px;
+	font-size: 16px;
+}
+
+#new-appt label {
+	color: #fff;
+	font-size:18px;
+}
+
+#new-appt h2 {
+	color: #fff;
+}
