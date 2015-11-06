@@ -92,11 +92,91 @@
                                                         <div class="widget-icon widget-icon-top bg-default-light to-center">
                                                             <div id="sparkline-bar"></div>
                                                         </div>
-                                                        <div class="widget-content to-center">
-                                                            <i class="fa fa-user r-mar-5"></i>
-                                                            Visitors expected
-                                                            <h3 class="bold">2.048</h3>
-                                                        </div>
+                                                         <!-- start of panel drop down -->
+                                                            <div class="panel panel-default" id="calorie_form_drop_down">
+                                                                <div class="panel-heading">
+                                                                    <div class="panel-title">
+                                                                        <h3 class="bold to-center">Calories Form</h3>
+                                                                    </div>
+                                                                </div>
+
+                                                                <!-- start of foods form -->
+
+                                                                
+                                                                    <%= form_for(:calories, html: {id: "calories_form"}) do |f| %>
+
+                                                                        <div class="panel-body panel-full">
+                                                                            <div class="accordion panel-group no-mb" id="accordion-1" role="tablist" aria-multiselectable="true">
+                                                                                
+                                                                                <!-- start of search fields -->
+                                                                                <div class="panel">
+                                                                                    <div class="panel-heading" role="tab" id="heading-1">
+                                                                                        <h4 class="panel-title">
+                                                                                            <a role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-1" aria-expanded="false" aria-controls="collapse-1" class="accordion-toggler collapsed">
+                                                                                                Search Foods
+                                                                                            </a>
+                                                                                        </h4>
+                                                                                    </div>
+                                                                                    <div id="collapse-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-1" aria-expanded="false" style="height: 0px;">
+                                                                                        <div class="panel-body widget-content to-center">
+                                                                                            <div id="total_calories">
+                                                                                                <strong> Total Calories: </strong> 
+                                                                                                <p>0</p>
+                                                                                            </div>
+                                                                                            <%= label_tag :groups, "Narrow Food Scope"  %></br>
+                                                                                                <%= select_tag(:group, options_for_select(FoodGroup.all.collect {|group| [group.name, group.id]}), {include_blank: true, style: "display:  block; width: 100%;"} ) %></br>
+                                                                                                <%= label_tag :foods, "Add Foods"  %></br>
+                                                                                                <%= text_area_tag :foods %> </br>
+
+                                                                                                <%= button_tag(type: 'button', id: 'calculate_food', class: 'btn-primary') do %>
+                                                                                                    <%= content_tag(:strong, 'Add to Total') %>
+                                                                                                <% end %> </br></br>
+                                                                                                <div class="actions">
+                                                                                                  <%= f.submit class: 'btn-primary' %>
+                                                                                                </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                
+                                                                            <!-- end of search fields -->
+                                                                        
+                                                                            <!-- start of custom fields -->
+                                                                                <div class="panel">
+                                                                                    <div class="panel-heading wp100" role="tab" id="heading-2">
+                                                                                        <h4 class="panel-title">
+                                                                                            <a class="accordion-toggler collapsed" role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+                                                                                                Custom Calories
+                                                                                            </a>
+                                                                                        </h4>
+                                                                                    </div>
+                                                                                    <div id="collapse-2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-2" aria-expanded="false" style="height: 0px;">
+                                                                                        <div class="panel-body widget-content to-center">
+                                                                                           <div id="total_calories">
+                                                                                                <strong> Total Calories: </strong> 
+                                                                                                <p>0</p>
+                                                                                            </div>
+
+                                                                                            <%= text_field_tag :costum_calories %></br></br>
+                                                                                            <%= button_tag(type: 'button', id: 'calculate_custom', class: 'btn-primary') do %>
+                                                                                                <%= content_tag(:strong, 'Add to Total') %>
+                                                                                            <% end %></br></br>
+                                                                                            <div class="actions">
+                                                                                                <%= f.submit class: 'btn-primary' %>
+                                                                                            </div>
+                                                                                            <%= hidden_field_tag 'calories', '0' %>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- end of custom fields -->
+
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                <% end %>
+                                                                <!-- end of food form -->
+                                                            </div>
+                                                            <!-- end of panel drop down-->  
+
                                                     </div>
                                                 </div>
                                                 <div class="col-md-4 no-h-pad">
@@ -105,21 +185,45 @@
                                                             <div id="sparkline-area"></div>
                                                         </div>
                                                         <div class="widget-content to-center">
-                                                            <i class="fa fa-dollar r-mar-5"></i>
-                                                            Anual incomes
-                                                            <h3 class="bold">120.000,00$</h3>
+
+                                                            <!-- start of sleep form -->
+                                                            <h3 class="bold">Sleep Form</h3>
+                                                            
+                                                              <%= form_for(:sleep, html: {id: "sleep_form"}) do |f| %>
+                                                                <div class="field">
+                                                                  <%= f.time_select :sleep, {:default => {:hour => '00', :minute => '00'}} %>
+                                                                </div>
+                                                                 <div class="actions">
+                                                                  <%= f.submit class: 'btn-primary' %>
+                                                                </div>
+                                                              <% end %>
+                                                            
+                                                            <!-- end sleep form -->
+
                                                         </div>
                                                     </div>
-                                                </div>
+                                                    </div>
                                                 <div class="col-md-4 no-h-pad">
                                                     <div class="widget bg-default">
                                                         <div class="widget-icon widget-icon-top bg-default-light to-center">
                                                             <div id="sparkline-bar-2"></div>
                                                         </div>
                                                         <div class="widget-content to-center">
-                                                            <i class="fa fa-shopping-cart r-mar-5"></i>
-                                                            Sales expected
-                                                            <h3 class="bold">128</h3>
+
+                                                        <!-- start of exercise form -->
+                                                            <h3 class="bold">Exercise Form</h3>
+                                                            
+                                                              <%= form_for(:exercise, html: {id: "exercise_form"}) do |f| %>
+                                                                <div class="field">
+                                                                  <%= f.time_select :exercise, {:default => {:hour => '00', :minute => '00'}} %>
+                                                                </div>
+                                                                 <div class="actions">
+                                                                  <%= f.submit class: 'btn-primary'%>
+                                                                </div>
+                                                              <% end %>
+                                                            
+                                                            <!-- end of exercise form -->
+
                                                         </div>
                                                     </div>
                                                 </div>
@@ -925,3 +1029,84 @@
             </div>
 
     <script src="./../js/vendor/gridstack.min.js"></script>
+
+    <script>
+// 
+
+$(function() {
+    $("select#group").change(function(){
+    sendFoodRequest($("#group").val())
+  });
+
+  function sendFoodRequest(group_name){
+    list = $.get('/user_stats/foods/' + group_name, function(food_source){
+      setAutoComplete("#foods", food_source)
+    });
+  };
+  
+  function add_food_calories(){
+    if($("#foods").val() != "") {
+      
+      $.get('/user_stats/calculate_calories/' + encodeURIComponent($("#foods").val()), function(returned_number){
+
+        total = returned_number + parseInt($("#collapse-2 #total_calories p").text());
+        $("#total_calories p").text(total)
+        $("#calories").val(total)
+        $("#foods").val("");
+      });
+
+    }
+  };
+
+  function add_custom_calories(){
+    total = parseInt($("#costum_calories").val()) + parseInt($("#collapse-2 #total_calories p").text());
+    debugger
+    $("#total_calories p").text(total)
+    $("#calories").val(total)
+    $("#costum_calories").val("")
+  };
+
+  $("#calculate_custom").click(function(){
+    add_custom_calories();
+  }); 
+
+  $("#calculate_food").click(function(){
+    add_food_calories();
+  });
+
+  function clearForm(){
+
+  }
+
+  function ajaxFormSubmit(form_id){
+    event.preventDefault();
+    var values = {};
+    $.each($("#" + form_id).serializeArray(), function(i, field) {
+       values[field.name] = field.value;
+    });
+    
+    $.post("/user_stats", values, function(data) {
+      $("#notice").css({"background-color": "#0a0", "color": "black"})
+      $("#notice").text("Succesfully added!");
+      $("#notice").delay(1000).fadeOut("slow");
+    });
+    document.getElementById(form_id).reset()
+  };
+
+  $("#calories_form").submit(function(event){
+    $("#total_calories p").text(0)
+    ajaxFormSubmit("calories_form")
+  });
+
+  $("#exercise_form").submit(function(event){
+    ajaxFormSubmit("exercise_form")
+  });
+
+  $("#sleep_form").submit(function(event){
+    ajaxFormSubmit("sleep_form")
+    
+  });  
+});
+
+</script>
+
