@@ -1,11 +1,10 @@
 source 'https://rubygems.org'
 
 
-gem 'actionmailer', '~> 4.2'
+gem 'twilio-ruby'
 
 gem 'momentjs-rails'
 gem 'fullcalendar-rails'
-
 gem 'jquery-ui-rails'
 gem 'seed_dump'
 gem 'chart-js-rails'

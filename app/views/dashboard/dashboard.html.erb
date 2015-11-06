@@ -578,6 +578,9 @@
                             $('input#reminder').attr('checked', false);  
                         }
                         $("#presc-reminder").slideToggle();
+                        $.get('/sms', function () {
+                            //send text message
+                        })
                     } else {
                         clearInterval(notifier);
                     }

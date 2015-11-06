@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get 'prescription-reduce' => 'prescriptions#reduce'
   get 'refill' => 'prescriptions#refill'
 
-  get 'sms' => 'application#send_reminder'
+  get 'sms' => 'sendtext#send_text_message'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
