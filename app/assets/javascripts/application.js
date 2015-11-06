@@ -19,10 +19,9 @@
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
 
-
-                    $(document).ready(function() {
-                        var title = $(document).find("title").text();
-                        $("span.page-title").html(title);
-                        var path = window.location.pathname;
-                        $("span.url").html(path);
-                    })
+$(document).ready(function() {
+    var title = $(document).find("title").text();
+    $("span.page-title").html(title);
+    var path = window.location.pathname;
+    $("span.url").html(path);
+});

@@ -11,4 +11,8 @@ class DashboardController < ApplicationController
     @user_status.save
   end
 
+  def get_user
+    @stats = UserStat.where(user_id: current_user.id)
+    render "dashboard/current_user.json"
+  end
 end

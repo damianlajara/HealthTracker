@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :user_stats
   resources :prescriptions
 
   resources :circles
@@ -16,6 +17,9 @@ Rails.application.routes.draw do
   get 'calendar' => 'appointments#calendar'
   get 'responseblake(.:format)' => 'appointments#responseblake'
   get 'notifications' => 'appointments#notifications'
+
+  get 'dashboard/user_stats' => 'dashboard#get_user'
+
   get 'dashboard' => 'application#root'
   get 'recent-prescription' => 'prescriptions#most_recent'
   get 'prescription-reduce' => 'prescriptions#reduce'
@@ -29,17 +33,17 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'application#root'
 
-  
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
 
-  post 'dashboard/user_status' => 'dashboard#user_status' 
+  post 'dashboard/user_status' => 'dashboard#user_status'
 
   post 'circles/add_user' => 'circles#add_user'
 
   post 'new-appointment' => 'appointments#create'
-  
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

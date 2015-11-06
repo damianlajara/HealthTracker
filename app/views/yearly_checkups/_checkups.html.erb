@@ -1,0 +1,13 @@
+<% current_user.yearly_checkups.select { |yearly_checkup| yearly_checkup.checkup_date.year <= Date.current.year }.each.with_index(1) do |checkup, index| %>
+  <div class="col-md-3">
+    <div class="checkup <%= checkup.name.downcase %>-img" id="<%= index %>">
+      <div class="info">
+        <h3><%= checkup.name %></h3>
+      </div>
+      <div class="panel">
+        <p><%= checkup.location %></p>
+        <p><%= distance_of_time_in_words(Date.current, checkup.checkup_date) %> left</p>
+      </div>
+    </div>
+  </div>
+<% end %>

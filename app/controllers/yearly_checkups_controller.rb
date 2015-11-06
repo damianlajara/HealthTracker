@@ -1,0 +1,3 @@
+class YearlyCheckupsController < ApplicationController
+  
+end
