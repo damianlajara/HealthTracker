@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 
+gem 'actionmailer', '~> 4.2'
+
 gem 'momentjs-rails'
 gem 'fullcalendar-rails'
 

@@ -29,6 +29,7 @@ $(document).ready(function() {
         selectable: true,
         selectHelper:true,
         select: function(start, end) {
+            debugger
             var title = prompt('Event Title:');
             var eventData;
             if (title) {

@@ -40,6 +40,7 @@ class PrescriptionsController < ApplicationController
   def edit
   end
 
+
   # POST /prescriptions
   # POST /prescriptions.json
   def create

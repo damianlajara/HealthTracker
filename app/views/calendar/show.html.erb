@@ -1,7 +1,39 @@
-<div class="col-md-9 no-h-pad">
-    <div class="panel">
+<title>Appointment Calendar</title>
+<div class="col-md-8 no-h-pad">
+    <div class="panel mar-10">
         <div class="panel-body">
             <div id='calendar' class="fc-theme"></div>
         </div>
     </div>
 </div>
+
+<div class="col-md-4 no-h-pad">
+	<div id="new-appt" class="panel mar-10">
+	  <h2>Add Appointment</h2>
+		<% @appointment = Appointment.new %>
+		<%= form_for(@appointment, html:{id: "appt-form"}) do |f| %>
+
+		  <div class="field">
+		    <%= f.label :doctor %><br>
+		    <%= f.text_field :doctor %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :date %><br>
+		    <%= f.datetime_select :date %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :location %><br>
+		    <%= f.text_field :location %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :reasons %><br>
+		    <%= f.text_area :reasons %>
+		  </div>
+
+		  <div class="actions">
+		    <%= f.submit %>
+		  </div>
+		<% end %>
+	</div>
+</div>
+

@@ -11562,8 +11562,8 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child::before,table.dataT
 }
 
 .fc-agenda .fc-event-time,.fc-event,.fc-event a,.fc-state-active {
-    background-color: #6c6c6c !important;
-    border-color: #6c6c6c !important;
+    background-color: #6c6c6c;
+    border-color: #6c6c6c;
 }
 
 .dropzone .dropzone-dict .fa-stack-2x {

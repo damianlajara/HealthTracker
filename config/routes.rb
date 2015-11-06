@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get 'prescription-reduce' => 'prescriptions#reduce'
   get 'refill' => 'prescriptions#refill'
 
+  get 'sms' => 'application#send_reminder'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,6 +41,8 @@ Rails.application.routes.draw do
   post 'dashboard/user_status' => 'dashboard#user_status'
 
   post 'circles/add_user' => 'circles#add_user'
+
+  post 'new-appointment' => 'appointments#create'
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
