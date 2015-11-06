@@ -11856,6 +11856,12 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child::before,table.dataT
     display: inline-block;
     position: relative;
 }
+
 #calorie_form_drop_down .panel-body {
     color: black;
+}
+
+#ui-id-1 {
+    background-color: rgb(240, 240, 240);
+    width: 250px;
 }
