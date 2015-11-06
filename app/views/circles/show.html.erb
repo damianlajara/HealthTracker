@@ -18,7 +18,7 @@
 
 		<div class="circle-members">
 			<ul class="list-group">
-				<% @circle.users.each do |u| %>
+				<% @circle.users.uniq.each do |u| %>
 					<li class="member list-group-item">
 						<%= image_tag u.avatar(:thumb), class: "member-img" %>
 						<div class="member-name"><%= u.full_name %></div>

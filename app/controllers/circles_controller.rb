@@ -42,7 +42,9 @@ class CirclesController < ApplicationController
   def add_user
     @user = User.find(params[:user][:id])
     @circle = Circle.find_by(circle_params)
-    @circle.users << @user
+    unless @circle.users.include? @user
+      @circle.users << @user
+    end
     
     respond_to do |format|
       if @circle.save
