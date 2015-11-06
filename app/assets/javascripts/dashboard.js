@@ -55,7 +55,8 @@ $(document).ready(function() {
       $.map(user_stats, function(stat) {
         var date = new Date(stat.created_at)
         // debugger
-        return days[date.getDay()] + " " + date.getDay() + "/" + date.getMonth() + " (" + stat.feeling + ")";
+        // return days[date.getDay()] + " " + date.getDay() + "/" + date.getMonth() + " (" + stat.feeling + ")";
+        return days[date.getDay()] + " " + date.getDay() + "/" + date.getMonth();
       });
 
     Chart.defaults.global = {
@@ -74,7 +75,7 @@ $(document).ready(function() {
       // Number - The value jump in the hard coded scale
       scaleStepWidth: null,
       // Number - The scale starting value
-      scaleStartValue: null,
+      scaleStartValue: 0,
       // String - Colour of the scale line
       scaleLineColor: "rgba(0,0,0,0.1)",
       // Number - Pixel width of the scale line
@@ -143,45 +144,50 @@ $(document).ready(function() {
       onAnimationComplete: function() {}
     }
 
-    var data = {
+    var calorieData = {
+      label: "Calories",
+      fillColor: "rgba(74, 121, 147, 0.2)",
+      strokeColor: "rgba(220,220,220,1)",
+      pointColor: "rgba(220,220,220,1)",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "rgba(220,220,220,1)",
+      // data: getCaloriesFrom(user_stats)
+      data: calories
+    }
+
+    var sleepData = {
+      label: "Sleep",
+      fillColor: "rgba(74, 121, 147, 0.6)",
+      strokeColor: "rgba(151,187,205,1)",
+      pointColor: "rgba(151,187,205,1)",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "rgba(151,187,205,1)",
+      // data: getSleepFrom(user_stats)
+      data: sleep
+    }
+
+    var exerciseData = {
+      label: "Exercise",
+      fillColor: "rgba(100, 147, 80, 0.9)",
+      strokeColor: "rgba(121,147,105,1)",
+      pointColor: "rgba(121,147,105,1)",
+      pointStrokeColor: "#fff",
+      pointHighlightFill: "#fff",
+      pointHighlightStroke: "rgba(121,147,105,1)",
+      // data: getExerciseFrom(user_stats)
+      data: exercise
+    }
+    var barGraphData = {
       // labels: getDateFrom(user_stats, days),
       labels: date,
-      datasets: [{
-        label: "Calories",
-        fillColor: "rgba(74, 121, 147, 0.2)",
-        strokeColor: "rgba(220,220,220,1)",
-        pointColor: "rgba(220,220,220,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(220,220,220,1)",
-        // data: getCaloriesFrom(user_stats)
-        data: calories
-      }, {
-        label: "Sleep",
-        fillColor: "rgba(74, 121, 147, 0.6)",
-        strokeColor: "rgba(151,187,205,1)",
-        pointColor: "rgba(151,187,205,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(151,187,205,1)",
-        // data: getSleepFrom(user_stats)
-        data: sleep
-      }, {
-        label: "Exercise",
-        fillColor: "rgba(100, 147, 80, 0.9)",
-        strokeColor: "rgba(121,147,105,1)",
-        pointColor: "rgba(121,147,105,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(121,147,105,1)",
-        // data: getExerciseFrom(user_stats)
-        data: exercise
-      }]
+      datasets: [calorieData, sleepData, exerciseData]
     };
 
     var options = {};
     var barGraphContext = document.getElementById("healthChart").getContext("2d");
-    var chartjsBarChart = new Chart(barGraphContext).Bar(data, options);
+    var chartjsBarChart = new Chart(barGraphContext).Bar(barGraphData, options);
 
     $("#calories-mini-chart").sparkline(calories, {
       type: 'line',
@@ -190,7 +196,8 @@ $(document).ready(function() {
       width: '100%',
       height: '48',
       chartRangeMin: 0,
-      tooltipChartTitle: 'Calories'
+      tooltipChartTitle: 'Calories',
+      tooltipSuffix: ' kcal'
     });
 
     $("#sleep-mini-chart").sparkline(sleep, {
@@ -201,7 +208,7 @@ $(document).ready(function() {
       height: '48',
       chartRangeMin: 0,
       tooltipChartTitle: 'Sleep',
-      tooltipSuffix: ' %'
+      tooltipSuffix: ' mins'
     });
 
     $("#exercise-mini-chart").sparkline(exercise, {
@@ -211,18 +218,64 @@ $(document).ready(function() {
       width: '100%',
       height: '48',
       chartRangeMin: 0,
-      tooltipChartTitle: 'Exercise'
+      tooltipChartTitle: 'Exercise',
+      tooltipSuffix: ' mins'
     });
+
+    var calorieGraphData = {
+      labels: date,
+      datasets: [calorieData]
+    };
+
+    var sleepGraphData = {
+      labels: date,
+      datasets: [sleepData]
+    };
+
+    var exerciseGraphData = {
+      labels: date,
+      datasets: [exerciseData]
+    };
+
+    var lineGraphOptions = {
+      ///Boolean - Whether grid lines are shown across the chart
+      scaleShowGridLines : true,
+      //String - Colour of the grid lines
+      scaleGridLineColor : "rgba(0,0,0,.05)",
+      //Number - Width of the grid lines
+      scaleGridLineWidth : 1,
+      //Boolean - Whether to show horizontal lines (except X axis)
+      scaleShowHorizontalLines: true,
+      //Boolean - Whether to show vertical lines (except Y axis)
+      scaleShowVerticalLines: true,
+      //Boolean - Whether the line is curved between points
+      bezierCurve : true,
+      //Number - Tension of the bezier curve between points
+      bezierCurveTension : 0.4,
+      //Boolean - Whether to show a dot for each point
+      pointDot : true,
+      //Number - Radius of each point dot in pixels
+      pointDotRadius : 4,
+      //Number - Pixel width of point dot stroke
+      pointDotStrokeWidth : 1,
+      //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+      pointHitDetectionRadius : 20,
+      //Boolean - Whether to show a stroke for datasets
+      datasetStroke : true,
+      //Number - Pixel width of dataset stroke
+      datasetStrokeWidth : 2,
+      //Boolean - Whether to fill the dataset with a colour
+      datasetFill : true,
+    };
+
+    var calorieGraphContext = document.getElementById("calories-full-chart").getContext("2d");
+    var calorieChart = new Chart(calorieGraphContext).Line(calorieGraphData, lineGraphOptions);
+
+    var sleepGraphContext = document.getElementById("sleep-full-chart").getContext("2d");
+    var sleepChart = new Chart(sleepGraphContext).Line(sleepGraphData, lineGraphOptions);
+
+    var exerciseGraphContext = document.getElementById("exercise-full-chart").getContext("2d");
+    var exerciseChart = new Chart(exerciseGraphContext).Line(exerciseGraphData, lineGraphOptions);
 
   });
 });
-
-// Toastr
-// setTimeout(function(message) {
-//     toastr.options = {
-//         progressBar: true,
-//         showMethod: 'slideDown',
-//         timeOut: 2500
-//     };
-//     toastr.success(message);
-// }, 150);
