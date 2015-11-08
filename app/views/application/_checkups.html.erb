@@ -3,7 +3,10 @@
 
     <div class="checkup <%= checkup.name.downcase %>-img" id="<%= index %>">
       <div class="info">
-        <h3><%= checkup.name %></h3>
+        <h3 class="text-center"><%= checkup.name %></h3>
+        <hr>
+        <p class="text-center"><%= checkup.location %></p>
+        <p class="text-center"><%= distance_of_time_in_words(Date.current, checkup.checkup_date) %> left</p>
       </div>
       <div class="panel">
         <p><%= checkup.location %></p>
