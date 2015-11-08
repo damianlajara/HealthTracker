@@ -1,0 +1,229 @@
+<div class="panel mar-10">
+
+                        <div id="need-refill">
+                            <%= image_tag 'doctor-small.png', :id => "doc" %>
+                            <div class="doc-message">
+                                <strong class="larger">Uh Oh!</strong></br>
+                                Your prescription ran out. But you have refills left. Go get one and click a heart to fill the bottle.
+                            </div>
+                        </div>
+                        <div id="no-refills">
+                            <%= image_tag 'doctor-done.png', :id => "doc" %>
+                            <div class="doc-message">
+                                <strong class="larger">All Done!</strong></br>I hope you're feeling better. Click the prescription icon to add a new one.
+                            </div>
+                        </div>
+                        <div id="pill-bottle">
+                        <div id="pill-panel">
+                            <div id="edit-presc">
+                                <i class="fa fa-pencil-square-o"></i>
+                            </div>
+                            <div id="refills">
+                            </div>
+                        </div>
+                        <div id="bottle-cap">
+                        <div id="cap-top"></div>
+                        <div id="cap-bottom">
+                          <div class="ridge"></div>
+                          <div class="ridge"></div>
+                          <div class="ridge"></div>
+                          <div class="ridge"></div>
+                          <div class="ridge"></div>
+                          <div class="ridge"></div>
+                          <div class="ridge"></div>
+                          <div class="ridge"></div>
+                          <div class="ridge"></div>
+                          <div class="ridge"></div>
+                        </div>
+                        </div>
+                        <div id="bottle-body">
+                          <div id="presc-label"><span id="pl-n"></span> : <span id="pl-a"></span></div>
+                          <div id="fill">
+                          <div class="pill pill1"></div>
+                          <div class="pill pill2"></div>
+                          <div class="pill pill3"></div>
+                          <div class="pill pill4"></div>
+                          </div>
+                          <div id="pill-count"></div>
+                        </div>
+                        </div>
+                        </div>
+                           <div class="panel mar-10" id="presc-reminder">
+                            <h2>Reminder:</h2>
+                            Take <span id="pr-d"></span> <span id="pr-n"></span>s<br><span style="font-size:15px">done </span><input type="checkbox" id="reminder">
+                           </div>
+                            <!-- Server Statistics -->
+                            <div class="panel mar-10" id="presc-form">
+
+                            <p id="notice"><%= notice %></p>
+                                <div class="panel-body">
+                                 <h2>Prescription Form:</h2>
+                                 <% @prescription = Prescription.new %>
+                                 <%= form_for(@prescription, html:{id:"prescription"}) do |f| %>
+                                  <% if @prescription.errors.any? %>
+                                    <div id="error_explanation">
+                                      <h2><%= pluralize(@prescription.errors.count, "error") %> prohibited this prescription from being saved:</h2>
+
+                                      <ul>
+                                      <% @prescription.errors.full_messages.each do |message| %>
+                                        <li><%= message %></li>
+                                      <% end %>
+                                      </ul>
+                                    </div>
+                                  <% end %>
+
+                                  <div class="field">
+                                    <%= f.label :name %><br>
+                                    <%= f.text_field :name %>
+                                  </div>
+                                  <div class="field">
+                                    <%= f.label :amount %><br>
+                                    <%= f.number_field :amount %>
+                                  </div>
+                                  <div class="field">
+                                    <%= f.label :refills %><br>
+                                    <%= f.number_field :refills %>
+                                  </div>
+                                  <div class="field">
+                                    <%= f.label :dosage %><br>
+                                    <%= f.number_field :dosage %>
+                                  </div>
+                                  <div class="field">
+                                    <%= f.label :frequency %><br>
+                                    <span class="form_subtxt">
+                                    <em>(hour/minutes)</em>
+                                    </span><br>
+                                    <%= f.time_select :frequency %>
+                                  </div>
+                                  <div class="field">
+                                    <%= f.label "Starting At:" %><br>
+                                    <span class="form_subtxt">
+                                    <em>(For Demo: minutes/seconds)</em>
+                                    </span><br>
+                                    <%= f.time_select :first_dose %>
+                                  </div>
+                                  <div class="actions">
+                                    <%= f.submit %>
+                                  </div>
+                                <% end %>
+</div>
+<script>
+  // Slide form up on load
+  $("#presc-form").slideToggle();
+  $("#presc-reminder").slideToggle();
+  $("#edit-presc").click(function () {
+    $("#presc-form").slideToggle();
+  });
+  $("input#reminder").change(function() {
+    if($('input#reminder').is(':checked')) {
+        $.get("/prescription-reduce", function(presc) {
+                $("#pill-count").text(presc.remainder);
+                $("#presc-reminder").slideToggle();
+                var calcHeight = (presc.remainder / presc.amount) * 100;
+                var fillHeight = (calcHeight - 15) + '%';
+                $("#fill").css("height", fillHeight);
+                if(presc.remainder <= 0){
+                    if(presc.used_refills == presc.refills) {
+                        $("#no-refills").delay(3000).addClass("active");
+                        $("#edit-presc").addClass("pulsing")
+                    } else {
+                        $("#need-refill").delay(3000).addClass("active");
+                        $(".avail-ref").addClass("pulsing")
+                    }
+                }
+        });
+    }
+  });
+  getPrescription();
+    function getPrescription() {
+        $.get("/recent-prescription", function(presc) {
+            if(presc == "none") {
+                $("#fill").addClass("invisible");
+            } else {
+            $("#pl-n").text(presc.name);
+            $("#pr-d").text(presc.dosage);
+            $("#pr-n").text(presc.name);
+            $("#pl-a").text(presc.amount);
+            $("#pill-count").text(presc.remainder);
+
+            var calcHeight = (presc.remainder / presc.amount) * 100
+            var fillHeight = (calcHeight - 15) + '%'
+            $("#fill").css("height", fillHeight)
+
+
+            var interval = presc.frequency * 1000;
+            var notifier = setInterval(notify, interval);
+            // if(ttnr == 0){
+                function notify() {
+                    if(presc.remainder > 0) {
+                        if($('input#reminder').attr('checked', true)){
+                            presc.remainder -= presc.dosage;
+                            $('input#reminder').attr('checked', false);
+                        }
+                        $("#presc-reminder").slideToggle();
+                        $.get('/sms', function () {
+                            //send text message
+                        })
+                    } else {
+                        clearInterval(notifier);
+                    }
+                };
+            // }
+            setRefills(presc);
+            if(presc.remainder <= 0){
+                if(presc.used_refills == presc.refills) {
+                    $("#no-refills").delay(3000).addClass("active");
+                    $("#edit-presc").addClass("pulsing")
+                } else {
+                    $("#need-refill").delay(3000).addClass("active");
+                    $(".avail-ref").addClass("pulsing")
+                }
+            }
+        }
+    });
+  };
+  function setRefills(presc) {
+            var refills = presc.refills
+            var usedRefills = presc.used_refills
+
+            for(var xrf = 0; xrf < refills; xrf++) {
+                $("#refills").append("<div id='refill' class='avail-ref'><i class='fa fa-heart'></i></div>");
+            };
+            $(".avail-ref").slice(0, usedRefills).each(function(ref){
+                $(this).removeClass("avail-ref");
+            });
+    //reset bottle with refill
+    $(".avail-ref").click(function() {
+        $( "#refills" ).empty();
+        $(this).html("<i class='fa fa-times'></i>");
+        $(this).removeClass("avail-ref");
+        $.get("/refill", function(status){
+           getPrescription();
+           $("#need-refill").removeClass("active");
+           $(".avail-ref").removeClass("pulsing");
+        });
+    });
+  };
+  $("form#prescription").submit(function(event){
+    event.preventDefault();
+    var values = {};
+    $.each($('form#prescription').serializeArray(), function(i, field) {
+       values[field.name] = field.value;
+    });
+    $.post("/prescriptions", values, function(data) {
+      $( "#refills" ).empty();
+      $("#notice").css({"padding": "15px", "background-color": "#abe8ab", "text-align": "center", "color": "black"});
+      $("#notice").text("Succesfully added!");
+      $("#notice").delay(3000).fadeOut("slow");
+      $("#presc-form").delay(4000).slideToggle();
+      $("#need-refill").removeClass("active");
+      $("#no-refills").removeClass("active");
+      $("#edit-presc").removeClass("pulsing");
+      $("#fill").removeClass("invisible");
+      getPrescription();
+      setRefills(presc);
+    });
+  });
+</script>
+
+                                

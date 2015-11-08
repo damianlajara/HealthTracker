@@ -12,3 +12,12 @@
 #new-appt h2 {
 	color: #fff;
 }
+
+
+#checkups-badges {
+	display: flex;
+}
+/*
+#checkups-badges .checkup {
+	width:25%;
+}*/

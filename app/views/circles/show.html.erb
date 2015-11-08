@@ -7,52 +7,52 @@
 </p>
 
 <%= form_tag '/circles/add_user', class: "new_user" do %>
-	<%= hidden_field_tag "circle[name]", @circle.name %>
-	<%= label_tag "user[id]", "User ID:"%>
+  <%= hidden_field_tag "circle[name]", @circle.name %>
+  <%= label_tag "user[id]", "User ID:"%>
     <%= number_field_tag "user[id]"%>
-	<%= submit_tag "Join Circle"%>
+  <%= submit_tag "Join Circle"%>
 <% end %>
 
 <% unless @circle.users.empty? %>
-	<div class="circle-body">
+  <div class="circle-body">
 
-		<div class="circle-members">
-			<ul class="list-group">
-				<% @circle.users.uniq.each do |u| %>
-					<li class="member list-group-item">
-						<%= image_tag u.avatar(:thumb), class: "member-img" %>
-						<div class="member-name"><%= u.full_name %></div>
-					</li>
-				<% end %>
-			</ul>
-		</div>
+    <div class="circle-members">
+      <ul class="list-group">
+        <% @circle.users.uniq.each do |u| %>
+          <li class="member list-group-item">
+            <%= image_tag u.avatar(:thumb), class: "member-img" %>
+            <div class="member-name"><%= u.full_name %></div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
 
-		<div class="circle-chart">
-			<canvas id="circleChart" width="450" height="450"></canvas>
-			<ul class="circle-legend">
-				<li class="circle-legend-li energized">
-					<div class="legend-li-icon"></div>
-					<div class="legend-li-label">Energized</div>
-				</li>
-				<li class="circle-legend-li just-fine">
-					<div class="legend-li-icon"></div>
-					<div class="legend-li-label">Just Fine</div>
-				</li>
-				<li class="circle-legend-li exhausted">
-					<div class="legend-li-icon"></div>
-					<div class="legend-li-label">Exhausted</div>
-				</li>
-				<li class="circle-legend-li mildly-sick">
-					<div class="legend-li-icon"></div>
-					<div class="legend-li-label">Mildly Sick</div>
-				</li>
-				<li class="circle-legend-li very-sick">
-					<div class="legend-li-icon"></div>
-					<div class="legend-li-label">Very Sick</div>
-				</li>
-			</ul>
-		</div>
-	</div>
+    <div class="circle-chart">
+      <canvas id="circleChart" width="450" height="450"></canvas>
+      <ul class="circle-legend">
+        <li class="circle-legend-li energized">
+          <div class="legend-li-icon"></div>
+          <div class="legend-li-label">Energized</div>
+        </li>
+        <li class="circle-legend-li just-fine">
+          <div class="legend-li-icon"></div>
+          <div class="legend-li-label">Just Fine</div>
+        </li>
+        <li class="circle-legend-li exhausted">
+          <div class="legend-li-icon"></div>
+          <div class="legend-li-label">Exhausted</div>
+        </li>
+        <li class="circle-legend-li mildly-sick">
+          <div class="legend-li-icon"></div>
+          <div class="legend-li-label">Mildly Sick</div>
+        </li>
+        <li class="circle-legend-li very-sick">
+          <div class="legend-li-icon"></div>
+          <div class="legend-li-label">Very Sick</div>
+        </li>
+      </ul>
+    </div>
+  </div>
 <% end %>
 
 <%= link_to 'Edit', edit_circle_path(@circle) %> |
@@ -68,65 +68,65 @@
 
 
   var doughnutOptions = {
-  	//Boolean - Whether we should show a stroke on each segment
-  	segmentShowStroke : true,
+    //Boolean - Whether we should show a stroke on each segment
+    segmentShowStroke : true,
 
-  	//String - The colour of each segment stroke
-  	segmentStrokeColor : "#fff",
+    //String - The colour of each segment stroke
+    segmentStrokeColor : "#fff",
 
-  	//Number - The width of each segment stroke
-  	segmentStrokeWidth : 2,
+    //Number - The width of each segment stroke
+    segmentStrokeWidth : 2,
 
-  	//The percentage of the chart that we cut out of the middle.
-  	percentageInnerCutout : 50,
+    //The percentage of the chart that we cut out of the middle.
+    percentageInnerCutout : 50,
 
-  	//Boolean - Whether we should animate the chart
-  	animation : true,
+    //Boolean - Whether we should animate the chart
+    animation : true,
 
-  	//Number - Amount of animation steps
-  	animationSteps : 100,
+    //Number - Amount of animation steps
+    animationSteps : 100,
 
-  	//String - Animation easing effect
-  	animationEasing : "easeOutBounce",
+    //String - Animation easing effect
+    animationEasing : "easeOutBounce",
 
-  	//Boolean - Whether we animate the rotation of the Doughnut
-  	animateRotate : true,
+    //Boolean - Whether we animate the rotation of the Doughnut
+    animateRotate : true,
 
-  	//Boolean - Whether we animate scaling the Doughnut from the centre
-  	animateScale : true,
+    //Boolean - Whether we animate scaling the Doughnut from the centre
+    animateScale : true,
 
-  	//Function - Will fire on animation completion.
-  	onAnimationComplete : null
+    //Function - Will fire on animation completion.
+    onAnimationComplete : null
   };
 
 
   // Doughnut Chart Data
   var doughnutData = [
-  	{
-  		value: <%= @circle.statuses[:energized] %>,
-  		color:"#10cc84"
-  	},
-  	{
-  		value: <%= @circle.statuses[:just_fine] %>,
-  		color : "#1dc8e2"
-  	},
+    {
+      value: <%= @circle.statuses[:energized] %>,
+      color:"#10cc84"
+    },
+    {
+      value: <%= @circle.statuses[:just_fine] %>,
+      color : "#1dc8e2"
+    },
       {
-  		value : <%= @circle.statuses[:exhausted] %>,
-  		color : "#b457f2"
-  	},
+      value : <%= @circle.statuses[:exhausted] %>,
+      color : "#b457f2"
+    },
 
-  	{
-  		value : <%= @circle.statuses[:mildly_sick] %>,
-  		color : "#ef7b45"
-  	},
+    {
+      value : <%= @circle.statuses[:mildly_sick] %>,
+      color : "#ef7b45"
+    },
       {
-  		value : <%= @circle.statuses[:very_sick] %>,
-  		color : "#ed3b3b"
-  	},
-  	{
-  		value : <%= @circle.undefined_status%>,
-  		color : "gray"
-  	}
+      value : <%= @circle.statuses[:very_sick] %>,
+      color : "#ed3b3b"
+    },
+    {
+      value : <%= @circle.undefined_status%>,
+      color : "gray"
+    }
 
   ];
 
@@ -138,82 +138,3 @@
   var mydoughnutChart = new Chart(ctx).Doughnut(doughnutData, doughnutOptions);
 
 </script>
-
-<style>
-h1.circle-title {
-	text-transform: uppercase;
-	margin-bottom:30px;
-}
-
-.circle-chart {
-	position: relative;
-	padding-top:20px;
-}
-
-.legend-li-label {
-	font-size: 22px;
-}
-
-.circle-legend {
-	position: absolute;
-	top:20px;
-	right: -350px;
-}
-
-.circle-body {
-	display: flex;
-}
-
-.circle-legend-li {
-	display: flex;
-	margin-bottom: 15px;
-}
-
-.legend-li-icon {
-	margin-right:10px;
-	height: 30px;
-    width: 30px;
-    border-radius: 7px;
-}
-
-.energized .legend-li-icon {
-	background: #10cc84;
-}
-
-.just-fine .legend-li-icon {
-	background: #1dc8e2;
-}
-
-.exhausted .legend-li-icon {
-	background: #b457f2;
-}
-
-.mildly-sick .legend-li-icon {
-	background: #ef7b45;
-}
-
-.very-sick .legend-li-icon {
-	background: #ed3b3b;
-}
-
-
-.member {
-	display: flex;
-}
-
-img.member-img {
-	width: 60px;
-	height: 60px;
-}
-
-.member-name {
-	line-height: 60px;
-    font-size: 22px;
-    margin: 0 15px;
-}
-
-.circle-members {
-	width: 25%;
-    margin-right: 100px;
-}
-</style>

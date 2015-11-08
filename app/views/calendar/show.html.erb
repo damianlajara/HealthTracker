@@ -7,6 +7,41 @@
     </div>
 </div>
 
+<div class="col-md-3 no-l-pad">
+    <div class="panel">
+        <div class="panel-body">
+            <div id="pending-events-container">
+                <h4>
+                    Pending events
+                    <div id="pending-counter" class="badge badge-warning pull-right">3</div>
+                </h4>
+                
+                <div id="pending-events">
+                    <p class="italic">
+                        Drag and drop pending events into the calendar.
+                    </p>
+                    <div class="pending-event ui-draggable ui-draggable-handle bg-theme-light block pad-v-5 pad-h-10">
+                        <i class="fa fa-coffee r-mar-10"></i>Client coffee
+                    </div>
+                    <div class="pending-event ui-draggable ui-draggable-handle bg-theme-light block mt-5 pad-v-5 pad-h-10">
+                        <i class="fa fa-briefcase r-mar-10"></i>Director's meeting
+                    </div>
+                    <div class="pending-event ui-draggable ui-draggable-handle bg-theme-light block mt-5 pad-v-5 pad-h-10">
+                        <i class="fa fa-futbol-o r-mar-10"></i>Futbol match
+                    </div>
+                </div>
+                <hr class="dotted"/>
+            </div>
+            <h4 class="to-center mb-10 no-mt">
+                Today agenda <small>(day view)</small>
+            </h4>
+            <div id="calendar-today"></div>
+        </div>
+    </div>
+</div>
+
+
+
 <div class="col-md-4 no-h-pad">
 	<div id="new-appt" class="panel mar-10">
 	  <h2>Add Appointment</h2>

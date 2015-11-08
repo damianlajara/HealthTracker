@@ -13,8 +13,9 @@ class Circle < ActiveRecord::Base
 		}
 
 		self.users.each do |u|
-	      unless u.user_statuses.last.nil?
-	      	case u.user_statuses.where("created_at >= ?", Time.zone.now.beginning_of_day).last.status
+		  statuses = u.user_statuses.where("created_at >= ?", Time.zone.now.beginning_of_day)
+	      unless u.user_statuses.last.nil? || statuses.empty?
+	      	case statuses.last.status
 				when "Energized"
 					hash[:energized] += 1
 				when "Just Fine"

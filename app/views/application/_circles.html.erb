@@ -1,0 +1,194 @@
+
+        <div class="panel dash-circles">
+            <div class="panel-heading">
+                <div class="panel-control r-pad-20">
+                    <ul data-tabs="tabs" class="nav nav-tabs navbar-right" id="panel-tabs">
+                      <% current_user.circles.each_with_index do |circle, ix| %>
+                        <li class="circle-tab" data-index="<%= ix %>"><a data-toggle="tab" href="#tab-1"><%= circle.name %></a></li>
+                      <% end %>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="panel-body">
+                <div class="tab-content">
+                     <% unless current_user.circles.empty? %>
+                        <div class="circle-body">
+                            <div id="circle-members">
+                                <div id="member-list-container"></div>
+                            </div>
+
+                            <div id="circleChart-container" >
+                                <canvas id="circleChart" width="300" height="300"></canvas>
+                            </div>
+                            <div id="circle-legend">
+                                <ul class="circle-legend">
+                                    <li class="circle-legend-li energized">
+                                        <div class="legend-li-icon"></div>
+                                        <div class="legend-li-label">Energized</div>
+                                    </li>
+                                    <li class="circle-legend-li just-fine">
+                                        <div class="legend-li-icon"></div>
+                                        <div class="legend-li-label">Just Fine</div>
+                                    </li>
+                                    <li class="circle-legend-li exhausted">
+                                        <div class="legend-li-icon"></div>
+                                        <div class="legend-li-label">Exhausted</div>
+                                    </li>
+                                    <li class="circle-legend-li mildly-sick">
+                                        <div class="legend-li-icon"></div>
+                                        <div class="legend-li-label">Mildly Sick</div>
+                                    </li>
+                                    <li class="circle-legend-li very-sick">
+                                        <div class="legend-li-icon"></div>
+                                        <div class="legend-li-label">Very Sick</div>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div id="circle-users-storage">
+            <% current_user.circles.each_with_index do |circle, ix| %>
+                  <ul id="<%= ix %>" class="list-group circle-users">
+                    <% circle.users.uniq.each do |u| %>
+                      <li class="member list-group-item">
+                        <%= image_tag u.avatar(:thumb), class: "member-img" %>
+                        <div class="member-name"><%= u.full_name %></div>
+                      </li>
+                    <% end %>
+                  </ul>
+            <% end %>
+        </div>
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+
+        <script>
+
+          // ======================================================
+          // Doughnut Chart
+          // ======================================================
+
+          // Doughnut Chart Options
+
+          // $(document).ready(function(){
+          //   renderChart();
+          // });
+
+
+        $(document).ready(function(){
+            renderChart('doughnutData0');
+            var users = $("#0.circle-users").html();
+            $('#member-list-container').html(users);
+        });
+
+          $(".circle-tab").click(function(){
+            var ix = $(this).attr("data-index");
+            var chartData = 'doughnutData' + ix;
+            var users_id = "#" + ix + ".circle-users";
+            var users = $(users_id).html();
+            $('#member-list-container').slideUp();
+            $('#member-list-container').html(users);
+            $('#member-list-container').delay(100).slideDown();
+            renderChart(chartData);
+          });
+
+          $("#clickTab").click(function(){
+            $("canvas").remove();
+            $(".circle-chart").prepend("<canvas id='circleChart' width='250' height='250'></canvas>");
+            renderChart();
+          });
+
+               
+              'use strict';
+              var myObject = {}
+              var doughnutOptions = {
+                //Boolean - Whether we should show a stroke on each segment
+                segmentShowStroke : true,
+
+                //String - The colour of each segment stroke
+                segmentStrokeColor : "#fff",
+
+                //Number - The width of each segment stroke
+                segmentStrokeWidth : 2,
+
+                //The percentage of the chart that we cut out of the middle.
+                percentageInnerCutout : 50,
+
+                //Boolean - Whether we should animate the chart
+                animation : true,
+
+                //Number - Amount of animation steps
+                animationSteps : 100,
+
+                //String - Animation easing effect
+                animationEasing : "easeOutExpo",
+
+                //Boolean - Whether we animate the rotation of the Doughnut
+                animateRotate : true,
+
+                //Boolean - Whether we animate scaling the Doughnut from the centre
+                animateScale : true,
+
+                //Function - Will fire on animation completion.
+                onAnimationComplete : null
+              };
+
+
+              // Doughnut Chart Data
+              <% i = 0 %>
+              <% current_user.circles.each do |circle| %>
+                  var myvar = "doughnutData" + <%= i %>
+                  myObject[myvar] = [
+                    {
+                        value: <%= circle.statuses[:energized] %>,
+                        color:"#10cc84"
+                    },
+                    {
+                        value: <%= circle.statuses[:just_fine] %>,
+                        color : "#1dc8e2"
+                    },
+                      {
+                        value : <%= circle.statuses[:exhausted] %>,
+                        color : "#b457f2"
+                    },
+
+                    {
+                        value : <%= circle.statuses[:mildly_sick] %>,
+                        color : "#ef7b45"
+                    },
+                      {
+                        value : <%= circle.statuses[:very_sick] %>,
+                        color : "#ed3b3b"
+                    },
+                    {
+                        value : <%= circle.undefined_status%>,
+                        color : "gray"
+                    }
+
+                  ];
+                  <% i += 1 %>
+              <% end %>
+
+
+              //Get the context of the Doughnut Chart canvas element we want to select
+              var ctx = document.getElementById("circleChart").getContext("2d");
+
+              // Create the Doughnut Chart
+            function renderChart(chartData) {
+              var mydoughnutChart = new Chart(ctx).Doughnut(myObject[chartData], doughnutOptions);
+            }
+
+        </script>
+
+

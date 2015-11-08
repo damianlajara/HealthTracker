@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -17,7 +18,8 @@ class User < ActiveRecord::Base
 
   has_many :feelings
 
-  has_one :circles, through: :user_circle
+  has_many :user_circles
+  has_many :circles, through: :user_circles
 
   has_many :user_statuses
 
