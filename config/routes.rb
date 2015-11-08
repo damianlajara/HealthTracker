@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :appointments
 
   devise_for :users
+  
+   get 'routines/symptom_list' => 'routines#symptom_list'
 
   resources :routines
 
@@ -44,6 +46,8 @@ Rails.application.routes.draw do
   post 'circles/add_user' => 'circles#add_user'
 
   get 'dashboard/zalman' => "dashboard#zalman"
+
+  
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

@@ -1,46 +1,32 @@
-var symptom_list = <%= Symptom.all.map {|symptom| symptom.common_term } %> 
+var symptom_list = []
+ $.get('/routines/symptom_list/', function(symptoms){
+    symptom_list = symptoms
+ });
+
 
 $( document ).ready(function() {
   smoothScroll();
   $(".health-form").hide();
-  radio_field();
-  
+  symptom_field();
+
 });
 
-function radio_field() {
-  $("#field-1").show();
-
-  $("#field-1 button").click(function(){
-    value = $("input[type=radio]:checked").val()
-
-    if(value === "true"){
-      symptom_field();
-    } 
-    else if($("input[type=radio]:checked").val() === undefined) {
-
-    }
-    else {
-      window.location="/routines/dashboard"
-    }
-  });
-};
-
 function symptom_field(){
-  $("#field-2").show();
+  $("#field-1").show();
   // trigger ancher tag. Page will scroll to #field-2. 
   $("a[href=#field-2]")[0].click()
 
   setAutoComplete("#routine_symptoms", symptom_list)
   $(".ui-helper-hidden-accessible").remove();
 
-  $("#field-2 button").click(function(){
+  $("#field-1 button").click(function(){
     $.get('/routines/symptom_check/' + $("textarea[id=routine_symptoms").val(), illness_field)
   });
 }
 
 function illness_field(possible_illnesses) {
-  $("#field-3").show();
-  $("a[href=#field-3]")[0].click()
+  $("#field-2").show();
+  $("a[href=#field-2]")[0].click()
 
 
   $.each(possible_illnesses, function(index, value) {

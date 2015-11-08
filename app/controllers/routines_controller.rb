@@ -1,17 +1,21 @@
 class RoutinesController < ApplicationController
-  before_filter :authenticate_user! 
 
   def new
     @user_routine = User.new
   end
 
+  def symptom_list
+    symptom_list = Symptom.all.map {|s| s.common_term }
+    respond_to do |format|
+       format.json { render json: symptom_list }
+    end
+  end
+
   def symptom_check
     symptoms = params[:symptoms].gsub(", ", ",").split(",")
-    binding.pry
     respond_to do |format|
        format.json { render json: SymptomChecker.possible_illnesses(symptoms).uniq }
-     end
-     binding.pry
+    end
   end
   
   def create
