@@ -1,0 +1,281 @@
+
+                    <div class="panel mar-10">
+                        <div class="panel-body">
+                            <h4 class="mb-10"><strong>Health Progress</strong>
+                            Expected / Real</h4>
+                            <div class="mt-10 mb-10" style="height: 256px">
+                                <canvas id="healthChart"></canvas>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 no-h-pad">
+                                    <div class="widget bg-default">
+                                        <div class=
+                                        "widget-icon widget-icon-top bg-default-light to-center">
+                                        <div id="calories-mini-chart"></div>
+                                        </div><!-- Accordion In Panel -->
+                                        <div class="panel to-center">
+                                            <div class="panel-heading">
+                                                <div class="panel-title dark">
+                                                    Total
+                                                    <strong>Calories</strong>
+                                                    for the past five days
+                                                </div>
+                                            </div>
+                                            <div class="panel-body panel-full">
+                                                <!-- start of calories form -->
+                                                <%= form_for(:calories, html: {id: "calories_form"}) do |f| %>
+                                                <div aria-multiselectable=
+                                                "false" class=
+                                                "accordion panel-group no-mb"
+                                                id="accordion-1" role=
+                                                "tablist">
+                                                    <div class=
+                                                    "panel panel-inverse">
+                                                        <div class=
+                                                        "panel-heading" id=
+                                                        "heading-1" role="tab">
+                                                            <h5 class=
+                                                            "panel-title">
+                                                            <a aria-controls=
+                                                            "collapse-1"
+                                                            aria-expanded=
+                                                            "true" class=
+                                                            "accordion-toggler"
+                                                            data-parent=
+                                                            "#accordion-1"
+                                                            data-toggle=
+                                                            "collapse" href=
+                                                            "#collapse-1" role=
+                                                            "button">Search
+                                                            Foods</a></h5>
+                                                        </div>
+                                                        <div aria-labelledby=
+                                                        "heading-1" class=
+                                                        "panel-collapse collapse"
+                                                        id="collapse-1" role=
+                                                        "tabpanel">
+                                                            <div class=
+                                                            "panel-body dark total_calories">
+                                                            <strong>Total
+                                                            Calories:</strong>
+                                                                <p>
+                                                                0</p><%= label_tag :groups, "Narrow Food Scope"  %><br>
+
+                                                                <%= select_tag(:group, options_for_select(FoodGroup.all.collect {|group| [group.name, group.id]}), {include_blank: true, style: "display:  block; width: 100%;"} ) %><br>
+
+                                                                <%= label_tag :foods, "Add Foods"  %><br>
+
+                                                                <%= text_area_tag :foods %><br>
+
+                                                                <%= button_tag(type: 'button', id: 'calculate_food', class: 'btn-primary') do %>
+                                                                <%= content_tag(:strong, 'Add to Total') %>
+                                                                <%end %><br>
+                                                                <br>
+                                                                <div class=
+                                                                "actions">
+                                                                    <%= f.submit class: 'btn-primary' %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class=
+                                                    "panel panel-inverse">
+                                                        <div class=
+                                                        "panel-heading" id=
+                                                        "heading-2" role="tab">
+                                                            <h5 class=
+                                                            "panel-title">
+                                                            <a aria-controls=
+                                                            "collapse-2"
+                                                            aria-expanded=
+                                                            "false" class=
+                                                            "accordion-toggler"
+                                                            data-parent=
+                                                            "#accordion-1"
+                                                            data-toggle=
+                                                            "collapse" href=
+                                                            "#collapse-2" role=
+                                                            "button">Custom
+                                                            Calories</a></h5>
+                                                        </div>
+                                                        <div aria-labelledby=
+                                                        "heading-2" class=
+                                                        "panel-collapse collapse"
+                                                        id="collapse-2" role=
+                                                        "tabpanel">
+                                                            <div class=
+                                                            "panel-body dark total_calories">
+                                                            <strong>Total
+                                                            Calories:</strong>
+                                                                <p>
+                                                                0</p><%= text_field_tag :costum_calories %><br>
+
+                                                                <br>
+                                                                <%= button_tag(type: 'button', id: 'calculate_custom', class: 'btn-primary') do %>
+                                                                <%= content_tag(:strong, 'Add to Total') %>
+                                                                <%end %><br>
+                                                                <br>
+                                                                <div class=
+                                                                "actions">
+                                                                    <%= f.submit class: 'btn-primary' %>
+                                                                </div><%= hidden_field_tag 'calories', '0' %>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div><%end %>
+                                                <!-- End of calories form -->
+                                            </div>
+                                        </div><!-- / Accordion In Panel -->
+                                        <!-- <div class="widget-content to-center">
+                                                            <i class="fa fa-user r-mar-5"></i>
+                                                            Total Calories this week
+                                                            <h3 class="bold">2.048</h3>
+                                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-4 no-h-pad">
+                                    <div class="widget bg-default">
+                                        <div class=
+                                        "widget-icon widget-icon-top bg-default-light to-center">
+                                        <div id="sleep-mini-chart"></div>
+                                        </div><!-- Accordion In Panel -->
+                                        <div class="panel to-center">
+                                            <div class="panel-heading">
+                                                <div class="panel-title dark">
+                                                    Total
+                                                    <strong>Sleep</strong> for
+                                                    the past five days
+                                                </div>
+                                            </div>
+                                            <div class="panel-body panel-full">
+                                                <div aria-multiselectable=
+                                                "false" class=
+                                                "accordion panel-group no-mb"
+                                                id="accordion-2" role=
+                                                "tablist">
+                                                    <div class=
+                                                    "panel panel-inverse">
+                                                        <div class=
+                                                        "panel-heading" id=
+                                                        "heading-3" role="tab">
+                                                            <h5 class=
+                                                            "panel-title">
+                                                            <a aria-controls=
+                                                            "collapse-3"
+                                                            aria-expanded=
+                                                            "true" class=
+                                                            "accordion-toggler"
+                                                            data-parent=
+                                                            "#accordion-2"
+                                                            data-toggle=
+                                                            "collapse" href=
+                                                            "#collapse-3" role=
+                                                            "button">Track
+                                                            Sleep</a></h5>
+                                                        </div>
+                                                        <div aria-labelledby=
+                                                        "heading-3" class=
+                                                        "panel-collapse collapse"
+                                                        id="collapse-3" role=
+                                                        "tabpanel">
+                                                            <div class=
+                                                            "panel-body dark">
+                                                                <!-- start of sleep form -->
+                                                                <%= form_for(:sleep, html: {id: "sleep_form"}) do |f| %>
+                                                                <div class=
+                                                                "field">
+                                                                    <%= f.time_select :sleep, {:default => {:hour => '00', :minute => '00'}} %>
+                                                                </div>
+                                                                <div class=
+                                                                "actions">
+                                                                    <%= f.submit class: 'btn-primary' %>
+                                                                </div><%end %>
+                                                                <!-- end sleep form -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- / Accordion In Panel -->
+                                        <!-- <div class="widget-content to-center">
+                                                            <i class="fa fa-dollar r-mar-5"></i>
+                                                            Total Sleep this week
+                                                            <h3 class="bold">120.000,00$</h3>
+                                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="col-md-4 no-h-pad">
+                                    <div class="widget bg-default">
+                                        <div class=
+                                        "widget-icon widget-icon-top bg-default-light to-center">
+                                        <div id="exercise-mini-chart"></div>
+                                        </div><!-- Accordion In Panel -->
+                                        <div class="panel to-center">
+                                            <div class="panel-heading">
+                                                <div class="panel-title dark">
+                                                    Total
+                                                    <strong>Exercise</strong>
+                                                    for the past five days
+                                                </div>
+                                            </div>
+                                            <div class="panel-body panel-full">
+                                                <div aria-multiselectable=
+                                                "false" class=
+                                                "accordion panel-group no-mb"
+                                                id="accordion-3" role=
+                                                "tablist">
+                                                    <div class=
+                                                    "panel panel-inverse">
+                                                        <div class=
+                                                        "panel-heading" id=
+                                                        "heading-4" role="tab">
+                                                            <h5 class=
+                                                            "panel-title">
+                                                            <a aria-controls=
+                                                            "collapse-4"
+                                                            aria-expanded=
+                                                            "true" class=
+                                                            "accordion-toggler"
+                                                            data-parent=
+                                                            "#accordion-3"
+                                                            data-toggle=
+                                                            "collapse" href=
+                                                            "#collapse-4" role=
+                                                            "button">Track
+                                                            Exercise</a></h5>
+                                                        </div>
+                                                        <div aria-labelledby=
+                                                        "heading-4" class=
+                                                        "panel-collapse collapse"
+                                                        id="collapse-4" role=
+                                                        "tabpanel">
+                                                            <div class=
+                                                            "panel-body dark">
+                                                                <!-- start of exercise form -->
+                                                                <%= form_for(:exercise, html: {id: "exercise_form"}) do |f| %>
+                                                                <div class=
+                                                                "field">
+                                                                    <%= f.time_select :exercise, {:default => {:hour => '00', :minute => '00'}} %>
+                                                                </div>
+                                                                <div class=
+                                                                "actions">
+                                                                    <%= f.submit class: 'btn-primary'%>
+                                                                </div><%end %>
+                                                                <!-- end of exercise form -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div><!-- / Accordion In Panel -->
+                                        <!-- <div class="widget-content to-center">
+                                                            <i class="fa fa-shopping-cart r-mar-5"></i>
+                                                            Total Exercise this week
+                                                            <h3 class="bold">128</h3>
+                                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                

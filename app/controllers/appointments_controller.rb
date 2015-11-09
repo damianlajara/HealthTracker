@@ -42,15 +42,22 @@ class AppointmentsController < ApplicationController
   # POST /appointments
   # POST /appointments.json
   def create
+
     @appointment = Appointment.new(appointment_params)
+
     @appointment.user = current_user
     
     month = Date::ABBR_MONTHNAMES[appointment_params["date(2i)"].to_i]
     day = appointment_params["date(3i)"]
     year = appointment_params["date(1i)"]
     time = "#{appointment_params["date(4i)"]}:#{appointment_params["date(5i)"]}:00"
+    
+    if params[:appointment][:appt_type].empty?
+      @appointment.cal_date = "#{month} #{day} #{year} #{time} GMT-0500 (EST)"
+    else 
+      @appointment.appt_type = params[:appointment][:appt_type]
+    end
 
-    @appointment.cal_date = "#{month} #{day} #{year} #{time} GMT-0500 (EST)"
     @appointment.save
     
 
@@ -97,6 +104,6 @@ class AppointmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def appointment_params
-      params.require(:appointment).permit(:doctor, :date, :reasons, :location)
+      params.require(:appointment).permit(:cal_date, :doctor, :date, :reasons, :location)
     end
 end

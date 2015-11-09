@@ -19,9 +19,11 @@ ActiveRecord::Schema.define(version: 20151109034455) do
     t.datetime "date"
     t.text     "reasons"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.string   "cal_date"
+    t.string   "appt_type",  default: "standard", null: false
+    t.time     "time"
   end
 
   create_table "checkups_users", force: :cascade do |t|
@@ -84,6 +86,13 @@ ActiveRecord::Schema.define(version: 20151109034455) do
 
   add_index "notifications", ["prescription_id"], name: "index_notifications_on_prescription_id"
   add_index "notifications", ["user_id"], name: "index_notifications_on_user_id"
+
+  create_table "pending_events", force: :cascade do |t|
+    t.integer "user_id"
+    t.string  "appt_type"
+  end
+
+  add_index "pending_events", ["user_id"], name: "index_pending_events_on_user_id"
 
   create_table "prescriptions", force: :cascade do |t|
     t.integer "user_id"
