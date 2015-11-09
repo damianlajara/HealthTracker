@@ -1,0 +1,72 @@
+<title>TEST Dashboard</title>
+
+               <div class="container-fluid">
+
+
+                   <div class="row">
+                       <div class="col-md-8 no-pad">
+                           <!-- render circles -->
+
+                           <div class="row">
+                               <div class="mar-10">
+                                   <h2>Stats</h2>
+                                   <hr>
+                               </div>
+                                  <%= render "application/userstats" %>
+                           </div>
+
+                           <!-- render checkups -->
+
+                           <div class="row">
+                               <div class="mar-10">
+                                   <h2>Checkups</h2>
+                                   <hr>
+                               </div>
+                                  <%= render "application/checkups" %>
+                           </div>
+
+                           <!-- End Checkups -->
+
+                           <!-- render circles -->
+
+                           <div class="row">
+                               <div class="mar-10">
+                                   <h2>Circles</h2>
+                                   <hr>
+                               </div>
+                                  <%= render "application/circles" %>
+                           </div>
+
+                           <!-- End circles -->
+
+                       </div>
+
+                       <div class="col-md-4 no-pad">
+                       <!-- Render Prescription -->
+                       <div class="mar-10">
+                           <div class="mar-10">
+                               <h2>Prescription</h2>
+                               <hr>
+                           </div>
+                           <%= render "application/prescription" %>
+                       </div>
+                       <!-- End Prescription -->
+
+
+                           <!-- Today's tasks -->
+                           
+                           <!-- / Today's tasks -->
+                       </div>
+                   </div>
+
+               </div>
+
+           </div>
+           <%= render "application/session" %>
+
+
+   <script src="./../js/vendor/jquery.peity.min.js"></script>
+   <script src="./../js/vendor/index.js"></script>
+   <script src="./../js/vendor/Chart.min.js"></script>
+   <script src="./../js/demo/demo-dashboard.js"></script>
+   <script src="./../js/vendor/holder.min.js"></script>
