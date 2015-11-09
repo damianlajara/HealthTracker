@@ -43,6 +43,7 @@ Rails.application.routes.draw do
   post 'circles/add_user' => 'circles#add_user'
 
   post 'new-appointment' => 'appointments#create'
+  post 'create-checkup' => 'appointments#create'
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

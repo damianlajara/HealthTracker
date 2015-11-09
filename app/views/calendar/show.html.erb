@@ -1,46 +1,4 @@
 <title>Appointment Calendar</title>
-<div class="col-md-8 no-h-pad">
-    <div class="panel mar-10">
-        <div class="panel-body">
-            <div id='calendar' class="fc-theme"></div>
-        </div>
-    </div>
-</div>
-
-<div class="col-md-3 no-l-pad">
-    <div class="panel">
-        <div class="panel-body">
-            <div id="pending-events-container">
-                <h4>
-                    Pending events
-                    <div id="pending-counter" class="badge badge-warning pull-right">3</div>
-                </h4>
-                
-                <div id="pending-events">
-                    <p class="italic">
-                        Drag and drop pending events into the calendar.
-                    </p>
-                    <div class="pending-event ui-draggable ui-draggable-handle bg-theme-light block pad-v-5 pad-h-10">
-                        <i class="fa fa-coffee r-mar-10"></i>Client coffee
-                    </div>
-                    <div class="pending-event ui-draggable ui-draggable-handle bg-theme-light block mt-5 pad-v-5 pad-h-10">
-                        <i class="fa fa-briefcase r-mar-10"></i>Director's meeting
-                    </div>
-                    <div class="pending-event ui-draggable ui-draggable-handle bg-theme-light block mt-5 pad-v-5 pad-h-10">
-                        <i class="fa fa-futbol-o r-mar-10"></i>Futbol match
-                    </div>
-                </div>
-                <hr class="dotted"/>
-            </div>
-            <h4 class="to-center mb-10 no-mt">
-                Today agenda <small>(day view)</small>
-            </h4>
-            <div id="calendar-today"></div>
-        </div>
-    </div>
-</div>
-
-
 
 <div class="col-md-4 no-h-pad">
 	<div id="new-appt" class="panel mar-10">
@@ -70,5 +28,117 @@
 		  </div>
 		<% end %>
 	</div>
+	<div class="panel mar-10">
+	    <div class="panel-body">
+			<div id="pending-events-container">
+		        <h4>
+		            Pending Checkups
+		            <div id="pending-counter" class="badge badge-warning pull-right">4</div>
+		        </h4>
+		        
+		        <div id="pending-events">
+		            <p class="italic">
+		                Drag and drop pending events into the calendar.
+		            </p>
+		            <% current_user.pending_events.each do |p_e| %>
+		            <a href="#ex1" id="modal-trigger"rel="modal:open">
+		            <div class="pending-event ui-draggable ui-draggable-handle bg-theme-light block pad-v-5 pad-h-10" id="<%= p_e.appt_type %>">
+		                <i class="fa fa-coffee r-mar-10"></i>
+		                <%= p_e.appt_type %> 
+		            </div>
+		            </a>
+		            <br>
+		            <% end %>
+
+
+		        </div>
+		        
+		    </div>
+		</div>
+	</div>
+
 </div>
+
+
+<div class="col-md-8 no-h-pad">
+    <div class="panel mar-10">
+        <div class="panel-body">
+            <div id='calendar' class="fc-theme"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+ <!-- Modal HTML embedded directly into document -->
+  <div id="ex1" style="display:none;">
+        <h2>Ready for your <div id="modal-appt-type"></div> Checkup?</h2>
+  		<h2>Give us the deets! </h2><br>
+	        <% @checkup = Appointment.new %>
+			<%= form_for(@checkup, html:{id: "modal-form"}) do |f| %>
+			  <div class="field">
+			    <%= f.label :doctor %><br>
+			    <%= f.text_field :doctor %>
+			  </div>
+			  <div class="field">
+			    <%= f.label :time %><br>
+			    <%= f.time_field :time %>
+			  </div>
+			  <div class="field">
+			    <%= f.label :location %><br>
+			    <%= f.text_field :location %>
+			  </div>
+			  <div class="actions">
+			    <a href="#" rel="modal:close" id="modal-close">
+			   		Ready to Drop!
+			   	</a>
+			  </div>
+			<% end %>
+  <a href="" id="close-modal" rel="modal:close">Close</a>
+  </div>
+
+
+
+
+
+
+    <div class="hidden-form">
+	    <% @checkup = Appointment.new %>
+		<%= form_for(@checkup, html:{id: "checkup-form"}) do |f| %>
+		  <div class="field">
+		    <%= f.label :doctor %><br>
+		    <%= f.text_field :doctor %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :time %><br>
+		    <%= f.time_field :time %>
+		  </div>
+	  	  <div class="field">
+		    <%= f.label :cal_date %><br>
+		    <%= f.text_field :cal_date %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :location %><br>
+		    <%= f.text_field :location %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :appt_type %><br>
+		    <%= f.text_field :appt_type %>
+		  </div>
+		  <div class="field">
+		    <%= f.label :reasons %><br>
+		    <%= f.text_area :reasons %>
+		  </div>
+		<% end %>
+    </div>
+
+
+
+
+
+
+
+
+
 

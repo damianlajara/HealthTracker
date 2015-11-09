@@ -13,6 +13,12 @@
 	color: #fff;
 }
 
+#pending-events .draggable {
+	margin-left: -8px;
+	margin-right: 8px;
+	box-shadow: 8px 8px 6px #222;
+}
+
 
 #checkups-badges {
 	display: flex;
@@ -21,3 +27,4 @@
 #checkups-badges .checkup {
 	width:25%;
 }*/
+

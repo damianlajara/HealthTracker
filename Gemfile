@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 
 gem 'twilio-ruby'
-
 gem 'momentjs-rails'
 gem 'fullcalendar-rails'
 gem 'jquery-ui-rails'

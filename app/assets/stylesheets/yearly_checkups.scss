@@ -2,16 +2,36 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.phyical-img {
-	background-image: image-url('3.jpg');
+#cu-0.empty  {
+	background-image: image-url('physical-empty.jpg');
+  background-size:contain
+}
+
+.physical-img {
+  background-image: image-url('physical-icon.jpg');
+  background-size:contain
+}
+
+#cu-1.empty  {
+  background-image: image-url('blood-empty.jpg');
+  background-size:contain
+}
+
+
+
+#cu-2.empty  {
+  background-image: image-url('dental-empty.jpg');
+  background-size:contain
 }
 
 .dental-img {
-	background-image: image-url('4');
+  background-image: image-url('dental-icon.jpg');
+  background-size:contain
 }
 
-.optical-img {
-	background-image: image-url('5');
+#cu-3.empty  {
+  background-image: image-url('optical-empty.jpg');
+  background-size:contain
 }
 
 .flu_shot-img {
@@ -19,15 +39,18 @@
 }
 
 .checkup {
+    box-shadow:
+    inset 0 0 0 16px rgba(255,255,255,0.6),
+    0 1px 2px rgba(0,0,0,0.1);
+}
+
+.checkup, .active-checkup {
   width: 9em;
   height: 9em;
   margin: 10px;
 	border-radius: 50%;
 	position: relative;
 	cursor: default;
-	box-shadow:
-		inset 0 0 0 16px rgba(255,255,255,0.6),
-		0 1px 2px rgba(0,0,0,0.1);
 
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
@@ -96,17 +119,13 @@
 	-webkit-backface-visibility: hidden;
 
   h3 {
-  	color: #fff;
-  	text-transform: uppercase;
-  	letter-spacing: 2px;
-  	font-size: 22px;
-  	margin: 0 30px;
-  	padding: 45px 0 0 0;
-  	height: 140px;
-  	font-family: 'Open Sans', Arial, sans-serif;
-  	text-shadow:
-  		0 0 1px #fff,
-  		0 1px 2px rgba(0,0,0,0.3);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 17px;
+    text-align: center;
+    line-height: 110px;
+    text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.8);
   }
   p {
   	color: #fff;
