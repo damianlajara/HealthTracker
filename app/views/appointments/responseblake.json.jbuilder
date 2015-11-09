@@ -1,5 +1,4 @@
 
-
 json.array!(@appointments) do |appointment|
       json.id  appointment.id
       json.title  appointment.reasons

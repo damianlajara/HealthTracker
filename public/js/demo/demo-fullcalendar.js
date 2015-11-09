@@ -40,10 +40,13 @@ $(document).ready(function() {
     $("#appt-form").submit(function(event){
         event.preventDefault();
         var values = {};
+
         $.each($('#appt-form').serializeArray(), function(i, field) {
            values[field.name] = field.value;
         });
+        debugger
         $.post("/new-appointment", values, function(data) {
+            debugger
             $('#calendar').fullCalendar("refetchEvents");
         });
     });
@@ -127,7 +130,7 @@ $(document).ready(function() {
             event.cal_date = month + ' ' + monthdate + ' ' + year + ' 23:22:00 GMT-0500 (EST)';
 
             // Nov 14 2015 23:22:00 GMT-0500 (EST)
-            $("#checkup-form #appointment_cal_date").val(event.cal_date);
+            // $("#checkup-form #appointment_cal_date").val(event.cal_date);
 
             // $("#checkup-form").submit();   
             debugger

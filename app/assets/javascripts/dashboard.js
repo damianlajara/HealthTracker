@@ -56,7 +56,8 @@ $(document).ready(function() {
         var date = new Date(stat.created_at)
         // debugger
         // return days[date.getDay()] + " " + date.getDay() + "/" + date.getMonth() + " (" + stat.feeling + ")";
-        return days[date.getDay()] + " " + date.getDay() + "/" + date.getMonth();
+        // return days[date.getDay()] + " " + date.getDay() + "/" + date.getMonth();
+        return stat.feeling
       });
 
     Chart.defaults.global = {
