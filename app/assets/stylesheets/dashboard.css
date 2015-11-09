@@ -29,6 +29,7 @@
 	width:25%;
 }*/
 
+
 #status-prompt {
 	padding: 80px 20px;
     background: #27D0B1;
@@ -43,5 +44,10 @@
 #status-prompt input[type="submit"] {
 	width: 100%;
 	margin:10px 0;
+}
+
+
+#side-nav>li {
+	margin-bottom: 1em;
 }
 
