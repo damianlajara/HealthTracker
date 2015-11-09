@@ -28,3 +28,6 @@
 	width:25%;
 }*/
 
+#side-nav>li {
+	margin-bottom: 1em;
+}
