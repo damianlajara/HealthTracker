@@ -40,12 +40,13 @@ function appendTaskWidget(element, value, klass, checked) {
     if (value!='') {
         var todo =
         "<li class='list-group-item'>"+
-            "<label class='option no-mb'" + (klass=='done'?'done':'') + ">"+
+            "<label class='option no-mb'" +(klass === 'done'?'done':'') + ">"+
                 "<input type='checkbox' class='toggle' name='varcb1'>"+
                 "<span class='checkbox checkbox-thin'></span>"+
                 "<span class='l-mar-5'>" + value + "</span>"+
             "</label>"+
         "</li>";
+        debugger
         $(element).append(todo);
     }
 }
