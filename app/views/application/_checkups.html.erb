@@ -1,4 +1,5 @@
 <div id="checkups-badges">
+
 	<% current_user.checkups.each_with_index do |checkup, ix| %>
 		<% if checkup == "empty" %>
 	    	<div class="checkup empty" id="cu-<%= ix %>">
@@ -14,4 +15,5 @@
 	    </div>
 	    <% end %>
 	<% end %>
+
 </div>
