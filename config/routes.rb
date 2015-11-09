@@ -28,7 +28,8 @@ Rails.application.routes.draw do
   get 'refill' => 'prescriptions#refill'
 
   get 'sms' => 'sendtext#send_text_message'
-
+  post 'add-task' => 'tasks#create'
+  get 'tasklist' => 'tasks#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

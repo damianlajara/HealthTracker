@@ -11,6 +11,22 @@ $(document).ready(function() {
       });
     }, "json");
 
+    $('#addtask').click(function() {
+      alert("begin")
+      $.each($('#task-form').serializeArray(), function(i, field) {
+         values[field.name] = field.value;
+      });
+      $.post('/add-task', function() {
+        debugger
+      });
+      $.get("/tasklist", function(tasks) {
+        debugger
+        $('#todocount').text(tasks.length)
+        var last = tasks[tasks.length-1]
+        appendTask('#todolist', last.name, false);
+      }, "json");
+        // appendTask('#todolist', $('#todonew').val(), false);
+    });
 
     // $('#todonew').keypress(function(e) {
     //     if (e.which === 13) {

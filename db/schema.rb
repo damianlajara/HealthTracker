@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20151109034455) do
   create_table "tasks", force: :cascade do |t|
     t.string   "name"
     t.string   "status",     default: "pending"
+    t.integer  "user_id"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
   end

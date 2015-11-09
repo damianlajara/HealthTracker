@@ -3,6 +3,7 @@ class CreateTasks < ActiveRecord::Migration
     create_table :tasks do |t|
       t.string :name
       t.string :status, default: :pending
+      t.integer :user_id
       t.timestamps null: false
     end
   end
