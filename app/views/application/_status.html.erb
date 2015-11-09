@@ -1,0 +1,13 @@
+
+<form action='dashboard/user_status' method="POST">
+<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+<%= select_tag "status", 
+"<option>Energized</option>
+ <option>Just Fine</option>
+ <option>Exhausted</option>
+ <option>Mildly Sick</option>
+ <option>Very Sick</option>".html_safe %>
+
+<input type="submit" value="Submit">
+
+</form>

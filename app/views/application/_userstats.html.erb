@@ -29,55 +29,7 @@
                                                 "accordion panel-group no-mb"
                                                 id="accordion-1" role=
                                                 "tablist">
-                                                    <div class=
-                                                    "panel panel-inverse">
-                                                        <div class=
-                                                        "panel-heading" id=
-                                                        "heading-1" role="tab">
-                                                            <h5 class=
-                                                            "panel-title">
-                                                            <a aria-controls=
-                                                            "collapse-1"
-                                                            aria-expanded=
-                                                            "true" class=
-                                                            "accordion-toggler"
-                                                            data-parent=
-                                                            "#accordion-1"
-                                                            data-toggle=
-                                                            "collapse" href=
-                                                            "#collapse-1" role=
-                                                            "button">Search
-                                                            Foods</a></h5>
-                                                        </div>
-                                                        <div aria-labelledby=
-                                                        "heading-1" class=
-                                                        "panel-collapse collapse"
-                                                        id="collapse-1" role=
-                                                        "tabpanel">
-                                                            <div class=
-                                                            "panel-body dark total_calories">
-                                                            <strong>Total
-                                                            Calories:</strong>
-                                                                <p>
-                                                                0</p><%= label_tag :groups, "Narrow Food Scope"  %><br>
-
-                                                                <%= select_tag(:group, options_for_select(FoodGroup.all.collect {|group| [group.name, group.id]}), {include_blank: true, style: "display:  block; width: 100%;"} ) %><br>
-
-                                                                <%= label_tag :foods, "Add Foods"  %><br>
-
-                                                                <%= text_area_tag :foods %><br>
-
-                                                                <%= button_tag(type: 'button', id: 'calculate_food', class: 'btn-primary') do %>
-                                                                <%= content_tag(:strong, 'Add to Total') %>
-                                                                <%end %><br>
-                                                                <br>
-                                                                <div class=
-                                                                "actions">
-                                                                    <%= f.submit class: 'btn-primary' %>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    
                                                     <div class=
                                                     "panel panel-inverse">
                                                         <div class=
@@ -95,7 +47,7 @@
                                                             data-toggle=
                                                             "collapse" href=
                                                             "#collapse-2" role=
-                                                            "button">Custom
+                                                            "button">
                                                             Calories</a></h5>
                                                         </div>
                                                         <div aria-labelledby=

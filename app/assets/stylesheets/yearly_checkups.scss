@@ -1,4 +1,12 @@
-
+.days-left {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: 58%;
+    font-size: 30px;
+    color: #fff;
+    text-shadow: -2px 2px 4px rgba(0, 0, 0, 0.95);
+}
 
 
 #cu-0.empty  {
@@ -13,6 +21,11 @@
 
 #cu-1.empty  {
   background-image: image-url('blood-empty.jpg');
+  background-size:contain
+}
+
+.blood-img {
+  background-image: image-url('blood-icon.jpg');
   background-size:contain
 }
 
@@ -33,19 +46,26 @@
   background-size:contain
 }
 
+.optical-img {
+  background-image: image-url('optical-icon.jpg');
+  background-size:contain
+}
+
 .flu_shot-img {
 	background-image: image-url('6');
 }
 
 .checkup {
+    position: relative;
     box-shadow:
     inset 0 0 0 16px rgba(255,255,255,0.6),
     0 1px 2px rgba(0,0,0,0.1);
 }
 
 .checkup, .active-checkup {
-  width: 9em;
-  height: 9em;
+  position: relative;
+  width: 11em;
+  height: 11em;
   margin: 10px;
 	border-radius: 50%;
 	position: relative;
@@ -85,6 +105,7 @@
       	-ms-transform: scale(1);
       	transform: scale(1);
       	opacity: 1;
+        position: absolute;
 
         p {
         	opacity: 1;
@@ -97,6 +118,8 @@
 
 .info {
 	position: absolute;
+  top: -5px;
+  left: -4px;
 	background: rgba(63,147,147, 0.8);
 	width: inherit;
 	height: inherit;

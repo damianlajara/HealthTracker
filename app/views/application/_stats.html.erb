@@ -23,43 +23,11 @@
         </div>
     </div>
 
-    <div class="panel-body panel-full">
-      <!-- start of calories form -->
-      <%= form_for(:calories, html: {id: "calories_form"}) do |f| %>
-        <div class="accordion panel-group no-mb" id="accordion-1" role="tablist" aria-multiselectable="false">
-
-            <div class="panel panel-inverse">
-                <div class="panel-heading" role="tab" id="heading-1">
-                    <h5 class="panel-title">
-                        <a role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-1" aria-expanded="true" aria-controls="collapse-1" class="accordion-toggler">
-                            Search Foods
-                        </a>
-                    </h5>
-                </div>
-                <div id="collapse-1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-1">
-                    <div class="panel-body dark total_calories">
-                      <strong> Total Calories: </strong>
-                      <p>0</p>
-                      <%= label_tag :groups, "Narrow Food Scope"  %></br>
-                      <%= select_tag(:group, options_for_select(FoodGroup.all.collect {|group| [group.name, group.id]}), {include_blank: true, style: "display:  block; width: 100%;"} ) %></br>
-                      <%= label_tag :foods, "Add Foods"  %></br>
-                      <%= text_area_tag :foods %> </br>
-
-                      <%= button_tag(type: 'button', id: 'calculate_food', class: 'btn-primary') do %>
-                          <%= content_tag(:strong, 'Add to Total') %>
-                      <% end %> </br></br>
-                      <div class="actions">
-                        <%= f.submit class: 'btn-primary' %>
-                      </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="panel panel-inverse">
                 <div class="panel-heading" role="tab" id="heading-2">
                     <h5 class="panel-title">
                         <a role="button" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-2" aria-expanded="false" aria-controls="collapse-2" class="accordion-toggler">
-                            Custom Calories
+                            Calories
                         </a>
                     </h5>
                 </div>
