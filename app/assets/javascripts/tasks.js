@@ -1,34 +1,54 @@
 $(document).ready(function() {
 
     $.get("/tasks", function(tasks) {
-      $('#todocount').text(tasks.length)
+      //$('#todocount').text(tasks.length)
       $.each(tasks, function(index, task) {
         if(task.status == "done") {
           appendTask('#oldtodolist', task.name, true);
+          if(index < 10) {
+            appendTaskWidget('#mini_list', task.name, "done", true);
+          }
         } else {
           appendTask('#todolist', task.name, false);
+          if(index < 10) {
+            appendTaskWidget('#mini_list', task.name, "pending", false);
+          }
         }
       });
     }, "json");
 
 
-    // $('#todonew').keypress(function(e) {
-    //     if (e.which === 13) {
-    //         $('.destroy').off('click');
-    //         $('.toggle').off('click');
-    //         appendTask('#todolist', $(this).val(), false);
-    //     }
-    //     todoToggle();
-    //     todoRemove();
-    // });
-    //
-    // $('#addtask').click(function() {
-    //     appendTask('#todolist', $('#todonew').val(), false);
-    // });
+    $('#todonew').keypress(function(e) {
+        if (e.which === 13) {
+            $('.destroy').off('click');
+            $('.toggle').off('click');
+            appendTask('#todolist', $(this).val(), false);
+        }
+        todoToggle();
+        todoRemove();
+    });
+
+    $('#addtask').click(function() {
+        appendTask('#todolist', $('#todonew').val(), false);
+    });
 
     todoToggle();
     todoRemove();
 });
+
+function appendTaskWidget(element, value, klass, checked) {
+    if (value!='') {
+        var todo =
+        "<li class='list-group-item'>"+
+            "<label class='option no-mb'" + (klass=='done'?'done':'') + ">"+
+                "<input type='checkbox' class='toggle' name='varcb1'>"+
+                "<span class='checkbox checkbox-thin'></span>"+
+                "<span class='l-mar-5'>" + value + "</span>"+
+            "</label>"+
+        "</li>";
+        $(element).append(todo);
+    }
+}
 
 function appendTask(element, value, checked) {
     if (value!='') {

@@ -12,7 +12,7 @@
                                     <h2>Stats</h2>
                                     <hr>
                                 </div>
-                                   <%= render "application/stats" %> 
+                                   <%= render "application/stats" %>
                             </div>
 
                             <!-- render checkups -->
@@ -22,7 +22,7 @@
                                     <h2>Checkups</h2>
                                     <hr>
                                 </div>
-                                   <%= render "application/checkups" %> 
+                                   <%= render "application/checkups" %>
                             </div>
 
                             <!-- End Checkups -->
@@ -34,15 +34,15 @@
                                     <h2>Circles</h2>
                                     <hr>
                                 </div>
-                                   <%= render "application/circles" %> 
+                                   <%= render "application/circles" %>
                             </div>
 
                             <!-- End circles -->
 
-                            <div class="row">
-                                <div class="col-md-12 no-pad">
+                            <!-- <div class="row">
+                                <div class="col-md-12 no-pad"> -->
                                     <!-- Activity -->
-                                    <div class="panel mar-10">
+                                    <!-- <div class="panel mar-10">
                                         <div class="panel-heading">
                                             <div class="panel-title">
                                                 <strong>Activity</strong>
@@ -152,14 +152,14 @@
                                                 Show more...
                                             </a>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- / Activity -->
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12 no-pad">
+                                <!-- </div>
+                            </div> -->
+                            <!-- <div class="row">
+                                <div class="col-md-12 no-pad"> -->
                                     <!-- Comments -->
-                                    <div class="widget bg-primary">
+                                    <!-- <div class="widget bg-primary">
                                         <div class="widget-icon bg-primary-light">
                                             <div id="sparkline-pie"></div>
                                         </div>
@@ -179,10 +179,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!-- / Comments -->
-                                </div>
-                            </div>
+                                <!-- </div>
+                            </div> -->
                         </div>
 
                         <div class="col-md-4 no-pad">
@@ -192,12 +192,12 @@
                                 <h2>Prescription</h2>
                                 <hr>
                             </div>
-                            <%= render "application/prescription" %> 
+                            <%= render "application/prescription" %>
                         </div>
                         <!-- End Prescription -->
 
                             <!-- Contacts -->
-                            <div class="panel mar-10">
+                            <!-- <div class="panel mar-10">
                                 <div class="panel-heading">
                                     <div class="panel-title">
                                         <strong>Contacts</strong>
@@ -301,11 +301,11 @@
                                         Show all my contacts...
                                     </a>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- / Contacts -->
 
                             <!-- Notifications -->
-                            <div class="panel mar-10">
+                            <!-- <div class="panel mar-10">
                                 <div class="panel-heading">
                                     <div class="panel-title">
                                         <strong>Notifications</strong>
@@ -391,77 +391,11 @@
                                         Load more notifications...
                                     </a>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- / Notifications -->
 
                             <!-- Today's tasks -->
-                            <div class="panel mar-10">
-                                <div class="panel-heading">
-                                    <div class="panel-title">
-                                        <div class="panel-title">
-                                            <strong>Today's tasks</strong>
-                                            <small> / You have 5 tasks</small>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel-body panel-full">
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <span class="label label-danger">10:00h</span>
-                                            <label class="option no-mb">
-                                                <input type="checkbox" name="varcb1">
-                                                <span class="checkbox checkbox-thin"></span>
-                                                <span class="l-mar-5">
-                                                    Partner evaluation
-                                                </span>
-                                            </label>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span class="label label-warning">11:00h</span>
-                                            <label class="option no-mb">
-                                                <input type="checkbox" name="varcb2">
-                                                <span class="checkbox checkbox-thin"></span>
-                                                <span class="l-mar-5">
-                                                    Do maintenance work in server
-                                                </span>
-                                            </label>
-                                        </li>
-                                        <li class="list-group-item ">
-                                            <span class="label label-warning">12:00h</span>
-                                            <label class="option no-mb">
-                                                <input type="checkbox" name="varcb3">
-                                                <span class="checkbox checkbox-thin"></span>
-                                                <span class="l-mar-5">
-                                                    Check server status (Database)
-                                                </span>
-                                            </label>
-                                        </li>
-                                        <li class="list-group-item ">
-                                            <span class="label label-warning">12:30h</span>
-                                            <label class="option no-mb">
-                                                <input type="checkbox" name="varcb4">
-                                                <span class="checkbox checkbox-thin"></span>
-                                                <span class="l-mar-5">
-                                                    Meeting with partners
-                                                </span>
-                                            </label>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <span class="label label-success">17:00h</span>
-                                            <label class="option no-mb">
-                                                <input type="checkbox" name="varcb5">
-                                                <span class="checkbox checkbox-thin"></span>
-                                                <span class="l-mar-5">
-                                                    Video conference with Australia
-                                                </span>
-                                            </label>
-                                        </li>
-                                    </ul>
-                                    <a class="btn btn-block btn-success">
-                                        Show all tasks...
-                                    </a>
-                                </div>
-                            </div>
+                            <%= render "application/todo_list" %>
                             <!-- / Today's tasks -->
                         </div>
                     </div>
@@ -470,6 +404,3 @@
 
             </div>
             <%= render "application/session" %>
-
-
-
