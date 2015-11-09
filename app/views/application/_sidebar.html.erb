@@ -86,21 +86,21 @@
                 <span class="name">Options</span>
             </li>
             <li class="active">
-                <%= link_to "#" do %>
+                <%= link_to root_path do %>
                   <i class="fa fa-tachometer"></i>
                   <span class="name">Dashboard</span>
                 <% end %>
             </li>
 
             <li class="@@activate-calendar">
-                <%= link_to "#" do %>
+                <%= link_to calendar_path do %>
                   <i class="fa fa-calendar-o"></i>
                   <span class="name">Calendar</span>
                 <% end %>
             </li>
 
             <li class="@@activate-calendar">
-                <%= link_to "#" do %>
+                <%= link_to appointments_path do %>
                   <i class="fa fa-thumb-tack"></i>
                   <span class="name">Appointments</span>
                 <% end %>
@@ -113,22 +113,29 @@
                 <% end %>
             </li>
 
+            <li class="@@activate-calendar">
+                <%= link_to tasks_path do %>
+                  <i class="fa fa-tasks"></i>
+                  <span class="name">Todo</span>
+                <% end %>
+            </li>
+
             <li class="@@activate-charts">
-                <%= link_to "#" do %>
+                <%= link_to user_stats_path do %>
                   <i class="fa fa-pie-chart"></i>
                   <span class="name">Charts</span>
                 <% end %>
             </li>
 
             <li class="@@activate-grids">
-                <%= link_to "#" do %>
+                <%= link_to prescriptions_path do %>
                   <i class="fa fa-plus-circle"></i>
                   <span class="name">Prescriptions</span>
                 <% end %>
             </li>
 
             <li class="@@activate-calendar">
-              <%= link_to "#" do %>
+              <%= link_to circles_path do %>
                 <i class="fa fa-heartbeat"></i>
                 <span class="name">Circles</span>
               <% end %>
