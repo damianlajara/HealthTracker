@@ -1,0 +1,34 @@
+function appendTask(element, value, checked) {
+    if (value!='') {
+        var newTodo =
+            "<li>" +
+                "<label class='option block'>"+
+                    "<input type='checkbox' class='toggle' "+(checked?'checked':'')+">"+
+                    "<span class='checkbox checkbox-thin'></span>"+
+                    "<label "+(checked?'data="done" class="done"':'')+">"+value+"</label>"+
+                    "<a class='destroy'></a>"+
+                "</label>"+
+            "</li>";
+        $('#todonew').val('');
+        $(element).html(newTodo);
+    }
+}
+
+if(<%= @task.status %> == "done") {
+  // appendTask('#oldtodolist', <%= @task.name %>, true);
+  var checked = true;
+  $('todolist').html("<li>" +
+      "<label class='option block'>"+
+          "<input type='checkbox' class='toggle' "+(checked?'checked':'')+">"+
+          "<span class='checkbox checkbox-thin'></span>"+
+          "<label "+(checked?'data="done" class="done"':'')+">"+<%= @task.name %>+"</label>"+
+          "<a class='destroy'></a>"+
+      "</label>"+
+  "</li>";)
+} else {
+  appendTask('#todolist', <%= @task.name %>, false);
+}
+//
+// $(document).ready(function() {
+//
+// })

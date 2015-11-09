@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel">
+    <div class="panel-heading">
+        <div class="panel-title">
+            <strong>TODO</strong> task list
+        </div>
+    </div>
+    <div class="panel-body">
+        <div id="todos">
+          <%= form_for(@new_task, remote: true) do |f| %>
+            <div class="iconed-input mb-5 input-group">
+
+              <i class="fa fa-tasks"></i>
+              <!-- <input id="todonew" type="text" class="form-control" placeholder="Create a new task..."> -->
+              <%= f.text_field :name, class: "form-control", placeholder: "Create a new task...", id: "todonew" %>
+              <span class="input-group-btn">
+                  <button id="addtask" type="submit" class="btn btn-success">
+                    <i class="fa fa-plus"></i>
+                  </button>
+              </span>
+
+              <!-- <i class="fa fa-tasks"></i>
+              <input id="todonew" type="text" class="form-control" placeholder="Create a new task...">
+              <span class="input-group-btn">
+                  <button id="addtask" type="submit" class="btn btn-success">
+                    <i class="fa fa-plus"></i>
+                  </button>
+              </span> -->
+            </div>
+          <% end %>
+            <ul id="todolist"
+                class="todolist list-unstyled sortable ui-sortable mt-10"
+                data-sortable-connect=".sortable"
+                data-sortable-axis="y">
+                <li class="header">Pending tasks</li>
+            </ul>
+            <ul id="oldtodolist"
+                class="todolist list-unstyled sortable ui-sortable"
+                data-sortable-connect=".sortable"
+                data-sortable-axis="y">
+                <li class="header">Completed tasks - <small>Tasks marked as complete</small></li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <!-- You have <span id='todocount' class="bold"></span> tasks -->
+    </div>
+
+</div>

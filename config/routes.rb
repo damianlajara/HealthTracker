@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :tasks
+
   resources :user_stats
   resources :prescriptions
 

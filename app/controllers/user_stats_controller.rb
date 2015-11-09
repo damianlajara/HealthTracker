@@ -32,18 +32,18 @@ class UserStatsController < ApplicationController
     }
 
     @todays_stat = current_user.user_stats.where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).first
-    
+
     if @todays_stat
       form_data["calories"] = form_data["calories"] + @todays_stat.calories
       form_data["sleep"] = form_data["sleep"] + @todays_stat.sleep
       form_data["exercise"] = form_data["exercise"] + @todays_stat.exercise
 
       @todays_stat.update(form_data)
-    else 
+    else
       @todays_stat = UserStat.new(form_data)
       @todays_stat.user = current_user
     end
-    
+
     respond_to do |format|
       if @user_stat = @todays_stat.save
         format.html { redirect_to @todays_stat, notice: 'User stat was successfully created.' }
@@ -87,6 +87,7 @@ class UserStatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_stat_params
-      params.require(:user_stat).permit(:belongs_to, :feeling, :date, :sleep, :calories, :exercise)
+      # params.require(:user_stat).permit(:belongs_to, :feeling, :date, :sleep, :calories, :exercise)
+      params.require(:user_stat).permit!
     end
 end
