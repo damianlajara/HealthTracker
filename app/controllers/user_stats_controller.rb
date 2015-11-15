@@ -51,7 +51,7 @@ class UserStatsController < ApplicationController
   # POST /user_stats
   # POST /user_stats.json
   def create
-    
+    binding.pry
     form_data = {
       "calories" => params["calories"].to_i,
       "sleep" => params["sleep(4i)"].to_i * 60 + params["sleep(5i)"].to_i,
