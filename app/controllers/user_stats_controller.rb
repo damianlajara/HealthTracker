@@ -24,19 +24,20 @@ class UserStatsController < ApplicationController
   # POST /user_stats
   # POST /user_stats.json
   def create
-
+    binding.pry
     form_data = {
+      # hour * 60 (converting hours to minutes)
       "calories" => user_stat_params["calories"].to_i,
       "sleep" => user_stat_params["sleep(4i)"].to_i * 60 + user_stat_params["sleep(5i)"].to_i,
       "exercise" => user_stat_params["exercise(4i)"].to_i * 60 + user_stat_params["exercise(5i)"].to_i
     }
-
     @todays_stat = current_user.user_stats.where('created_at BETWEEN ? AND ?', DateTime.now.beginning_of_day, DateTime.now.end_of_day).first
-
+    
     if @todays_stat
-      form_data["calories"] = form_data["calories"] + @todays_stat.calories
-      form_data["sleep"] = form_data["sleep"] + @todays_stat.sleep
-      form_data["exercise"] = form_data["exercise"] + @todays_stat.exercise
+      # to_i in case of nil value (nil will be converted to 0)
+      form_data["calories"] = form_data["calories"] + @todays_stat.calories.to_i
+      form_data["sleep"] = form_data["sleep"] + @todays_stat.sleep.to_i
+      form_data["exercise"] = form_data["exercise"] + @todays_stat.exercise.to_i
 
       @todays_stat.update(form_data)
     else
@@ -45,12 +46,10 @@ class UserStatsController < ApplicationController
     end
 
     respond_to do |format|
-      if @user_stat = @todays_stat.save
+      if @todays_stat.save
         format.html { redirect_to @todays_stat, notice: 'User stat was successfully created.' }
-        format.json { render :show, status: :created, location: @user_stat }
       else
         format.html { render :new }
-        format.json { render json: @todays_stat.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -87,7 +86,6 @@ class UserStatsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_stat_params
-      # params.require(:user_stat).permit(:belongs_to, :feeling, :date, :sleep, :calories, :exercise)
-      params.require(:user_stat).permit!
+      params.require(:user_stat).permit(:sleep, :calories, :exercise)
     end
 end

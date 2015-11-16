@@ -34,6 +34,59 @@
                                                     "panel panel-inverse">
                                                         <div class=
                                                         "panel-heading" id=
+                                                        "heading-1" role="tab">
+                                                            <h5 class=
+                                                            "panel-title">
+                                                            <a aria-controls=
+                                                            "collapse-1"
+                                                            aria-expanded=
+                                                            "false" class=
+                                                            "accordion-toggler"
+                                                            data-parent=
+                                                            "#accordion-1"
+                                                            data-toggle=
+                                                            "collapse" href=
+                                                            "#collapse-1" role=
+                                                            "button">
+                                                            USDA Search</a></h5>
+                                                        </div>
+                                                        <div aria-labelledby=
+                                                        "heading-1" class=
+                                                        "panel-collapse collapse"
+                                                        id="collapse-1" role=
+                                                        "tabpanel">
+                                                            <div class=
+                                                            "panel-body dark total_calories">
+                                                            <div id="total_calories">
+                                                                <strong> Total Calories: </strong> 
+                                                                <p>0</p>
+                                                            </div>
+                                                                <%= label_tag :groups, "Narrow Food Scope"  %></br>
+                                                                <%= select_tag(:group, options_for_select(FoodGroup.all.collect {|group| [group.name, group.id]}), {include_blank: true, style: "display:  block; width: 100%;"} ) %></br>
+                                                                <%= label_tag :foods, "Add Foods"  %></br>
+                                                                <%= text_area_tag :foods %> </br>
+
+                                                                <%= button_tag(type: 'button', id: 'calculate_food', class: 'btn-primary') do %>
+                                                                    <%= content_tag(:strong, 'Add to Total') %>
+                                                                <% end %> </br><br>
+                                                                <div class="actions">
+                                                                  <%= f.submit class: 'btn-primary' %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div aria-multiselectable=
+                                                "false" class=
+                                                "accordion panel-group no-mb"
+                                                id="accordion-1" role=
+                                                "tablist">
+                                                    
+                                                    <div class=
+                                                    "panel panel-inverse">
+                                                        <div class=
+                                                        "panel-heading" id=
                                                         "heading-2" role="tab">
                                                             <h5 class=
                                                             "panel-title">
@@ -48,7 +101,7 @@
                                                             "collapse" href=
                                                             "#collapse-2" role=
                                                             "button">
-                                                            Calories</a></h5>
+                                                            Costum Calories</a></h5>
                                                         </div>
                                                         <div aria-labelledby=
                                                         "heading-2" class=
@@ -63,18 +116,21 @@
                                                                 0</p><%= text_field_tag :costum_calories %><br>
 
                                                                 <br>
-                                                                <%= button_tag(type: 'button', id: 'calculate_custom', class: 'btn-primary') do %>
-                                                                <%= content_tag(:strong, 'Add to Total') %>
-                                                                <%end %><br>
-                                                                <br>
-                                                                <div class=
-                                                                "actions">
-                                                                    <%= f.submit class: 'btn-primary' %>
-                                                                </div><%= hidden_field_tag 'calories', '0' %>
+                                                                <%= form_for(:user_stat, html: {id: "calories_form"}) do |f| %>
+                                                                    <%= button_tag(type: 'button', id: 'calculate_custom', class: 'btn-primary') do %>
+                                                                    <%= content_tag(:strong, 'Add to Total') %>
+                                                                    <%= f.hidden_field :calories, value: 0 %>
+                                                                    <%end %></br>
+                                                                    <br>
+                                                                    <div class="actions">
+                                                                         <%= f.submit class: 'btn-primary' %>
+                                                                    </div>
+                                                                <% end %>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div><%end %>
+                                                </div>
+                                                <% end %>
                                                 <!-- End of calories form -->
                                             </div>
                                         </div><!-- / Accordion In Panel -->
@@ -133,7 +189,7 @@
                                                             <div class=
                                                             "panel-body dark">
                                                                 <!-- start of sleep form -->
-                                                                <%= form_for(:sleep, html: {id: "sleep_form"}) do |f| %>
+                                                                <%= form_for(:user_stat, html: {id: "sleep_form"}) do |f| %>
                                                                 <div class=
                                                                 "field">
                                                                     <%= f.time_select :sleep, {:default => {:hour => '00', :minute => '00'}} %>
@@ -204,14 +260,14 @@
                                                             <div class=
                                                             "panel-body dark">
                                                                 <!-- start of exercise form -->
-                                                                <%= form_for(:exercise, html: {id: "exercise_form"}) do |f| %>
+                                                                <%= form_for(:user_stat, html: {id: "exercise_form"}) do |f| %>
                                                                 <div class=
                                                                 "field">
                                                                     <%= f.time_select :exercise, {:default => {:hour => '00', :minute => '00'}} %>
                                                                 </div>
                                                                 <div class=
                                                                 "actions">
-                                                                    <%= f.submit class: 'btn-primary'%>
+                                                                    </br><%= f.submit class: 'btn-primary'%>
                                                                 </div><%end %>
                                                                 <!-- end of exercise form -->
                                                             </div>
