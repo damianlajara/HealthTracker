@@ -102,3 +102,24 @@ img.member-img {
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
 }
+
+
+.member.energized {
+	border-left: 10px solid #10CC84 !important;
+}
+
+.member.just-fine {
+	border-left: 10px solid #1DC8E2 !important;
+}
+
+.member.exhausted {
+	border-left: 10px solid #B457F2 !important;
+}
+
+.member.mildly-sick {
+	border-left: 10px solid #EF7B45 !important;
+}
+
+.member.very-sick {
+	border-left: 10px solid #ED3B3B !important;
+}

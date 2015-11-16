@@ -224,15 +224,15 @@
 #     },
 # ])
 
-Task.create([
-    {name: "Check what symptoms my brother has", status: "done"},
-    {name: "Make sure to call my mom about her back pain", status: "done"},
-    {name: "Call the doctor for botox renewal", status: "done"},
-    {name: "Call the doctor", status: "pending"},
-    {name: "Get a list of good dentists", status: "pending"},
-    {name: "Call sister about her surgery", status: "pending"},
-    {name: "Look up cures for the flu", status: "pending"},
-])
+# Task.create([
+#     {name: "Check what symptoms my brother has", status: "done"},
+#     {name: "Make sure to call my mom about her back pain", status: "done"},
+#     {name: "Call the doctor for botox renewal", status: "done"},
+#     {name: "Call the doctor", status: "pending"},
+#     {name: "Get a list of good dentists", status: "pending"},
+#     {name: "Call sister about her surgery", status: "pending"},
+#     {name: "Look up cures for the flu", status: "pending"},
+# ])
 
 
 

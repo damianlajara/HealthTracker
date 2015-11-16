@@ -61,6 +61,11 @@ class User < ActiveRecord::Base
     checkups
   end
 
+  def feeling 
+    status = self.user_statuses.last.status
+    status.split().join("-").downcase
+  end
+
 
 
 end

@@ -60,7 +60,7 @@
             <% current_user.circles.each_with_index do |circle, ix| %>
                   <ul id="<%= ix %>" class="list-group circle-users">
                     <% circle.users.uniq.each do |u| %>
-                      <li class="member list-group-item">
+                      <li class="member list-group-item <%= u.feeling %>">
                         <%= image_tag u.avatar(:thumb), class: "member-img" %>
                         <div class="member-name"><%= u.first_name %></div>
                       </li>

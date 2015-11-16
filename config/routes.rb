@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'user_status/create'
+
   resources :tasks
 
   resources :user_stats
@@ -46,6 +48,9 @@ Rails.application.routes.draw do
 
   post 'new-appointment' => 'appointments#create'
   post 'create-checkup' => 'appointments#create'
+
+  post 'create-status' => 'dashboard#user_status'
+  
 
 
   # Example of named route that can be invoked with purchase_url(id: product.id)

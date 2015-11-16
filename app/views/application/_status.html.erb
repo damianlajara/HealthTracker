@@ -1,13 +1,39 @@
 
-<form action='dashboard/user_status' method="POST">
-<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-<%= select_tag "status", 
-"<option>Energized</option>
- <option>Just Fine</option>
- <option>Exhausted</option>
- <option>Mildly Sick</option>
- <option>Very Sick</option>".html_safe %>
 
-<input type="submit" value="Submit">
+<% @user_status = UserStatus.new %>
+<form action="/create-status" id="status-form" method="POST">
+<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+  <div class="field">
+	  <%= select_tag "status", 
+	"<option>Energized</option>
+	 <option>Just Fine</option>
+	 <option>Exhausted</option>
+	 <option>Mildly Sick</option>
+	 <option>Very Sick</option>".html_safe %>
+  </div>
+
+  <input type="submit" value="Update Status">
 
 </form>
+
+<script>
+    $("#status-form").submit(function(event){
+       event.preventDefault();
+        var values = {};
+
+        $.each($('#status-form').serializeArray(), function(i, field) {
+           values[field.name] = field.value;
+        });      
+       $.post("/create-status", values, function(data) {
+       	debugger
+       });
+
+    });
+</script>
+
+<style>
+input[type="submit"] {
+	color: #696969 !important;
+	font-size: 18px;
+}
+</style>

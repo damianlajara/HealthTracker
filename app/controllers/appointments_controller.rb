@@ -59,7 +59,6 @@ class AppointmentsController < ApplicationController
     else 
       @appointment.appt_type = params[:appointment][:appt_type]
     end
-    binding.pry
 
     @appointment.save
     
