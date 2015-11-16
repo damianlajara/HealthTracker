@@ -3,10 +3,9 @@ class CreateFoods < ActiveRecord::Migration
     create_table :foods do |t|
       t.string :name
       t.integer :calories
-      t.belongs_to :food_group, index: true
-
+      t.integer :usda_id
+      t.belongs_to :food_group
       t.timestamps null: false
     end
-    add_foreign_key :foods, :groups
   end
 end

@@ -1,3 +1,4 @@
+require 'csv'
 User.create!([
   {email: "g.r.martinez49@gmail.com", password: "password123", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 4, current_sign_in_at: "2015-10-28 19:07:19", last_sign_in_at: "2015-10-26 03:34:51", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", first_name: "Giancarlo", last_name: "Martinez", birthdate: "1991-09-03", height: 6, weight: 205, gender: "male", avatar_file_name: "gian-icon.png", avatar_content_type: "image/png", avatar_file_size: 10376, avatar_updated_at: "2015-10-26 03:01:33"},
   {email: "isaac@flatironschool.com", password: "password123", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 2, current_sign_in_at: "2015-10-26 03:32:15", last_sign_in_at: "2015-10-26 03:26:22", current_sign_in_ip: "127.0.0.1", last_sign_in_ip: "127.0.0.1", first_name: "Isaac", last_name: "Lapides", birthdate: nil, height: nil, weight: nil, gender: "male", avatar_file_name: "isaac-icon.png", avatar_content_type: "image/png", avatar_file_size: 9480, avatar_updated_at: "2015-10-26 03:32:38"},
@@ -235,7 +236,6 @@ Task.create([
 ])
 
 
-
 UserStatus.create([
     {user_id: 1, status: "Energized"},
     {user_id: 2, status: "Very Sick"},
@@ -245,3 +245,40 @@ UserStatus.create([
     {user_id: 6, status: "Just Fine"},
 
   ])
+
+food_array = CSV.read("./db/food_seed_source.csv")[1..-1]
+food_groups = File.read("./db/food_groups.txt").split("\n")
+food_group_connections = CSV.read("./db/food_group_connection.csv")
+
+food_array.each do |row| 
+  food_data = {
+    name: row[1].gsub(",", ", "),
+    calories: row[3].to_i,
+    usda_id: row[0].to_i
+  }
+  @food = Food.create(food_data)
+end
+
+food_groups.each do |group| 
+  group_data = {
+    name: group.match(/\^~(\D+)~/)[1],
+    usda_id: group.match(/~(\d+)/)[1].to_i
+  }
+  @food_group = FoodGroup.create(group_data)
+end
+
+food_group_connections.each do |row|
+
+  usda_food_id = row[0].match(/~(\d{5})/)[1].to_i
+  usda_group_id = row[0].match(/\^~(\d+)/)[1].to_i
+
+
+  @food = Food.find_by(usda_id: usda_food_id)
+  @group = FoodGroup.find_by(usda_id: usda_group_id)
+  begin
+    @group.foods << @food
+    @group.save
+  rescue
+  end
+end
+

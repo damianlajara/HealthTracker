@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20151109034455) do
 
   create_table "food_groups", force: :cascade do |t|
     t.string   "name"
+    t.integer  "usda_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,12 +50,11 @@ ActiveRecord::Schema.define(version: 20151109034455) do
   create_table "foods", force: :cascade do |t|
     t.string   "name"
     t.integer  "calories"
+    t.integer  "usda_id"
     t.integer  "food_group_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
-
-  add_index "foods", ["food_group_id"], name: "index_foods_on_food_group_id"
 
   create_table "illness_symptoms", force: :cascade do |t|
     t.integer  "illness_id"
