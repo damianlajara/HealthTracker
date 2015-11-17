@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'user_stats/foods/:group' => 'user_stats#foods'
+
+  get 'user_stats/calculate_calories/:foods' => 'user_stats#calculate_calories'
 
   get 'user_status/create'
 
@@ -14,6 +17,8 @@ Rails.application.routes.draw do
   resources :appointments
 
   devise_for :users
+  
+    get 'routines/symptom_list' => 'routines#symptom_list'
 
   resources :routines
 

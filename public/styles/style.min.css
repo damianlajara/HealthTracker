@@ -33,6 +33,7 @@ component {
     border-bottom: 1px solid #d8dcde !important;
 }
 
+
 html {
     min-height: 100%;
     font-size: 10px;
@@ -11856,3 +11857,7 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td:first-child::before,table.dataT
     display: inline-block;
     position: relative;
 }
+
+#ui-id-1 {
+    background-color: rgb(240, 240, 240);
+    width: 250px;}

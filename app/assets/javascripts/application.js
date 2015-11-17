@@ -25,3 +25,5 @@ $(document).ready(function() {
     var path = window.location.pathname;
     $("span.url").html(path);
 });
+
+

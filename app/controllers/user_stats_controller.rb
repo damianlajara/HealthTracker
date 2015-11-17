@@ -12,6 +12,7 @@ class UserStatsController < ApplicationController
   def show
   end
 
+
   # GET /user_stats/new
   def new
     @user_stat = UserStat.new
@@ -54,27 +55,30 @@ class UserStatsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /user_stats/1
-  # PATCH/PUT /user_stats/1.json
-  def update
-    respond_to do |format|
-      if @user_stat.update(user_stat_params)
-        format.html { redirect_to @user_stat, notice: 'User stat was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user_stat }
-      else
-        format.html { render :edit }
-        format.json { render json: @user_stat.errors, status: :unprocessable_entity }
-      end
+  # GET /user_stats/foods
+  def foods
+    group = params[:group]
+    if group == "all"
+      @foods = Food.all
+    else
+      group = FoodGroup.find(group.to_i)
+      @foods = group.foods.map {|food| food.name}
     end
+    respond_to do |format|
+       format.json { render json: @foods }
+     end
   end
 
-  # DELETE /user_stats/1
-  # DELETE /user_stats/1.json
-  def destroy
-    @user_stat.destroy
+  def calculate_calories
+    food = params[:foods].gsub(/, $/, "")
+    total_calories = 0 
+    
+    if food = Food.find_by(name: food)
+      total_calories += food.calories
+    end
+
     respond_to do |format|
-      format.html { redirect_to user_stats_url, notice: 'User stat was successfully destroyed.' }
-      format.json { head :no_content }
+       format.json { render json: total_calories }
     end
   end
 
