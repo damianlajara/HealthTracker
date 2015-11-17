@@ -4,4 +4,4 @@ require File.expand_path('../application', __FILE__)
 # Initialize the Rails application.
 Rails.application.initialize!
 
-RAILS_ENV=['production'] rails server
+RAILS_ENV=['production']
