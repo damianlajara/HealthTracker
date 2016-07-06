@@ -250,7 +250,7 @@ food_array = CSV.read("./db/food_seed_source.csv")[1..-1]
 food_groups = File.read("./db/food_groups.txt").split("\n")
 food_group_connections = CSV.read("./db/food_group_connection.csv")
 
-food_array.each do |row| 
+food_array.each do |row|
   food_data = {
     name: row[1].gsub(",", ", "),
     calories: row[3].to_i,
@@ -259,7 +259,7 @@ food_array.each do |row|
   @food = Food.create(food_data)
 end
 
-food_groups.each do |group| 
+food_groups.each do |group|
   group_data = {
     name: group.match(/\^~(\D+)~/)[1],
     usda_id: group.match(/~(\d+)/)[1].to_i
@@ -281,4 +281,3 @@ food_group_connections.each do |row|
   rescue
   end
 end
-

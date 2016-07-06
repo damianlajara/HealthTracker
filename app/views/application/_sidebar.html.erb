@@ -4,10 +4,12 @@
         <ul class="side-nav-top nav">
             <li class="sidebar-nav-logo">
                 <component>sidebar-nav-logo</component>
-                <img src="./../img/sidebar-logo.png" alt="Dee Admin">
-                <span class="logo-text">
-                    <b>Dash</b>Doc
-                </span>
+                <a class="remove-default" href="<%= root_path %>">
+                  <img src="./../img/sidebar-logo.png" alt="Dash Doc">
+                  <span class="logo-text">
+                      <b>Dash</b>Doc
+                  </span>
+                </a>
             </li>
             <% if user_signed_in? %>
             <li class="sidebar-nav-profile">
